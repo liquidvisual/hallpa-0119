@@ -1,0 +1,31 @@
+- title: Lorem Ipsum Dolor Sit Amet
+  body: 'Lorem ipsum dolor sit amet, consectetuer lorem ipsum. Melita liquam ut eros ligula, at auctor lorem. Ut nunc urna, fringilla nec blandit et, accumsan vitae nibh. Praesent pharetra pellentesque pulvinar.'
+  image: /assets/img/content/hero/hero-1.jpg
+  options:
+  scroll_prompt: true
+  youtube_id:
+  vimeo_id:
+
+- title:
+  body: '<p class="lead">Lorem ipsum dolor sit amet, consectetuer lorem ipsum. Melita liquam ut eros ligula, at auctor lorem. Ut nunc urna, fringilla nec blandit et, accumsan vitae nibh. Praesent pharetra pellentesque pulvinar. Lorem ipsum dolor sit amet, consectetur adipisicing Melita liquam ut eros ligula, at auctor lorem. Ut nunc urna, fringilla nec blandit et, accumsan vitae nibh. Praesent pharetra pellentesque pulvinar. Lorem ipsum dolor sit amet, consectetur adipisicing Melita liquam ut eros ligula, at auctor lorem. Ut nunc urna, fringilla nec blandit et, accumsan vitae nibh. Praesent pharetra pellentesque pulvinar. Lorem ipsum dolor sit amet, consectetur adipisicing Melita liquam ut eros ligula, at auctor lorem.</p>'
+  image: /assets/img/content/hero/hero-2.jpg
+  options: is-tinted
+  scroll_prompt: false
+  youtube_id:
+  # vimeo_id: 264406454
+
+- title: Hero With YouTube Embedded Background
+  body: '<p class="lead">Although you can embed video across multiple slides, we recommended you only use one for performance reasons.</p>'
+  image: /assets/img/content/hero/hero-3.jpg
+  options: is-tinted
+  scroll_prompt: false
+  # youtube_id: ScMzIvxBSi4
+  vimeo_id:
+
+- title: Hero With YouTube Embedded Background
+  body:
+  image: /assets/img/content/hero/hero-4.jpg
+  options: is-tinted
+  scroll_prompt: false
+  # youtube_id: 3xUfCUFPL-8
+  vimeo_id:

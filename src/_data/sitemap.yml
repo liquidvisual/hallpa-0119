@@ -1,0 +1,41 @@
+- title: Home
+  url: /
+
+- title: About
+  url: /components/
+
+- title: Our People
+  url: /advanced-page/
+  include_children_in_nav: true
+  children:
+    - title: John Smith
+      url: /404/
+
+- title: Areas of Practice
+  url: /areas-of-practice/
+  include_children_in_nav: true
+  children:
+    - title: Advanced Page
+      url: /advanced-page/
+
+    - title: Standard Page
+      url: /standard-page/
+
+    - title: Search Results
+      url: /search/
+
+    - title: Site Map
+      url: /site-map/
+
+    - title: 404
+      url: /404/
+
+- title: Blog
+  url: /blog/
+  include_children_in_nav: true
+  children:
+    - title: Blog Post
+      url: /blog/blog-item/
+
+- title: Contact
+  url: /contact/

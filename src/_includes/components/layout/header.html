@@ -1,0 +1,80 @@
+{% assign settings = site.data.settings %}
+{% assign phone = settings.offices[0].phone %}
+{% assign logo = page.logo | default: "/assets/img/content/logo.png" %}
+
+<!-- HEADER TOP -->
+<div class="global-header-top hidden-sm-down">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                {% include components/social_media.html %}
+            </div>
+            <div class="col-9 text-right">
+
+                <!-- PAYMENTS -->
+                <a href="#">
+                    <i class="fa fa-credit-card"></i>&nbsp;
+                    <span class="text hidden-sm-down">PAYMENTS</span>
+                </a>
+
+                <!-- PHONE -->
+                <a href="tel:{{ settings.offices[0].phone }}">
+                    <i class="fa fa-phone"></i>&nbsp;
+                    <span class="text hidden-sm-down">{{ settings.offices[0].phone }}</span>
+                </a>
+
+                <!-- EMAIL -->
+                <a class="hidden-sm-down" href="mailto:{{ settings.offices[0].email }}">
+                    <i class="fa fa-envelope"></i>&nbsp;  {{ settings.offices[0].email }}
+                </a>
+
+                <!-- SEARCH (OPTIONAL) -->
+                <!-- <a href="#search" data-search-trigger>
+                    <i class="fa fa-search"></i>
+                    <span class="text hidden-sm-down">&nbsp;Search</span>
+                </a> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER BODY -->
+<div class="global-header-body">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="logo" href="/" title="{{ settings.title_homepage }}" itemprop="url">
+            <img src="{{ logo }}" alt="{{ settings.company }}" itemprop="logo">
+        </a>
+
+        <!-- HAMBURGER -->
+        <div class="global-header-hamburger hidden-xl-up">
+            <div class="lv-hamburger" data-menu-toggle>
+                <span class="lv-hamburger-top"></span>
+                <span class="lv-hamburger-middle"></span>
+                <span class="lv-hamburger-bottom"></span>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="global-navigation hidden-lg-down">
+            <div class="lv-topbar">
+                {% include components/navigation/navigation.html %}
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- BG SPLIT -->
+    <div class="bg-split hidden-sm-down">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-xl-4">
+                    <div class="bg-fill mr-xl-5 mr-xxl-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

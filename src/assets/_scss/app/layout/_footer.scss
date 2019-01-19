@@ -1,0 +1,198 @@
+/*
+    FOOTER.CSS
+
+    - Last updated: 19.01.19
+    - liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// FOOTER
+//-----------------------------------------------------------------
+
+.global-footer {
+	position: relative; // [LOCKED] - for bg fill
+	background: $secondary;
+	color: white;
+	z-index: 1; // [LOCKED] - for bg fill
+
+	@include media-breakpoint-up(md) {
+	    background: $primary;
+	}
+
+	a {
+		color: white; // [THEMEABLE]
+
+		&:hover {
+			opacity: 0.85;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// FOOTER BODY
+//-----------------------------------------------------------------
+
+.global-footer-body {
+	position: relative;
+
+	> .container { // [LOCKED] - consistent with sitemap
+		padding-top: $spacer*2.5;
+		padding-bottom: $spacer;
+
+		@include media-breakpoint-up(md) {
+		    padding-top: rem-calc(64); //$spacer*2.5;
+		    padding-bottom: rem-calc(50); //$spacer*2.5;
+		}
+	}
+
+	.logo img {
+		width: rem-calc(154);
+		max-width: 100%;
+	}
+
+	.fa.mr-1 {
+		min-width: rem-calc(20);
+		text-align: center;
+	}
+
+	.text-link {
+		color: $primary;
+	}
+
+	.contact-col {
+		@include media-breakpoint-up(lg) {
+		    flex: 0 1 rem-calc(230);
+		}
+	}
+
+	.error {
+		color: lighten($red, 35%);
+	}
+
+	.btn { // form button
+		border: 0; // test?
+		background: rgba(black, 0.2); // [THEMEABLE]
+		color: white; // [THEMEABLE]
+
+		&:hover {
+			background: rgba(black, 0.3); // same as scrolltop
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// FOOTER BOTTOM
+//-----------------------------------------------------------------
+
+.global-footer-bottom {
+	position: relative; // for bg fill
+	padding: rem-calc(25 0);
+	font-size: rem-calc(15);
+	color: rgba(white, 0.4);
+
+	@include media-breakpoint-down(sm) { // mobile down
+	    background: darken($secondary, 4%);
+	}
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 700;
+
+		.fa-angle-up,
+		.fa-angle-down {
+			font-size: rem-calc(20);
+			transition: transform 400ms ease;
+
+			&.is-active { // arrow on sitemap
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.legal-text {
+		font-size: rem-calc(14);
+	}
+
+	.author-logo {
+		display: inline-block; // [LOCKED] - aligns icon
+		font-size: rem-calc(11);
+		font-weight: 400;
+
+		img {
+			opacity: 0.5;
+		}
+
+		.text {
+			opacity: 0.3;
+		}
+	}
+
+	//=========================================
+	// BLEED TO BOTTOM [LOCKED]
+	//=========================================
+
+	// &:after {
+	// 	content: "";
+	// 	position: fixed;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background: inherit;
+	// 	z-index: -1;
+	// }
+}
+
+//-----------------------------------------------------------------
+// BG SPLIT
+//-----------------------------------------------------------------
+
+.global-footer .bg-split {
+	position: absolute;
+	top: 0; // IE11
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+
+	> .container {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		> .row {
+			display: flex;
+			height: 100%;
+			flex-grow: 1;
+		}
+	}
+
+	.bg-fill-1,
+	.bg-fill-2 {
+		position: absolute;
+		right: 0;
+		width: 100vw;
+		height: 100%;
+		background: $secondary;
+	}
+}
+
+
+
+
+.global-footer-bottom .bg-split {
+
+	.bg-fill-a {
+		position: absolute;
+		right: 0;
+		width: 100vw;
+		height: 100%;
+		background: darken($secondary, 4%);
+	}
+}
+
+//=========================================
+//
+//=========================================
