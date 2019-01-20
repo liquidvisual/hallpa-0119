@@ -11,7 +11,7 @@
 // BOOTSTRAP OVERRIDE
 //-----------------------------------------------------------------
 
-// fuck right off Bootstrap
+// come on Bootstrap
 b, strong {
     font-weight: $font-weight-bold;
 }
@@ -54,7 +54,7 @@ b, strong {
 
     &.headroom--bottom {
         @include media-breakpoint-up(sm) {
-            bottom: 30px;
+            bottom: 45px;
         }
     }
 

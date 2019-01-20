@@ -31,7 +31,7 @@
             {% if forloop.index > 1 and page.url contains item.url %} active {% endif %}
             {% if item.children %} has-dropdown {% endif %}
             {% if item.children and item.children.size > 7 %} is-mega {% endif %}
-            {% if item.children and forloop.index >= 6 or forloop.last %} is-right-aligned {% endif %}
+            {% if item.children and forloop.index >= 5 or forloop.last %} is-right-aligned {% endif %}
             {% if item.cta %} {{ item.cta }} {% endif %}
         {% endcapture %}
 

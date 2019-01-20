@@ -40,7 +40,7 @@ $header-bottom-lg-height: 50px !default;
 
 .headroom--unpinned.global-header {
 	@include media-breakpoint-down(lg) {
-    	transform: translateY(-100%); // HIDE MENU BAR
+    	transform: translateY(-106%); // HIDE MENU BAR
 	}
 }
 

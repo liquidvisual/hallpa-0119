@@ -93,7 +93,7 @@
 	color: rgba(white, 0.4);
 
 	@include media-breakpoint-down(sm) { // mobile down
-	    background: darken($secondary, 4%);
+	    background: $primary; //darken($secondary, 4%);
 	}
 
 	a {
@@ -179,18 +179,8 @@
 	}
 }
 
-
-
-
-.global-footer-bottom .bg-split {
-
-	.bg-fill-a {
-		position: absolute;
-		right: 0;
-		width: 100vw;
-		height: 100%;
-		background: darken($secondary, 4%);
-	}
+.global-footer-bottom .bg-split .bg-fill-1 {
+	background: darken($secondary, 4%);
 }
 
 //=========================================

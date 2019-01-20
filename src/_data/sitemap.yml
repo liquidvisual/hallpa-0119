@@ -2,17 +2,17 @@
   url: /
 
 - title: About
-  url: /components/
+  url: '#/about/'
 
 - title: Our People
-  url: /advanced-page/
+  url: '#/our-people/'
   include_children_in_nav: true
   children:
     - title: John Smith
-      url: /404/
+      url: /our-people/john-smith/
 
 - title: Areas of Practice
-  url: /areas-of-practice/
+  url: '#/areas-of-practice/'
   include_children_in_nav: true
   children:
     - title: Advanced Page
@@ -31,11 +31,11 @@
       url: /404/
 
 - title: Blog
-  url: /blog/
+  url: '#/blog/'
   include_children_in_nav: true
   children:
     - title: Blog Post
-      url: /blog/blog-item/
+      url: '#/blog/blog-item/'
 
 - title: Contact
-  url: /contact/
+  url: '#/contact/'
