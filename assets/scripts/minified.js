@@ -1,5 +1,3 @@
-var _$$headroom;
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -16,18 +14,13 @@ function launchGallery() {
 }function launchSlider() {
   $("[data-hero-slider]").each(function () {
     var e = $(this),
-        t = $(".lv-hero", e),
-        n = $(".lv-hero-item-caption", e),
-        i = $(".lv-hero-item", t).length,
-        o = $(".lv-hero-slider-prev-btn", e),
-        r = $(".lv-hero-slider-next-btn", e);i > 1 && (o.on("click", function () {
+        t = $(".lv-hero-item-slider", e),
+        n = $(".lv-hero-item", t).length,
+        i = $(".lv-hero-slider-prev-btn", e),
+        o = $(".lv-hero-slider-next-btn", e);n > 1 && (i.on("click", function () {
       t.flickity("previous").flickity("stopPlayer");
-    }), r.on("click", function () {
+    }), o.on("click", function () {
       t.flickity("next").flickity("stopPlayer");
-    }), t.on("ready.flickity change.flickity", function () {
-      $(window).width() > 576 && (n.hide(), setTimeout(function () {
-        n.show();
-      }, 500));
     }));
   });
 }function closeSearch() {
@@ -4763,16 +4756,6 @@ function launchGallery() {
           n = this.toleranceExceeded(e, t);this.isOutOfBounds(e) || (e <= this.offset ? this.top() : this.notTop(), e + this.getViewportHeight() >= this.getScrollerHeight() ? this.bottom() : this.notBottom(), this.shouldUnpin(e, n) ? this.unpin() : this.shouldPin(e, n) && this.pin(), this.lastKnownScrollY = e);
     } }, n.options = { tolerance: { up: 0, down: 0 }, offset: 0, scroller: window, classes: { pinned: "headroom--pinned", unpinned: "headroom--unpinned", top: "headroom--top", notTop: "headroom--not-top", bottom: "headroom--bottom", notBottom: "headroom--not-bottom", initial: "headroom" } }, n.cutsTheMustard = void 0 !== e && e.rAF && e.bind && e.classList, n;
 }), function (e) {
-  e && (e.fn.headroom = function (t) {
-    return this.each(function () {
-      var n = e(this),
-          i = n.data("headroom"),
-          o = "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t;o = e.extend(!0, {}, Headroom.options, o), i || ((i = new Headroom(this, o)).init(), n.data("headroom", i)), "string" == typeof t && (i[t](), "destroy" === t && n.removeData("headroom"));
-    });
-  }, e("[data-headroom]").each(function () {
-    var t = e(this);t.headroom(t.data());
-  }));
-}(window.Zepto || window.jQuery), function (e) {
   "use strict";
   "function" == typeof define && define.amd ? define(["jquery"], e) : "undefined" != typeof module && module.exports ? module.exports = e(require("jquery")) : e(jQuery);
 }(function (e) {
@@ -5406,18 +5389,23 @@ function launchGallery() {
   e.stopPropagation();
 }), $(document).keyup(function (e) {
   27 === e.keyCode && closeSearch();
-}), $(window).on("load", function () {
-  $("html").addClass("has-loaded");
-}), $(function () {
-  $('[data-toggle="tooltip"]').tooltip(), $.Scrollax();
+});var headroom = null,
+    lvPage = document.querySelector(".lv-page"),
+    resizeTimer;function initHeadroom() {
+  var _ref;
+
+  if (!headroom) return headroom = new Headroom(lvPage, (_ref = { offset: 0, tolerance: 0 }, _defineProperty(_ref, "tolerance", { up: 5, down: 0 }), _defineProperty(_ref, "classes", { initial: "headroom", pinned: "headroom--pinned", unpinned: "headroom--unpinned", top: "headroom--top", notTop: "headroom--not-top", bottom: "headroom--bottom", notBottom: "headroom--not-bottom" }), _defineProperty(_ref, "onPin", function onPin() {}), _defineProperty(_ref, "onUnpin", function onUnpin() {}), _defineProperty(_ref, "onTop", function onTop() {}), _defineProperty(_ref, "onNotTop", function onNotTop() {}), _defineProperty(_ref, "onBottom", function onBottom() {}), _defineProperty(_ref, "onNotBottom", function onNotBottom() {}), _ref)), setHeadroomOffset(), void headroom.init();
+}function setHeadroomOffset() {
+  headroom.offset = $(".global-header").height();
+}function onResize() {
+  clearTimeout(resizeTimer), resizeTimer = setTimeout(function () {
+    headroom && setHeadroomOffset();
+  }, 250);
+}$(function () {
+  document.documentElement.classList.add("has-loaded"), initHeadroom(), $(window).on("resize", onResize), $.Scrollax();
 }), $('a[href*="#"]:not([href="#"], [href="#sitemap"], [data-toggle="tab"])').click(function () {
   var e = $(this).attr("href"),
       t = $(e);t.length && $.scrollTo(t.offset().top - 50, 500);
 }), $("[data-back-top]").click(function () {
   $.scrollTo(0, 500);
-}), $('a[href="#sitemap"]').length && $('a[href="#sitemap"]').click(function () {
-  var e = $(this).attr("href"),
-      t = $(e);$(".fa-angle-down").toggleClass("is-active"), setTimeout(function () {
-    $.scrollTo(t.offset().top, 300);
-  }, 300);
-}), $(".global-header, .btn-back-top").headroom((_$$headroom = { offset: $(window).width() < 767 ? 60 : 380, tolerance: 0 }, _defineProperty(_$$headroom, "tolerance", { up: 5, down: 0 }), _defineProperty(_$$headroom, "classes", { initial: "headroom", pinned: "headroom--pinned", unpinned: "headroom--unpinned", top: "headroom--top", notTop: "headroom--not-top", bottom: "headroom--bottom", notBottom: "headroom--not-bottom" }), _defineProperty(_$$headroom, "onPin", function onPin() {}), _defineProperty(_$$headroom, "onUnpin", function onUnpin() {}), _defineProperty(_$$headroom, "onTop", function onTop() {}), _defineProperty(_$$headroom, "onNotTop", function onNotTop() {}), _defineProperty(_$$headroom, "onBottom", function onBottom() {}), _defineProperty(_$$headroom, "onNotBottom", function onNotBottom() {}), _$$headroom));
+});
