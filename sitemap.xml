@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/404/</loc>
+<loc>/about/</loc>
 </url>
 <url>
-<loc>/advanced-page/</loc>
+<loc>/areas-of-practice/</loc>
 </url>
 <url>
-<loc>/blog/blog-item/</loc>
+<loc>/areas-of-practice/areas-of-practice-item/</loc>
+</url>
+<url>
+<loc>/areas-of-practice/areas-of-practice-item/areas-of-practice-item/</loc>
 </url>
 <url>
 <loc>/blog/</loc>
+</url>
+<url>
+<loc>/blog/blog-item/</loc>
 </url>
 <url>
 <loc>/contact/</loc>
@@ -19,18 +25,15 @@
 <loc>/</loc>
 </url>
 <url>
-<loc>/login/</loc>
+<loc>/our-people/</loc>
 </url>
 <url>
-<loc>/paypal/</loc>
+<loc>/our-people/our-people-item/</loc>
 </url>
 <url>
 <loc>/search/</loc>
 </url>
 <url>
 <loc>/site-map/</loc>
-</url>
-<url>
-<loc>/standard-page/</loc>
 </url>
 </urlset>
