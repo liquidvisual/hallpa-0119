@@ -1,0 +1,43 @@
+---
+layout: base__page
+---
+
+{% contentfor hero_caption %}
+	<h1 class="display-1 text-uppercase mb-4">{{ page.title }}</h1>
+	<p class="display-3">We are home to some of Australia’s leading lawyers, with trusted specialists in the areas you need. Hall Payne is big enough to offer you the depth and breadth of expertise you would expect at a large legal firm – but small enough to provide the personalised, prompt and friendly service we’re known for.</p>
+{% endcontentfor %}
+
+<!-- SECTION -->
+<section class="section">
+	<div class="container">
+
+		<ul class="block-grid-xs-1 block-grid-md-2 block-grid-lg-4 block-grid-xl-5 mb-5">
+			{% for item in (1..14) %}
+				<li>
+					<!-- CARD -->
+					<div class="card is-flat">
+
+						<!-- IMAGE -->
+						<a class="btn-tile" href="/our-people/our-people-item/">
+							<img width="100%" class="card-img-top" src="/assets/img/ui/no-face.png" alt="{{ item.title }}">
+							<span class="btn-tile-bg" style="background-image: url('/assets/img/ui/no-face.png')"></span>
+						</a>
+
+						<!-- CARD BODY -->
+						<div class="card-body d-flex flex-column">
+
+							<!-- TITLE -->
+							<a class="text-dark" href="/our-people/our-people-item/">
+								<h3 class="card-title h5 font-weight-semibold mb-1">Staff Name</h3>
+							</a>
+
+							<!-- POSITION -->
+							<p class="text-muted text-uppercase">Position</p>
+
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

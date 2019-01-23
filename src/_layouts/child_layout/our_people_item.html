@@ -1,0 +1,37 @@
+---
+layout: base__page
+---
+
+<!-- SECTION -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 pr-md-5">
+
+				<!-- HEADER -->
+				<header class="text-uppercase mb-4">
+					<h1>{{ page.title }}</h1>
+					<h3 class="h5">Solicitor</h3>
+				</header>
+
+				<!-- LEAD -->
+				<p class="lead mb-4">
+					{{ page.lead }}
+				</p>
+
+				<!-- WYSIWYG -->
+				<div class="wysiwyg">
+					{{ content | markdownify }}
+				</div>
+
+			</div>
+			<div class="col-md-6 pl-5">
+
+				<!-- PHOTO -->
+				<p><img src="https://placehold.it/672x388" alt="Vanessa brown"></p>
+
+				<h3 class="text-uppercase">Get in touch with Vanessa...</h3>
+			</div>
+		</div>
+	</div>
+</section>

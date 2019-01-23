@@ -36,6 +36,7 @@
 
 .global-footer-body {
 	position: relative;
+	font-weight: 600; // todo: semibold?;
 
 	> .container { // [LOCKED] - consistent with sitemap
 		padding-top: $spacer*2.5;

@@ -1,0 +1,51 @@
+{% assign settings = site.data.settings %}
+{% assign bg_image = include.bg_image | default: '/assets/img/content/hero/hero-4.jpg' %}
+
+<!-- CONTACT SECTION -->
+<section class="section section-contact is-parallax is-dark has-image-bg" style="background-image: url({{ bg_image }})">
+	<div class="container">
+		<div class="row h-100 justify-content-end">
+			<div class="col-md-9 col-lg-8 col-xl-7">
+
+				<!-- BG FILL -->
+				<div class="bg-fill"></div>
+
+				<!-- HEADER -->
+				<h2 class="text-uppercase">Speak to one of our experts</h2>
+
+				<br>
+
+				<!-- PHONE -->
+		        <a class="h4 font-weight-normal mr-4" href="tel:{{ settings.offices[0].phone }}" title="{{ settings.offices[0].title }}">
+		            <i class="fa fa-phone"></i>&nbsp;
+		            <span class="text">
+		            	{{ settings.offices[0].phone }}
+		        	</span>
+		        </a>
+
+		        <br class="hidden-md-up">
+
+				<!-- EMAIL -->
+		        <a class="h4 font-weight-normal" href="mailto:{{ settings.offices[0].email }}">
+		            <i class="fa fa-envelope"></i>&nbsp;
+		            <span class="text">
+		            	{{ settings.offices[0].email }}
+		            </span>
+		        </a>
+
+				<hr>
+
+				<p class="lead">Or fill out the form below to request a callback...</p>
+
+				<br>
+
+				<!-- { % include form_contact__centered.html %} -->
+
+			</div>
+		</div>
+	</div>
+
+	<!-- PARALLAX (OPTIONAL) -->
+	<!-- { % include components/hero/hero__parallax_plugin.html image=bg_image %} -->
+
+</section>

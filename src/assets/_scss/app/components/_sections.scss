@@ -16,21 +16,26 @@
 // VARIABLES
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
-// SECTION CONTENT
-// used in the main-body 2-column layout
+// SECTION
 //-----------------------------------------------------------------
 
-.section-content {
-	margin: $spacer * 2.5 0;
+.section {
+    overflow: hidden;
 
-	// REMOVE CARD PROPERTIES
-	@include media-breakpoint-down(md) {
-		margin: 0;
-		padding-left: 0;
-		padding-right: 0;
-		background: none;
-		box-shadow: none;
-	}
+    > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .bg-fill {
+        position: absolute;
+        top: -50vh;
+        left: rem-calc(-30);
+        width: 200vw;
+        height: 200vh;
+        background: rgba(#09243a, 0.67);
+        pointer-events: none;
+    }
 }
 
 //-----------------------------------------------------------------
@@ -42,9 +47,30 @@
     padding: ($spacer * 2.5) 0;
 
     @include media-breakpoint-up(md) {
-        padding: ($spacer * 3) 0;
+        padding: rem-calc(90 0); //($spacer * 3) 0;
     }
 }
+
+//-----------------------------------------------------------------
+// SECTION COLORS
+//-----------------------------------------------------------------
+
+.section {
+    &.is-primary {
+        background: $primary;
+        color: white;
+
+        .card {
+            background: none;
+            color: white;
+
+            h3 {
+                color: white;
+            }
+        }
+    }
+}
+
 
 //-----------------------------------------------------------------
 // HAS IMAGE BG

@@ -18,13 +18,18 @@
         font-size: rem-calc(15); // 50/50 on this
     }
 
+    time {
+        color: rgba(white, 0.25);
+        font-size: rem-calc(14); // what controls this?
+        font-weight: 600; // TODO: $font-weight-semibold;
+    }
+
     &.is-flat {
     	box-shadow: none;
 
     	.card-body {
     		padding: rem-calc(30 15 0 0);
     	}
-
     }
 }
 

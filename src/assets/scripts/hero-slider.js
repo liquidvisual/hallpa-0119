@@ -9,8 +9,8 @@ function launchSlider() {
     $('[data-hero-slider]').each(function() {
 
         var $this       = $(this);
-        var $slider     = $('.lv-hero', $this);
-        var $captions   = $('.lv-hero-item-caption', $this);
+        var $slider     = $('.lv-hero-item-slider', $this);
+        // var $captions   = $('.lv-hero-item-caption', $this);
         var slideCount  = $('.lv-hero-item', $slider).length;
         var $prevArrow  = $('.lv-hero-slider-prev-btn', $this);
         var $nextArrow  = $('.lv-hero-slider-next-btn', $this);
@@ -38,15 +38,15 @@ function launchSlider() {
             // RE-TRIGGER CSS TRANSITIONS
             //==================================================
 
-            $slider.on('ready.flickity change.flickity', function() {
-                if ($(window).width() > 576) {
-                    $captions.hide();
+            // $slider.on('ready.flickity change.flickity', function() {
+                // if ($(window).width() > 576) {
+                    // $captions.hide();
 
-                    setTimeout(function(){
-                        $captions.show();
-                    }, 500);
-                }
-            })
+                    // setTimeout(function(){
+                        // $captions.show();
+                    // }, 500);
+                // }
+            // })
         }
     //--
     });

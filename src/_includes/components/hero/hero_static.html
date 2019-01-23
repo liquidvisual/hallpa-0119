@@ -2,7 +2,7 @@
 <!--
     HERO STATIC
 
-    - Updated: 15.09.18
+    - Updated: 22.01.19
     - Static banner, no carousel functionality, commonly used on internal pages
       to display page headers
 -->
@@ -10,30 +10,59 @@
 
 {% assign id = include.id %}
 {% assign options = include.options %}
-{% assign bg_image = include.bg_image %}
+{% assign slides = include.data | default: site.data.hero_slides %}
+{% assign bg_image = page.hero_image %}
 
 <!-- HERO WRAPPER -->
 <section id="{{ id }}" class="lv-hero-wrapper">
 
-    {% include components/hero/hero__parallax_plugin.html image=bg_image %}
-
     <!-- HERO -->
-    <div class="lv-hero is-static">
+    <div class="lv-hero is-parallax {{ options }}">
 
-        <!-- HERO ITEM -->
-        <div class="lv-hero-item align-items-end {{ options }}" style="background-image: url('{{ bg_image }}')">
-
-            <!-- HERO CAPTION -->
+        <!-- HERO ITEMS -->
+        <div class="lv-hero-item align-items-end {{ options }}" style="background-image: url('{{ page.hero_image }}')">
             <div class="container">
-                <div class="lv-hero-item-caption animated fadeInLeftSubtle fadeInUpSubtleX">
-                    {% if page.title_override %}
-                        <h2 class="display-1">{{ page.title_override }}</h2>
-                    {% else %}
-                        <h1 class="display-1">{{ page.title }}</h1>
-                    {% endif %}
+                <div class="row h-100">
+                    <div class="col-md-9 col-lg-8 col-xl-7">
+
+                        <!-- BG FILL -->
+                        <div class="bg-fill"></div>
+
+                        <!-- HERO CAPTION -->
+                        <div class="lv-hero-item-caption animated fadeInLeftSubtle">
+
+                            {% ifhascontent hero_caption %}
+                                {% contentblock hero_caption no-convert %}
+                            {% endifhascontent %}
+                            {% ifnothascontent hero_caption %}
+
+                                <!-- HEADER -->
+                                {% if page.title_override %}
+                                    <h2 class="display-1 text-uppercase mb-0">{{ page.title_override }}</h2>
+                                {% else %}
+                                    <h1 class="display-1 text-uppercase mb-0">{{ page.title }}</h1>
+                                {% endif %}
+
+                                {% if page.locational %}
+                                    <!-- LOCATIONAL -->
+                                    <div class="d-flex align-items-center mt-1">
+                                        <h3 class="h4 text-uppercase mr-2 mb-0">Queensland</h3>
+                                        <button class="btn btn-sm btn-light mb-0">Change State</button>
+                                    </div>
+                                {% endif %}
+
+                            {% endifnothascontent %}
+
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+
+        <!-- PARALLAX (OPTIONAL) -->
+        {% if bg_image %}
+            {% include components/hero/hero__parallax_plugin.html image=page.hero_image %}
+        {% endif %}
+
+    </div> <!-- /.lv-hero -->
+</section> <!-- /.lv-hero-wrapper -->

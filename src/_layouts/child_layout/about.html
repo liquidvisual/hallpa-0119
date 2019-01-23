@@ -1,0 +1,92 @@
+---
+layout: base__page
+---
+
+{% contentfor hero_caption %}
+	<h1 class="display-1 text-uppercase mb-4">{{ page.title }}</h1>
+
+	<p class="display-3">Choosing the right law firm is the first and most crucial step in achieving the best legal outcome possible.</p>
+
+	<div class="spacer mb-4"></div>
+
+	<div class="display-4">
+		Hall Payne understands the legal process can be unfamiliar and stressful. For more than 25 years we have been there for everyday Australians after work accidents or injury, for unions fighting to protect member rights, and for families going through change or upheaval.
+		<br>
+		<br>
+		We get great outcomes for clients in a cost-effective, timely and straightforward manner. Our impressive track record helping Australians from all walks of life has seen us become one of Australia’s most well respected firms with offices in Brisbane, Sydney, Darwin, Hobart, regional Queensland and Far North Queensland.
+	</div>
+
+	<div class="spacer my-3"></div>
+
+	<div class="mb-1"><a href="/our-people/" class="btn btn-block btn-secondary">Our People <i class="fa fa-angle-right"></i></a></div>
+	<div class="mb-1"><a href="#/link-here/" class="btn btn-block btn-secondary">Why Switch? <i class="fa fa-angle-right"></i></a></div>
+	<div class="mb-1"><a href="#/link-here/" class="btn btn-block btn-secondary">Community Work <i class="fa fa-angle-right"></i></a></div>
+
+{% endcontentfor %}
+
+<!-- SECTION -->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			{% for item in page.claims %}
+				<div class="col-lg-4">
+
+					<!-- CLAIM -->
+					<div class="mb-4 mb-lg-0">
+						<h3 class="d-flex flex-column flex-xl-row align-items-center text-uppercase mb-3">
+							<div class="text-center text-xl-left mb-3 mb-xl-0">
+								<img class="mr-3" src="{{ item.image }}" alt="Icon">
+							</div>
+							<span class="text">{{ item.title }}</span>
+						</h3>
+						<div class="pr-xl-4">
+							{{ item.body }}
+						</div>
+					</div>
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% include sections/section_contact.html %}
+
+{% comment %}
+
+
+<!-- <h3 class="text-center my-5">Everything has moved to <a href="/sections/">Sections</a></h3> -->
+
+<!-- MEDIA ARTICLE -->
+{% capture item %}{% include components/media/media_article.html %}{% endcapture %}
+{% include sections/section.html content_block=item %}
+
+<!-- GALLERY -->
+{% capture item %}{% include components/media/gallery.html %}{% endcapture %}
+{% include sections/section.html content_block=item %}
+
+<!-- CARDS -->
+{% capture item %}{% include components/cards/cards.html %}{% endcapture %}
+{% include sections/section.html content_block=item %}
+
+<!-- CARDS SLIDER -->
+{% capture item %}{% include components/cards/cards__slider.html %}{% endcapture %}
+{% include sections/section.html content_block=item %}
+
+<!-- CARDS SLIDER -->
+{% capture item %}{% include components/cards/cards__tabs.html %}{% endcapture %}
+{% include sections/section_center.html content_block=item %}
+
+<!-- AFFILIATES -->
+{% capture item %}{% include components/media/affiliates.html %}{% endcapture %}
+{% include sections/section_center.html content_block=item %}
+
+<!-- MEDIA LIGHTBOX -->
+{% capture item %}{% include components/media/media_lightbox.html %}{% endcapture %}
+{% include sections/section_split.html content_block=item %}
+
+<!-- CONTACT FORM -->
+{% capture item %}{% include components/forms/form_contact.html %}{% endcapture %}
+{% include sections/section.html content_block=item %}
+
+{% endcomment %}

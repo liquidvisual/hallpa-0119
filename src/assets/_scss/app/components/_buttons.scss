@@ -17,6 +17,28 @@ b, strong {
 }
 
 //-----------------------------------------------------------------
+// BUTTON
+//-----------------------------------------------------------------
+
+.btn {
+    // font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+
+    .fa-angle-right {
+        position: relative;
+        top: -1px;
+        margin-left: rem-calc(15);
+        font-size: rem-calc(24);
+        line-height: 0;
+    }
+}
+
+.btn-light {
+    color: $primary;
+}
+
+//-----------------------------------------------------------------
 // BACK TO TOP
 //-----------------------------------------------------------------
 
@@ -46,18 +68,6 @@ b, strong {
         margin: auto 0;
     }
 
-    &.headroom--not-top.headroom--unpinned {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    &.headroom--bottom {
-        @include media-breakpoint-up(sm) {
-            bottom: 45px;
-        }
-    }
-
     i {
         font-size: rem-calc(18);
         line-height: 0.8;
@@ -67,6 +77,18 @@ b, strong {
 
     &:hover {
         background: rgba(black, 0.3);
+    }
+}
+
+.headroom--not-top.headroom--unpinned .btn-back-top {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.headroom--bottom .btn-back-top {
+    @include media-breakpoint-up(sm) {
+        bottom: 45px;
     }
 }
 
@@ -91,11 +113,11 @@ b, strong {
 .btn-tile {
     display: block;
     position: relative;
-    height: rem-calc(250);
+    // height: rem-calc(250);
     overflow: hidden;
 
     @include media-breakpoint-up(md) {
-        height: auto;
+        // height: auto;
     }
 
     //=========================================

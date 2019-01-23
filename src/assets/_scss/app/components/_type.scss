@@ -20,7 +20,7 @@ html {
 //-----------------------------------------------------------------
 
 a, button {
-    font-weight: $font-weight-semibold;
+    font-weight: 600; //$font-weight-semibold;
     transition: color 150ms ease, background-color 150ms ease, opacity 150ms ease;
     word-break: break-word; // handles long links in safari
     outline: none !important;
@@ -31,7 +31,7 @@ a, button {
 //-----------------------------------------------------------------
 
 p, ul, ol, td {
-    // font-size: rem-calc(16);
+    font-size: rem-calc(15);
 }
 
 //-----------------------------------------------------------------
@@ -43,6 +43,15 @@ p.lead {
         font-size: rem-calc(17); // [LOCKED] - curated
     }
 }
+
+//-----------------------------------------------------------------
+// HEADINGS
+//-----------------------------------------------------------------
+
+// h1, .h1,
+// h2, .h2 {
+//     text-transform: uppercase;
+// }
 
 //-----------------------------------------------------------------
 // HEADINGS MOBILE

@@ -12,8 +12,25 @@
 //-----------------------------------------------------------------
 
 .lv-breadcrumb-wrapper {
-    background: #f7f7f9;
+	position: absolute;
+	top: rem-calc(15);
+	left: 0;
+	width: 100%;
+    // background: #f7f7f9;
     // border-bottom: 1px solid #e5e5e5;
+
+    text-transform: uppercase;
+    z-index: 100;
+
+    .breadcrumb-item {
+    	font-size: rem-calc(15);
+    	font-weight: 700;
+    	color: white;
+
+    	&:hover {
+    		opacity: 0.8;
+    	}
+    }
 }
 
 //=========================================

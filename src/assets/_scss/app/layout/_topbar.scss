@@ -124,7 +124,7 @@
     display: none; // [OPT IN DESIGN / OFF CANVAS ETC]
     position: absolute;
     left: 0;
-    width: rem-calc(240);
+    width: rem-calc(280);
     height: 0; // so hit areas aren't triggered
     border: 0;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2); // same as bootstrap dropdown in header

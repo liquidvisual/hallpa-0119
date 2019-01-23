@@ -2,102 +2,122 @@
 <!--
     HERO DEFAULT
 
-    - Updated: 15.09.18
+    - Updated: 21.01.19
     - Complete functionality incl. youtube video, commonly used on homepages
 -->
 {% endcomment %}
 
 {% assign id = include.id %}
-{% assign justify_caption = include.justify_caption | default: 'center' %}
 {% assign options = include.options | default: 'is-default' %}
 {% assign slides = include.data | default: site.data.hero_slides %}
 {% assign youtube_script_included_once = false %}
 
 <!-- HERO WRAPPER -->
-<section id="{{ id }}" class="lv-hero-wrapper has-fade-transition" data-hero-slider>
+<section id="{{ id }}" class="lv-hero-wrapper">
 
     <!-- HERO -->
-    <div class="lv-hero {{ options }}"
-
-        {% if slides.size > 1 %}
-            data-flickity='
-            {
-                "adaptiveHeight": true,
-                "autoPlay": false,
-                "cellAlign": "left",
-                "contain": true,
-                "draggable": false,
-                "dragThreshold": 40,
-                "freeScroll": false,
-                "freeScrollFriction": 0.075,
-                "friction": 0.28,
-                "groupCells": false,
-                "imagesLoaded": true,
-                "pageDots": true,
-                "pauseAutoPlayOnHover": true,
-                "prevNextButtons": false,
-                "selectedAttraction": 0.025,
-                "watchCSS": false,
-                "wrapAround": true
-            }'
-        {% endif %}
-        >
+    <div class="lv-hero {{ options }}">
 
         <!-- HERO ITEMS -->
-        {% for item in slides %}
-            <div class="lv-hero-item {{ item.options }}" style="background-image: url('{{ item.image }}')">
-                <div class="container">
+        {% for item in slides | limit: 1 %}
+            <div class="lv-hero-item {{ item.options }}"> <!-- style="background-image: url('{{ item.image }}')" -->
 
-                    {% capture row_classes %}
-                        {% if justify_caption == "center" %}
-                            justify-content-center text-center
-                        {% else %}
-                            justify-content-left text-left
+                <!-- HERO SLIDER (OVERLAY BEHIND) -->
+                <div class="lv-hero-item-slider-wrapper has-fade-transition" data-hero-slider>
+                    <div class="lv-hero-item-slider"
+
+                        {% if slides.size > 1 %}
+                            data-flickity='
+                            {
+                                "adaptiveHeight": true,
+                                "autoPlay": false,
+                                "cellAlign": "left",
+                                "contain": true,
+                                "draggable": false,
+                                "dragThreshold": 40,
+                                "freeScroll": false,
+                                "freeScrollFriction": 0.075,
+                                "friction": 0.28,
+                                "groupCells": false,
+                                "imagesLoaded": true,
+                                "pageDots": true,
+                                "pauseAutoPlayOnHover": true,
+                                "prevNextButtons": false,
+                                "selectedAttraction": 0.025,
+                                "watchCSS": false,
+                                "wrapAround": true
+                            }'
                         {% endif %}
-                    {% endcapture %}
+                        >
 
-                    <div class="row {{ row_classes }}">
-                        <div class="col-md-11 col-lg-10">
+                        {% for item in slides %}
+                            <div class="lv-hero-item-slide" style="background-image: url('{{ item.image }}')">
+
+                                {% if item.scroll_prompt %}
+                                    <!-- SCROLL PROMPT -->
+                                    <a class="lv-hero-scroll-prompt hidden-lg-down"><i class="fa fa-angle-down"></i></a>
+                                {% endif %}
+
+                                {% if item.youtube_id %}
+                                    {% include components/hero/hero__youtube_plugin.html %}
+                                {% elsif item.vimeo_id %}
+                                    {% include components/hero/hero__vimeo_plugin.html %}
+                                {% endif %}
+
+                                <!-- PARALLAX (OPTIONAL) -->
+                                {% unless item.youtube_id or item.vimeo_id  %}
+                                    {% if item.image %}
+                                        {% include components/hero/hero__parallax_plugin.html image=item.image %}
+                                    {% endif %}
+                                {% endunless  %}
+
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div> <!-- /.hero-item-slider-wrapper -->
+
+                <div class="container">
+                    <div class="row h-100">
+                        <div class="col-md-9 col-lg-8 col-xl-7">
+
+                            <!-- BG FILL -->
+                            <div class="bg-fill"></div>
 
                             <!-- HERO CAPTION -->
-                            <div class="lv-hero-item-caption animated fadeInLeftSubtle fadeInUpSubtleX">
+                            <div class="lv-hero-item-caption animated fadeInLeftSubtle">
 
                                 <!-- HEADER -->
-                                <h1 class="display-1">{{ item.title }}</h1>
+                                <h1 class="h3 mb-3">Hall Payne is known for giving expert advice to those who need it.</h1>
 
                                 <!-- WYSIWYG -->
-                                <div class="wysiwyg mb-4">
-                                    {{ item.body }}
+                                <div class="wysiwyg mb-5">
+                                    Our specialist Lawyers work with everyday Australians to large member organisations. Whether it's for you, your family, business or community organisation - Hall Payne can help.
                                 </div>
+
+                                <!-- PRACTICE AREAS -->
+                                <ul class="list-unstyled">
+                                    {% for item in site.data.sitemap[3].children %}
+                                        <li class="mb-3">
+                                            <a class="h3 font-weight-bold text-uppercase" href="/areas-of-practice/business-law/">
+                                                {{ item.title }}
+                                                <i class="fa fa-angle-right d-inline"></i>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
 
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {% if item.scroll_prompt %}
-                    <!-- SCROLL PROMPT -->
-                    <a class="lv-hero-scroll-prompt hidden-lg-down"><i class="fa fa-angle-down"></i></a>
-                {% endif %}
-
-                {% if item.youtube_id %}
-                    {% include components/hero/hero__youtube_plugin.html %}
-                {% elsif item.vimeo_id %}
-                    {% include components/hero/hero__vimeo_plugin.html %}
-                {% endif %}
-
-                <!-- PARALLAX (OPTIONAL) -->
-                {% unless item.youtube_id or item.vimeo_id  %}
-                    {% if item.image %}
-                        {% include components/hero/hero__parallax_plugin.html image=item.image %}
-                    {% endif %}
-                {% endunless  %}
-
             </div>
         {% endfor %}
 
     </div> <!-- /.lv-hero -->
 
+    {% comment %}
     {% if slides.size > 1 %}
         <!-- SLIDER CONTROLS -->
         <div class="lv-hero-slider-controls hidden-lg-down">
@@ -105,5 +125,6 @@
             <span class="lv-hero-slider-next-btn"><i class="fa fa-angle-right"></i></span>
         </div>
     {% endif %}
+    {% endcomment %}
 
 </section> <!-- /.lv-hero-wrapper -->

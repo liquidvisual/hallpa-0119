@@ -1,7 +1,7 @@
 /*
     HERO.CSS
 
-    - updated: 17.04.18
+    - updated: 22.10.19
     - notes:
         * liquidvisual uses flickity for all sliders
 */
@@ -12,13 +12,13 @@
 $hero-height-presets: (
     is-default: (
         xs: auto,
-        md: rem-calc(675),
-        lg: rem-calc(675), // [LOCKED] - 576 maintain aspect ratio?
+        md: auto, //rem-calc(800),
+        lg: auto, //rem-calc(846), // [LOCKED] - 576 maintain aspect ratio?
     ),
-    is-medium: (
-        xs: auto,
-        md: rem-calc(500),
-        lg: rem-calc(500),
+    is-short: (
+        xs: rem-calc(350),
+        md: rem-calc(386),
+        lg: rem-calc(386),
     ),
     is-full: (
         xs: auto,
@@ -26,10 +26,10 @@ $hero-height-presets: (
         lg: 100vh,
     ),
     is-static: (
-        xs: rem-calc(200),
-        md: rem-calc(320),
-        lg: rem-calc(320),
-    ),
+        xs: auto, //rem-calc(200),
+        md: auto, //rem-calc(320),
+        lg: auto //rem-calc(386),
+    )
 );
 
 //-----------------------------------------------------------------
@@ -80,8 +80,8 @@ $hero-height-presets: (
     align-items: center;
     width: 100%; // [LOCKED]
     // height: 100%;
-    min-height: rem-calc(540); // curated
-    padding: rem-calc(100 0);
+    // min-height: rem-calc(540); // curated
+    padding: rem-calc(45 0); //rem-calc(100 0);
     background-color: $primary;
     background-repeat: no-repeat;
     background-position: center center;
@@ -91,7 +91,12 @@ $hero-height-presets: (
 
     @include media-breakpoint-up(md) {
         height: 100%;
-        padding: 0;
+        // padding: 0;
+        padding: 8.7% 0;//rem-calc(110 0);
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: rem-calc(110 0);
     }
 
     //=========================================
@@ -114,33 +119,84 @@ $hero-height-presets: (
 // IS ALTERNATE (INNER PAGES)
 //-----------------------------------------------------------------
 
+.is-short,
 .is-static {
 
     // undo options placed on auto-height - this is slim banner
     .lv-hero-item {
         height: 100%;
         min-height: 0;
-        padding: 0;
+        padding: rem-calc(0 0 45 0);
     }
+
+
+
+    // .lv-hero-caption
 }
 
-//-----------------------------------------------------------------
+//----------------------------------------------------------------- *****
 // HERO CAPTION
-//-----------------------------------------------------------------
+//----------------------------------------------------------------- *****
 
 .lv-hero-item-caption {
     position: relative;
+    max-width: rem-calc(680); // [LOCKED] - psd
+    font-size: rem-calc(17);
     color: white;
     z-index: 1; // [LOCKED] - above tint
 
-    // better
-    @include media-breakpoint-up(lg) {
-        padding-top: rem-calc(60);
+    h1 {
+        max-width: rem-calc(600); // [LOCKED] - psd thing
+    }
+
+    a:hover {
+        color: white;
+        opacity: 0.7;
+    }
+
+    .fa-angle-right {
+        font-size: rem-calc(40);
+        line-height: 0;
+        opacity: 0.5;
     }
 }
 
-.is-full .lv-hero-item-caption {
-    padding-top: 0
+.lv-hero .bg-fill {
+    position: absolute;
+    top: -50vh;
+    right: rem-calc(-30);
+    width: 200vw;
+    height: 200vh;
+    background: rgba(#09243a, 0.67);
+    pointer-events: none;
+}
+
+//-----------------------------------------------------------------
+// SLIDER WRAPPER
+//-----------------------------------------------------------------
+
+.lv-hero-item-slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .lv-hero-item-slider {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .lv-hero-item-slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
 }
 
 //-----------------------------------------------------------------
@@ -239,9 +295,9 @@ $hero-height-presets: (
 }
 
 .lv-hero .flickity-viewport {
-    @include media-breakpoint-up(md) {
+    // @include media-breakpoint-up(md) {
         height: 100% !important; // fixes responsive issue
-    }
+    // }
 }
 
 // for auto height animation
@@ -257,18 +313,18 @@ $hero-height-presets: (
 //=========================================
 
 .has-fade-transition {
-    .lv-hero .flickity-slider {
+    .lv-hero-item-slider .flickity-slider {
         transform: none !important;
     }
 
-    .lv-hero .lv-hero-item {
+    .lv-hero-item-slide {
         left: 0 !important;
         opacity: 0;
         transition: opacity 0.9s ease-in-out 0.3s;
         z-index: 1;
     }
 
-    .lv-hero .lv-hero-item.is-selected {
+    .lv-hero-item-slide.is-selected {
         opacity: 1;
         transition: opacity 0.9s ease-in-out;
         z-index: 2;

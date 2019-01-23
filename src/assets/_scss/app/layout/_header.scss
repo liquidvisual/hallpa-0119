@@ -27,7 +27,7 @@ $header-bottom-lg-height: 50px !default;
 // PINNED - SCROLLING DOWN
 //****************************************************
 
-.headroom--pinned.global-header {
+.headroom--pinned .global-header {
     @include media-breakpoint-down(lg) {
         transform: translateY(0%); // SHOW MENU BAR
         transition: transform 200ms ease;
@@ -38,7 +38,7 @@ $header-bottom-lg-height: 50px !default;
 // UNPINNED - SCROLLING UP
 //****************************************************
 
-.headroom--unpinned.global-header {
+.headroom--unpinned .global-header {
 	@include media-breakpoint-down(lg) {
     	transform: translateY(-106%); // HIDE MENU BAR
 	}
@@ -48,7 +48,7 @@ $header-bottom-lg-height: 50px !default;
 // HEADROOM NOT TOP
 //****************************************************
 
-.headroom--not-top.global-header {
+.headroom--not-top .global-header {
 	position: fixed;
 	box-shadow: 0 0 3px 1px rgba(black, 0.2);
 
@@ -116,12 +116,13 @@ $header-bottom-lg-height: 50px !default;
 	height: $header-top-lg-height;
 	background: #242a2f; // body bg variable?
 	font-size: rem-calc(16);
-	font-weight: $font-weight-semibold;
+	// font-weight: 400; //$font-weight-semibold;
 	color: white; // [LOCKED] - for dropdown override
 	// transition: all ease 150ms;
 	z-index: 2; // [LOCKED] - dropdown needs to move over top of nav
 
 	a {
+		font-weight: 500; //$font-weight-semibold;
 		margin-right: rem-calc(25);
 		color: white; // [THEMEABLE]
 		transition: opacity 200ms ease;

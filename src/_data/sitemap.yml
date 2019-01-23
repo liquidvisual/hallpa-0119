@@ -2,40 +2,77 @@
   url: /
 
 - title: About
-  url: '#/about/'
+  url: /about/
 
 - title: Our People
-  url: '#/our-people/'
+  url: /our-people/
   include_children_in_nav: true
   children:
     - title: John Smith
-      url: /our-people/john-smith/
+      url: /our-people/our-people-item/
 
 - title: Areas of Practice
-  url: '#/areas-of-practice/'
+  url: /areas-of-practice/
   include_children_in_nav: true
   children:
-    - title: Advanced Page
-      url: /advanced-page/
+    - title: Personal Compensation law
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-01@2x.jpg
+      include_children_in_nav: true
+      children:
+        - title: Workplace Injury
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Motor Vehicle Accidents
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Medical Negligence
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Asbestosis, Black Lung & Dust Diseases
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Public Liability (Slips and Falls)
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Other Injury Claims
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
+        - title: Institutional Abuse
+          url: /areas-of-practice/areas-of-practice-item/areas-of-practice-item/
 
-    - title: Standard Page
-      url: /standard-page/
+    - title: Industrial & Employment Law
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-02@2x.jpg
 
-    - title: Search Results
-      url: /search/
+    - title: Discrimination
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-03@2x.jpg
 
-    - title: Site Map
-      url: /site-map/
+    - title: Superannuation & Insurance
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-04@2x.jpg
 
-    - title: 404
-      url: /404/
+    - title: Family law
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-05@2x.jpg
+
+    - title: Wills & Estates
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-06@2x.jpg
+
+    - title: Criminal Law
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-07@2x.jpg
+
+    - title: Conveyancing
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-08@2x.jpg
+
+    - title: Immigration
+      url: /areas-of-practice/areas-of-practice-item/
+      image: /assets/img/content/area-of-practice-thumbs/thumb-09@2x.jpg
 
 - title: Blog
-  url: '#/blog/'
+  url: /blog/
   include_children_in_nav: true
   children:
     - title: Blog Post
-      url: '#/blog/blog-item/'
+      url: /blog/blog-item/
 
 - title: Contact
-  url: '#/contact/'
+  url: /contact/

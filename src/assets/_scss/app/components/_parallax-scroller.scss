@@ -1,7 +1,7 @@
 /*
     PARALLAX-SCROLLER.CSS
 
-    - Last updated: 15.09.18
+    - Last updated: 22.10.19
     - liquidvisual.com
 
     NOTES
@@ -60,8 +60,10 @@
 // TODO: maybe tweak
 //=========================================
 
-.lv-hero-wrapper.is-parallax {
+.lv-hero-wrapper .is-parallax {
 	.lv-hero-item[style] {
-		background: none !important;
+		@include media-breakpoint-up(xl) {
+		    background: none !important;
+		}
 	}
 }
