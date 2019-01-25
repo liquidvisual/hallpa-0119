@@ -3,7 +3,7 @@ layout: child_layout/our_people_item
 title: Vanessa Brown
 title_override: Our People
 permalink: /our-people/our-people-item/
-hero_image: /assets/img/content/hero/hero-1-placeholder.png
+hero_image: /assets/img/content/backgrounds/bg-5.jpg
 hero_options:
 hero_caption_align: left
 breadcrumbs: true

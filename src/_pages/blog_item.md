@@ -3,7 +3,7 @@ layout: child_layout/blog_item
 title: The Trick to Creating Delicious Meals on the Go
 title_override: Blog
 permalink: /blog/blog-item/
-hero_image: /assets/img/content/hero/hero-1-placeholder.png
+hero_image: /assets/img/content/backgrounds/bg-1.jpg
 breadcrumbs: true
 ---
 

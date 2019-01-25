@@ -127,10 +127,9 @@ function initHeadroom() {
 //-----------------------------------------------------------------
 
 function setHeadroomOffset() {
-    console.log('headroom recalculated: '+ $('.global-header').height())
-    // if ($(window).width() >= 1050) {
-        headroom.offset = $('.global-header').height();
-    // }
+    headroom.offset = 60;
+    if ($(window).width() >= 768) headroom.offset = 280;
+    if ($(window).width() >= 992) headroom.offset = 374;
 }
 
 //-----------------------------------------------------------------

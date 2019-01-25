@@ -15,25 +15,39 @@
 form,
 form[data-toggle="validator"] {
 	.error {
-		display: block;
+		display: none;
 		// padding: rem-calc(5 10 4 10);
 		padding: rem-calc(10 10 10 0);
 		// background: $red;
 		font-weight: $font-weight-semibold;
-		color: $red;
+		color: lighten($red, 20%);
 	}
 
 	.has-error > .error {
-		// display: block;
-		// margin-bottom: $form-group-margin-bottom;
+		display: block;
+		margin-bottom: $form-group-margin-bottom;
 	}
 
-	// .has-error > .form-control {
-	// 	border-bottom-left-radius: 0;
-	// 	border-bottom-right-radius: 0;
-	// 	margin-bottom: 0;
-	// }
+	.has-error > .form-control {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		margin-bottom: 0;
+	}
 }
+
+
+form button {
+	min-width: rem-calc(250);
+	font-size: rem-calc(17) !important;
+	color: white !important;
+	justify-content: center;
+
+	&.disabled {
+		cursor: not-allowed;
+	}
+}
+
+
 
 //-----------------------------------------------------------------
 // CAPTCHA BADGE

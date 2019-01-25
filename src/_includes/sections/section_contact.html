@@ -1,22 +1,33 @@
 {% assign settings = site.data.settings %}
-{% assign bg_image = include.bg_image | default: '/assets/img/content/hero/hero-4.jpg' %}
+{% assign bg_image = include.bg_image | default: '/assets/img/content/backgrounds/bg-6.jpg' %}
+{% assign parallax_enabled = include.parallax_enabled | default: false %}
 
 <!-- CONTACT SECTION -->
-<section class="section section-contact is-parallax is-dark has-image-bg" style="background-image: url({{ bg_image }})">
+<section
+	class="section section-contact is-dark has-image-bg"
+	style="background-image: url({{ bg_image }})">
+
+	{% if parallax_enabled %}
+		<!-- PARALLAX (OPTIONAL) -->
+		{% include components/hero/hero__parallax_plugin.html image=bg_image %}
+	{% endif %}
+
 	<div class="container">
 		<div class="row h-100 justify-content-end">
-			<div class="col-md-9 col-lg-8 col-xl-7">
+			<div class="col-md-8 col-lg-7 col-xl-6">
 
 				<!-- BG FILL -->
 				<div class="bg-fill"></div>
 
 				<!-- HEADER -->
-				<h2 class="text-uppercase">Speak to one of our experts</h2>
+				<h2 class="display-2 font-weight-bold text-uppercase mb-2">
+					Speak to one of our experts
+				</h2>
 
 				<br>
 
 				<!-- PHONE -->
-		        <a class="h4 font-weight-normal mr-4" href="tel:{{ settings.offices[0].phone }}" title="{{ settings.offices[0].title }}">
+		        <a class="h4 text-white font-weight-normal mr-4" href="tel:{{ settings.offices[0].phone }}" title="{{ settings.offices[0].title }}">
 		            <i class="fa fa-phone"></i>&nbsp;
 		            <span class="text">
 		            	{{ settings.offices[0].phone }}
@@ -26,26 +37,23 @@
 		        <br class="hidden-md-up">
 
 				<!-- EMAIL -->
-		        <a class="h4 font-weight-normal" href="mailto:{{ settings.offices[0].email }}">
+		        <a class="h4 text-white font-weight-normal" href="mailto:{{ settings.offices[0].email }}">
 		            <i class="fa fa-envelope"></i>&nbsp;
 		            <span class="text">
 		            	{{ settings.offices[0].email }}
 		            </span>
 		        </a>
 
-				<hr>
+				<hr class="mt-4 mb-4">
 
-				<p class="lead">Or fill out the form below to request a callback...</p>
+				<!-- TEXT -->
+				<p class="h4 font-weight-normal">Or fill out the form below to request a callback...</p>
 
 				<br>
 
-				<!-- { % include form_contact__centered.html %} -->
+				{% include form_contact.html %}
 
 			</div>
 		</div>
 	</div>
-
-	<!-- PARALLAX (OPTIONAL) -->
-	<!-- { % include components/hero/hero__parallax_plugin.html image=bg_image %} -->
-
 </section>

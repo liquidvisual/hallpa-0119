@@ -2,7 +2,7 @@
 layout: child_layout/about
 title: About
 permalink: /about/
-hero_image: /assets/img/content/hero/hero-1-placeholder.png
+hero_image: /assets/img/content/backgrounds/bg-7.jpg
 hero_options: is-default
 hero_caption_align: left
 claims:

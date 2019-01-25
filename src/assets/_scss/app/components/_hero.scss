@@ -277,6 +277,8 @@ $hero-height-presets: (
 //-----------------------------------------------------------------
 
 .lv-page .lv-hero .flickity-page-dots {
+    text-align: right;
+    padding-right: rem-calc(20);
     bottom: rem-calc(15);
     z-index: 999;
 

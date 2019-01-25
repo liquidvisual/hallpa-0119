@@ -237,6 +237,14 @@ $header-bottom-lg-height: 50px !default;
 		width: 100vw;
 		height: 100%;
 		background: $primary;
+
+		@include media-breakpoint-up(xl) {
+		    right: rem-calc(30);
+		}
+
+		@include media-breakpoint-up(xxl) {
+		    right: rem-calc(-8);
+		}
 	}
 }
 

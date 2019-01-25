@@ -1,7 +1,7 @@
 /*
     PARALLAX-SCROLLER.CSS
 
-    - Last updated: 22.10.19
+    - Last updated: 25.01.19
     - liquidvisual.com
 
     NOTES
@@ -15,8 +15,8 @@
 //-----------------------------------------------------------------
 
 .parallax-layers {
-	// display: none;
-	visibility: hidden;
+	display: none;
+	// visibility: hidden;
 }
 
 .parallax-layers,
@@ -48,8 +48,8 @@
 
 .is-parallax .parallax-layers {
 	@include media-breakpoint-up(xl) {
-		// display: block;
-	    visibility: visible; // TODO: change this back to block/none when docs is fixed
+		display: block;
+	    // visibility: visible; // TODO: change this back to block/none when docs is fixed
 	}
 }
 
