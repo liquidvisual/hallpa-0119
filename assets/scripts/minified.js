@@ -177,8 +177,8 @@ function launchGallery() {
         I = k.pop,
         N = k.push,
         O = k.push,
-        P = k.slice,
-        L = function L(e, t) {
+        L = k.slice,
+        P = function P(e, t) {
       for (var n = 0, i = e.length; n < i; n++) {
         if (e[n] === t) return n;
       }return -1;
@@ -215,10 +215,10 @@ function launchGallery() {
         oe = ye(function (e) {
       return !0 === e.disabled && ("form" in e || "label" in e);
     }, { dir: "parentNode", next: "legend" });try {
-      O.apply(k = P.call(w.childNodes), w.childNodes), k[w.childNodes.length].nodeType;
+      O.apply(k = L.call(w.childNodes), w.childNodes), k[w.childNodes.length].nodeType;
     } catch (e) {
       O = { apply: k.length ? function (e, t) {
-          N.apply(e, P.call(t));
+          N.apply(e, L.call(t));
         } : function (e, t) {
           for (var n = e.length, i = 0; e[n++] = t[i++];) {}e.length = n - 1;
         } };
@@ -356,14 +356,14 @@ function launchGallery() {
           if (t === e) return !0;
         }return !1;
       }, D = t ? function (e, t) {
-        if (e === t) return d = !0, 0;var i = !e.compareDocumentPosition - !t.compareDocumentPosition;return i || (1 & (i = (e.ownerDocument || e) === (t.ownerDocument || t) ? e.compareDocumentPosition(t) : 1) || !n.sortDetached && t.compareDocumentPosition(e) === i ? e === h || e.ownerDocument === w && b(w, e) ? -1 : t === h || t.ownerDocument === w && b(w, t) ? 1 : u ? L(u, e) - L(u, t) : 0 : 4 & i ? -1 : 1);
+        if (e === t) return d = !0, 0;var i = !e.compareDocumentPosition - !t.compareDocumentPosition;return i || (1 & (i = (e.ownerDocument || e) === (t.ownerDocument || t) ? e.compareDocumentPosition(t) : 1) || !n.sortDetached && t.compareDocumentPosition(e) === i ? e === h || e.ownerDocument === w && b(w, e) ? -1 : t === h || t.ownerDocument === w && b(w, t) ? 1 : u ? P(u, e) - P(u, t) : 0 : 4 & i ? -1 : 1);
       } : function (e, t) {
         if (e === t) return d = !0, 0;var n,
             i = 0,
             o = e.parentNode,
             r = t.parentNode,
             s = [e],
-            a = [t];if (!o || !r) return e === h ? -1 : t === h ? 1 : o ? -1 : r ? 1 : u ? L(u, e) - L(u, t) : 0;if (o === r) return ue(e, t);for (n = e; n = n.parentNode;) {
+            a = [t];if (!o || !r) return e === h ? -1 : t === h ? 1 : o ? -1 : r ? 1 : u ? P(u, e) - P(u, t) : 0;if (o === r) return ue(e, t);for (n = e; n = n.parentNode;) {
           s.unshift(n);
         }for (n = t; n = n.parentNode;) {
           a.unshift(n);
@@ -467,7 +467,7 @@ function launchGallery() {
           var n,
               o = i.pseudos[e] || i.setFilters[e.toLowerCase()] || re.error("unsupported pseudo: " + e);return o[_] ? o(t) : o.length > 1 ? (n = [e, e, "", t], i.setFilters.hasOwnProperty(e.toLowerCase()) ? ae(function (e, n) {
             for (var i, r = o(e, t), s = r.length; s--;) {
-              e[i = L(e, r[s])] = !(n[i] = r[s]);
+              e[i = P(e, r[s])] = !(n[i] = r[s]);
             }
           }) : function (e) {
             return o(e, 0, n);
@@ -606,7 +606,7 @@ function launchGallery() {
                 (d = v[u]) && c.push(g[u] = d);
               }o(null, v = [], c, l);
             }for (u = v.length; u--;) {
-              (d = v[u]) && (c = o ? L(r, d) : f[u]) > -1 && (r[c] = !(s[c] = d));
+              (d = v[u]) && (c = o ? P(r, d) : f[u]) > -1 && (r[c] = !(s[c] = d));
             }
           }
         } else v = _e(v === s ? v.splice(p, v.length) : v), o ? o(null, s, v, l) : O.apply(s, v);
@@ -615,7 +615,7 @@ function launchGallery() {
       for (var t, n, o, r = e.length, s = i.relative[e[0].type], a = s || i.relative[" "], l = s ? 1 : 0, u = ye(function (e) {
         return e === t;
       }, a, !0), d = ye(function (e) {
-        return L(t, e) > -1;
+        return P(t, e) > -1;
       }, a, !0), f = [function (e, n, i) {
         var o = !s && (i || n !== c) || ((t = n).nodeType ? u(e, n, i) : d(e, n, i));return t = null, o;
       }]; l < r; l++) {
@@ -763,7 +763,7 @@ function launchGallery() {
       }return (r = i.getElementById(o[2])) && (this[0] = r, this.length = 1), this;
     }return e.nodeType ? (this[0] = e, this.length = 1, this) : m(e) ? void 0 !== n.ready ? n.ready(e) : e(_) : _.makeArray(e, this);
   }).prototype = _.fn, I = _(i);var O = /^(?:parents|prev(?:Until|All))/,
-      P = { children: !0, contents: !0, next: !0, prev: !0 };function L(e, t) {
+      L = { children: !0, contents: !0, next: !0, prev: !0 };function P(e, t) {
     for (; (e = e[t]) && 1 !== e.nodeType;) {}return e;
   }_.fn.extend({ has: function has(e) {
       var t = _(e, this),
@@ -797,9 +797,9 @@ function launchGallery() {
     }, parentsUntil: function parentsUntil(e, t, n) {
       return x(e, "parentNode", n);
     }, next: function next(e) {
-      return L(e, "nextSibling");
+      return P(e, "nextSibling");
     }, prev: function prev(e) {
-      return L(e, "previousSibling");
+      return P(e, "previousSibling");
     }, nextAll: function nextAll(e) {
       return x(e, "nextSibling");
     }, prevAll: function prevAll(e) {
@@ -816,7 +816,7 @@ function launchGallery() {
       return D(e, "iframe") ? e.contentDocument : (D(e, "template") && (e = e.content || e), _.merge([], e.childNodes));
     } }, function (e, t) {
     _.fn[e] = function (n, i) {
-      var o = _.map(this, t, n);return "Until" !== e.slice(-5) && (i = n), i && "string" == typeof i && (o = _.filter(i, o)), this.length > 1 && (P[e] || _.uniqueSort(o), O.test(e) && o.reverse()), this.pushStack(o);
+      var o = _.map(this, t, n);return "Until" !== e.slice(-5) && (i = n), i && "string" == typeof i && (o = _.filter(i, o)), this.length > 1 && (L[e] || _.uniqueSort(o), O.test(e) && o.reverse()), this.pushStack(o);
     };
   });var j = /[^\x20\t\r\n\f]+/g;function M(e) {
     return e;
@@ -1297,9 +1297,9 @@ function launchGallery() {
     return D(e, "table") && D(11 !== t.nodeType ? t : t.firstChild, "tr") && _(e).children("tbody")[0] || e;
   }function Oe(e) {
     return e.type = (null !== e.getAttribute("type")) + "/" + e.type, e;
-  }function Pe(e) {
+  }function Le(e) {
     return "true/" === (e.type || "").slice(0, 5) ? e.type = e.type.slice(5) : e.removeAttribute("type"), e;
-  }function Le(e, t) {
+  }function Pe(e, t) {
     var n, i, o, r, s, a, l, c;if (1 === t.nodeType) {
       if (Y.hasData(e) && (r = Y.access(e), s = Y.set(t, r), c = r.events)) for (o in delete s.handle, s.events = {}, c) {
         for (n = 0, i = c[o].length; n < i; n++) {
@@ -1323,7 +1323,7 @@ function launchGallery() {
     });if (f && (r = (o = ye(t, e[0].ownerDocument, !1, e, i)).firstChild, 1 === o.childNodes.length && (o = r), r || i)) {
       for (l = (a = _.map(he(o, "script"), Oe)).length; d < f; d++) {
         c = o, d !== h && (c = _.clone(c, !0, !0), l && _.merge(a, he(c, "script"))), n.call(e[d], c, d);
-      }if (l) for (u = a[a.length - 1].ownerDocument, _.map(a, Pe), d = 0; d < l; d++) {
+      }if (l) for (u = a[a.length - 1].ownerDocument, _.map(a, Le), d = 0; d < l; d++) {
         c = a[d], de.test(c.type || "") && !Y.access(c, "globalEval") && _.contains(u, c) && (c.src && "module" !== (c.type || "").toLowerCase() ? _._evalUrl && _._evalUrl(c.src) : y(c.textContent.replace(Ie, ""), u, c));
       }
     }return e;
@@ -1345,8 +1345,8 @@ function launchGallery() {
           d = _.contains(e.ownerDocument, e);if (!(p.noCloneChecked || 1 !== e.nodeType && 11 !== e.nodeType || _.isXMLDoc(e))) for (s = he(u), i = 0, o = (r = he(e)).length; i < o; i++) {
         a = r[i], l = s[i], void 0, "input" === (c = l.nodeName.toLowerCase()) && ce.test(a.type) ? l.checked = a.checked : "input" !== c && "textarea" !== c || (l.defaultValue = a.defaultValue);
       }if (t) if (n) for (r = r || he(e), s = s || he(u), i = 0, o = r.length; i < o; i++) {
-        Le(r[i], s[i]);
-      } else Le(e, u);return (s = he(u, "script")).length > 0 && pe(s, !d && he(e, "script")), u;
+        Pe(r[i], s[i]);
+      } else Pe(e, u);return (s = he(u, "script")).length > 0 && pe(s, !d && he(e, "script")), u;
     }, cleanData: function cleanData(e) {
       for (var t, n, i, o = _.event.special, r = 0; void 0 !== (n = e[r]); r++) {
         if (K(n)) {
@@ -1935,8 +1935,8 @@ function launchGallery() {
       It = /^(?:GET|HEAD)$/,
       Nt = /^\/\//,
       Ot = {},
-      Pt = {},
-      Lt = "*/".concat("*"),
+      Lt = {},
+      Pt = "*/".concat("*"),
       jt = i.createElement("a");function Mt(e) {
     return function (t, n) {
       "string" != typeof t && (n = t, t = "*");var i,
@@ -1947,7 +1947,7 @@ function launchGallery() {
     };
   }function Ht(e, t, n, i) {
     var o = {},
-        r = e === Pt;function s(a) {
+        r = e === Lt;function s(a) {
       var l;return o[a] = !0, _.each(e[a] || [], function (e, a) {
         var c = a(t, n, i);return "string" != typeof c || r || o[c] ? r ? !(l = c) : void 0 : (t.dataTypes.unshift(c), s(c), !1);
       }), l;
@@ -1958,9 +1958,9 @@ function launchGallery() {
         o = _.ajaxSettings.flatOptions || {};for (n in t) {
       void 0 !== t[n] && ((o[n] ? e : i || (i = {}))[n] = t[n]);
     }return i && _.extend(!0, e, i), e;
-  }jt.href = yt.href, _.extend({ active: 0, lastModified: {}, etag: {}, ajaxSettings: { url: yt.href, type: "GET", isLocal: /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(yt.protocol), global: !0, processData: !0, async: !0, contentType: "application/x-www-form-urlencoded; charset=UTF-8", accepts: { "*": Lt, text: "text/plain", html: "text/html", xml: "application/xml, text/xml", json: "application/json, text/javascript" }, contents: { xml: /\bxml\b/, html: /\bhtml/, json: /\bjson\b/ }, responseFields: { xml: "responseXML", text: "responseText", json: "responseJSON" }, converters: { "* text": String, "text html": !0, "text json": JSON.parse, "text xml": _.parseXML }, flatOptions: { url: !0, context: !0 } }, ajaxSetup: function ajaxSetup(e, t) {
+  }jt.href = yt.href, _.extend({ active: 0, lastModified: {}, etag: {}, ajaxSettings: { url: yt.href, type: "GET", isLocal: /^(?:about|app|app-storage|.+-extension|file|res|widget):$/.test(yt.protocol), global: !0, processData: !0, async: !0, contentType: "application/x-www-form-urlencoded; charset=UTF-8", accepts: { "*": Pt, text: "text/plain", html: "text/html", xml: "application/xml, text/xml", json: "application/json, text/javascript" }, contents: { xml: /\bxml\b/, html: /\bhtml/, json: /\bjson\b/ }, responseFields: { xml: "responseXML", text: "responseText", json: "responseJSON" }, converters: { "* text": String, "text html": !0, "text json": JSON.parse, "text xml": _.parseXML }, flatOptions: { url: !0, context: !0 } }, ajaxSetup: function ajaxSetup(e, t) {
       return t ? qt(qt(e, _.ajaxSettings), t) : qt(_.ajaxSettings, e);
-    }, ajaxPrefilter: Mt(Ot), ajaxTransport: Mt(Pt), ajax: function ajax(t, n) {
+    }, ajaxPrefilter: Mt(Ot), ajaxTransport: Mt(Lt), ajax: function ajax(t, n) {
       "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && (n = t, t = void 0), n = n || {};var o,
           r,
           s,
@@ -2004,9 +2004,9 @@ function launchGallery() {
         } catch (e) {
           p.crossDomain = !0;
         }
-      }if (p.data && p.processData && "string" != typeof p.data && (p.data = _.param(p.data, p.traditional)), Ht(Ot, p, n, x), u) return x;for (f in (d = _.event && p.global) && 0 == _.active++ && _.event.trigger("ajaxStart"), p.type = p.type.toUpperCase(), p.hasContent = !It.test(p.type), r = p.url.replace(Dt, ""), p.hasContent ? p.data && p.processData && 0 === (p.contentType || "").indexOf("application/x-www-form-urlencoded") && (p.data = p.data.replace(Tt, "+")) : (h = p.url.slice(r.length), p.data && (p.processData || "string" == typeof p.data) && (r += (_t.test(r) ? "&" : "?") + p.data, delete p.data), !1 === p.cache && (r = r.replace(At, "$1"), h = (_t.test(r) ? "&" : "?") + "_=" + bt++ + h), p.url = r + h), p.ifModified && (_.lastModified[r] && x.setRequestHeader("If-Modified-Since", _.lastModified[r]), _.etag[r] && x.setRequestHeader("If-None-Match", _.etag[r])), (p.data && p.hasContent && !1 !== p.contentType || n.contentType) && x.setRequestHeader("Content-Type", p.contentType), x.setRequestHeader("Accept", p.dataTypes[0] && p.accepts[p.dataTypes[0]] ? p.accepts[p.dataTypes[0]] + ("*" !== p.dataTypes[0] ? ", " + Lt + "; q=0.01" : "") : p.accepts["*"]), p.headers) {
+      }if (p.data && p.processData && "string" != typeof p.data && (p.data = _.param(p.data, p.traditional)), Ht(Ot, p, n, x), u) return x;for (f in (d = _.event && p.global) && 0 == _.active++ && _.event.trigger("ajaxStart"), p.type = p.type.toUpperCase(), p.hasContent = !It.test(p.type), r = p.url.replace(Dt, ""), p.hasContent ? p.data && p.processData && 0 === (p.contentType || "").indexOf("application/x-www-form-urlencoded") && (p.data = p.data.replace(Tt, "+")) : (h = p.url.slice(r.length), p.data && (p.processData || "string" == typeof p.data) && (r += (_t.test(r) ? "&" : "?") + p.data, delete p.data), !1 === p.cache && (r = r.replace(At, "$1"), h = (_t.test(r) ? "&" : "?") + "_=" + bt++ + h), p.url = r + h), p.ifModified && (_.lastModified[r] && x.setRequestHeader("If-Modified-Since", _.lastModified[r]), _.etag[r] && x.setRequestHeader("If-None-Match", _.etag[r])), (p.data && p.hasContent && !1 !== p.contentType || n.contentType) && x.setRequestHeader("Content-Type", p.contentType), x.setRequestHeader("Accept", p.dataTypes[0] && p.accepts[p.dataTypes[0]] ? p.accepts[p.dataTypes[0]] + ("*" !== p.dataTypes[0] ? ", " + Pt + "; q=0.01" : "") : p.accepts["*"]), p.headers) {
         x.setRequestHeader(f, p.headers[f]);
-      }if (p.beforeSend && (!1 === p.beforeSend.call(m, x, p) || u)) return x.abort();if (C = "abort", y.add(p.complete), x.done(p.success), x.fail(p.error), o = Ht(Pt, p, n, x)) {
+      }if (p.beforeSend && (!1 === p.beforeSend.call(m, x, p) || u)) return x.abort();if (C = "abort", y.add(p.complete), x.done(p.success), x.fail(p.error), o = Ht(Lt, p, n, x)) {
         if (x.readyState = 1, d && g.trigger("ajaxSend", [x, p]), u) return x;p.async && p.timeout > 0 && (l = e.setTimeout(function () {
           x.abort("timeout");
         }, p.timeout));try {
@@ -2428,13 +2428,13 @@ function launchGallery() {
         a = r ? "left" : "top",
         l = r ? "height" : "width",
         c = r ? "width" : "height";return o[s] = t[s] + t[l] / 2 - i[l] / 2, o[a] = n === a ? t[a] - i[c] : t[N(a)], o;
-  }function P(e, t) {
+  }function L(e, t) {
     return Array.prototype.find ? e.find(t) : e.filter(t)[0];
-  }function L(e, t, n) {
+  }function P(e, t, n) {
     return (void 0 === n ? e : e.slice(0, function (e, t, n) {
       if (Array.prototype.findIndex) return e.findIndex(function (e) {
         return e[t] === n;
-      });var i = P(e, function (e) {
+      });var i = L(e, function (e) {
         return e[t] === n;
       });return e.indexOf(i);
     }(e, "name", n))).forEach(function (e) {
@@ -2467,7 +2467,7 @@ function launchGallery() {
       var i = "";-1 !== ["width", "height", "top", "right", "bottom", "left"].indexOf(n) && z(t[n]) && (i = "px"), e.style[n] = t[n] + i;
     });
   }function W(e, t, n) {
-    var i = P(e, function (e) {
+    var i = L(e, function (e) {
       return e.name === t;
     }),
         o = !!i && e.some(function (e) {
@@ -2487,7 +2487,7 @@ function launchGallery() {
         s = e.split(/(\+|\-)/).map(function (e) {
       return e.trim();
     }),
-        a = s.indexOf(P(s, function (e) {
+        a = s.indexOf(L(s, function (e) {
       return -1 !== e.search(/,|\s/);
     }));s[a] && -1 === s[a].indexOf(",") && console.warn("Offsets separated by white space(s) are deprecated, use a comma (,) instead.");var l = /\s*,\s*|\s+/,
         c = -1 !== a ? [s.slice(0, a).concat([s[a].split(l)[0]]), [s[a].split(l)[1]].concat(s.slice(a + 1))] : [s];return (c = c.map(function (e, i) {
@@ -2595,7 +2595,7 @@ function launchGallery() {
                 y = -1 !== ["top", "bottom"].indexOf(i),
                 b = !!t.flipVariations && (y && "start" === r && h || y && "end" === r && p || !y && "start" === r && m || !y && "end" === r && g);(f || v || b) && (e.flipped = !0, (f || v) && (i = s[l + 1]), b && (r = function (e) {
               return "end" === e ? "start" : "start" === e ? "end" : e;
-            }(r)), e.placement = i + (r ? "-" + r : ""), e.offsets.popper = E({}, e.offsets.popper, O(e.instance.popper, e.offsets.reference, e.placement)), e = L(e.instance.modifiers, e, "flip"));
+            }(r)), e.placement = i + (r ? "-" + r : ""), e.offsets.popper = E({}, e.offsets.popper, O(e.instance.popper, e.offsets.reference, e.placement)), e = P(e.instance.modifiers, e, "flip"));
           }), e;
         }, behavior: "flip", padding: 5, boundariesElement: "viewport" }, inner: { order: 700, enabled: !1, fn: function fn(e) {
           var t = e.placement,
@@ -2607,7 +2607,7 @@ function launchGallery() {
               a = -1 === ["top", "left"].indexOf(n);return o[s ? "left" : "top"] = r[n] - (a ? o[s ? "width" : "height"] : 0), e.placement = N(t), e.offsets.popper = C(o), e;
         } }, hide: { order: 800, enabled: !0, fn: function fn(e) {
           if (!W(e.instance.modifiers, "hide", "preventOverflow")) return e;var t = e.offsets.reference,
-              n = P(e.instance.modifiers, function (e) {
+              n = L(e.instance.modifiers, function (e) {
             return "preventOverflow" === e.name;
           }).boundaries;if (t.bottom < n.top || t.left > n.right || t.top > n.bottom || t.right < n.left) {
             if (!0 === e.hide) return e;e.hide = !0, e.attributes["x-out-of-boundaries"] = "";
@@ -2618,7 +2618,7 @@ function launchGallery() {
           var n = t.x,
               i = t.y,
               o = e.offsets.popper,
-              r = P(e.instance.modifiers, function (e) {
+              r = L(e.instance.modifiers, function (e) {
             return "applyStyle" === e.name;
           }).gpuAcceleration;void 0 !== r && console.warn("WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!");var s = void 0 !== r ? r : t.gpuAcceleration,
               a = x(f(e.instance.popper)),
@@ -2657,7 +2657,7 @@ function launchGallery() {
     }return _(e, [{ key: "update", value: function value() {
         return function () {
           if (!this.state.isDestroyed) {
-            var e = { instance: this, styles: {}, arrowStyles: {}, attributes: {}, flipped: !1, offsets: {} };e.offsets.reference = k(this.state, this.popper, this.reference, this.options.positionFixed), e.placement = A(this.options.placement, e.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding), e.originalPlacement = e.placement, e.positionFixed = this.options.positionFixed, e.offsets.popper = O(this.popper, e.offsets.reference, e.placement), e.offsets.popper.position = this.options.positionFixed ? "fixed" : "absolute", e = L(this.modifiers, e), this.state.isCreated ? this.options.onUpdate(e) : (this.state.isCreated = !0, this.options.onCreate(e));
+            var e = { instance: this, styles: {}, arrowStyles: {}, attributes: {}, flipped: !1, offsets: {} };e.offsets.reference = k(this.state, this.popper, this.reference, this.options.positionFixed), e.placement = A(this.options.placement, e.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding), e.originalPlacement = e.placement, e.positionFixed = this.options.positionFixed, e.offsets.popper = O(this.popper, e.offsets.reference, e.placement), e.offsets.popper.position = this.options.positionFixed ? "fixed" : "absolute", e = P(this.modifiers, e), this.state.isCreated ? this.options.onUpdate(e) : (this.state.isCreated = !0, this.options.onCreate(e));
           }
         }.call(this);
       } }, { key: "destroy", value: function value() {
@@ -2820,8 +2820,8 @@ function launchGallery() {
       I = { interval: 5e3, keyboard: !0, slide: !1, pause: "hover", wrap: !0, touch: !0 },
       N = { interval: "(number|boolean)", keyboard: "boolean", slide: "(boolean|string)", pause: "(string|boolean)", wrap: "boolean", touch: "boolean" },
       O = "next",
-      P = "prev",
-      L = "left",
+      L = "prev",
+      P = "left",
       j = "right",
       M = { SLIDE: "slide.bs.carousel", SLID: "slid.bs.carousel", KEYDOWN: "keydown.bs.carousel", MOUSEENTER: "mouseenter.bs.carousel", MOUSELEAVE: "mouseleave.bs.carousel", TOUCHSTART: "touchstart.bs.carousel", TOUCHMOVE: "touchmove.bs.carousel", TOUCHEND: "touchend.bs.carousel", POINTERDOWN: "pointerdown.bs.carousel", POINTERUP: "pointerup.bs.carousel", DRAG_START: "dragstart.bs.carousel", LOAD_DATA_API: "load.bs.carousel.data-api", CLICK_DATA_API: "click.bs.carousel.data-api" },
       H = "carousel",
@@ -2842,7 +2842,7 @@ function launchGallery() {
     }, t.nextWhenVisible = function () {
       !document.hidden && n(this._element).is(":visible") && "hidden" !== n(this._element).css("visibility") && this.next();
     }, t.prev = function () {
-      this._isSliding || this._slide(P);
+      this._isSliding || this._slide(L);
     }, t.pause = function (e) {
       e || (this._isPaused = !0), this._element.querySelector($.NEXT_PREV) && (c.triggerTransitionEnd(this._element), this.cycle(!0)), clearInterval(this._interval), this._interval = null;
     }, t.cycle = function (e) {
@@ -2851,7 +2851,7 @@ function launchGallery() {
       var t = this;this._activeElement = this._element.querySelector($.ACTIVE_ITEM);var i = this._getItemIndex(this._activeElement);if (!(e > this._items.length - 1 || e < 0)) if (this._isSliding) n(this._element).one(M.SLID, function () {
         return t.to(e);
       });else {
-        if (i === e) return this.pause(), void this.cycle();var o = e > i ? O : P;this._slide(o, this._items[e]);
+        if (i === e) return this.pause(), void this.cycle();var o = e > i ? O : L;this._slide(o, this._items[e]);
       }
     }, t.dispose = function () {
       n(this._element).off(A), n.removeData(this._element, "bs.carousel"), this._items = null, this._config = null, this._element = null, this._interval = null, this._isPaused = null, this._isSliding = null, this._activeElement = null, this._indicatorsElement = null;
@@ -2902,9 +2902,9 @@ function launchGallery() {
       return this._items = e && e.parentNode ? [].slice.call(e.parentNode.querySelectorAll($.ITEM)) : [], this._items.indexOf(e);
     }, t._getItemByDirection = function (e, t) {
       var n = e === O,
-          i = e === P,
+          i = e === L,
           o = this._getItemIndex(t),
-          r = this._items.length - 1;if ((i && 0 === o || n && o === r) && !this._config.wrap) return t;var s = (o + (e === P ? -1 : 1)) % this._items.length;return -1 === s ? this._items[this._items.length - 1] : this._items[s];
+          r = this._items.length - 1;if ((i && 0 === o || n && o === r) && !this._config.wrap) return t;var s = (o + (e === L ? -1 : 1)) % this._items.length;return -1 === s ? this._items[this._items.length - 1] : this._items[s];
     }, t._triggerSlideEvent = function (e, t) {
       var i = this._getItemIndex(e),
           o = this._getItemIndex(this._element.querySelector($.ACTIVE_ITEM)),
@@ -2922,7 +2922,7 @@ function launchGallery() {
           l = this._getItemIndex(a),
           u = t || a && this._getItemByDirection(e, a),
           d = this._getItemIndex(u),
-          f = Boolean(this._interval);if (e === O ? (i = R, o = W, r = L) : (i = z, o = B, r = j), u && n(u).hasClass(q)) this._isSliding = !1;else if (!this._triggerSlideEvent(u, r).isDefaultPrevented() && a && u) {
+          f = Boolean(this._interval);if (e === O ? (i = R, o = W, r = P) : (i = z, o = B, r = j), u && n(u).hasClass(q)) this._isSliding = !1;else if (!this._triggerSlideEvent(u, r).isDefaultPrevented() && a && u) {
         this._isSliding = !0, f && this.pause(), this._setActiveIndicatorElement(u);var h = n.Event(M.SLID, { relatedTarget: u, direction: r, from: l, to: d });if (n(this._element).hasClass(F)) {
           n(u).addClass(o), c.reflow(u), n(a).addClass(i), n(u).addClass(i);var p = parseInt(u.getAttribute("data-interval"), 10);p ? (this._config.defaultInterval = this._config.defaultInterval || this._config.interval, this._config.interval = p) : this._config.interval = this._config.defaultInterval || this._config.interval;var m = c.getTransitionDurationFromElement(a);n(a).one(c.TRANSITION_END, function () {
             n(u).removeClass(i + " " + o).addClass(q), n(a).removeClass(q + " " + o + " " + i), s._isSliding = !1, setTimeout(function () {
@@ -3164,8 +3164,8 @@ function launchGallery() {
   }), n.fn[ae] = Ne._jQueryInterface, n.fn[ae].Constructor = Ne, n.fn[ae].noConflict = function () {
     return n.fn[ae] = le, Ne._jQueryInterface;
   };var Oe = n.fn.modal,
-      Pe = { backdrop: !0, keyboard: !0, focus: !0, show: !0 },
-      Le = { backdrop: "(boolean|string)", keyboard: "boolean", focus: "boolean", show: "boolean" },
+      Le = { backdrop: !0, keyboard: !0, focus: !0, show: !0 },
+      Pe = { backdrop: "(boolean|string)", keyboard: "boolean", focus: "boolean", show: "boolean" },
       je = { HIDE: "hide.bs.modal", HIDDEN: "hidden.bs.modal", SHOW: "show.bs.modal", SHOWN: "shown.bs.modal", FOCUSIN: "focusin.bs.modal", RESIZE: "resize.bs.modal", CLICK_DISMISS: "click.dismiss.bs.modal", KEYDOWN_DISMISS: "keydown.dismiss.bs.modal", MOUSEUP_DISMISS: "mouseup.dismiss.bs.modal", MOUSEDOWN_DISMISS: "mousedown.dismiss.bs.modal", CLICK_DATA_API: "click.bs.modal.data-api" },
       Me = "modal-scrollbar-measure",
       He = "modal-backdrop",
@@ -3207,7 +3207,7 @@ function launchGallery() {
     }, t.handleUpdate = function () {
       this._adjustDialog();
     }, t._getConfig = function (e) {
-      return e = s({}, Pe, e), c.typeCheckConfig("modal", e, Le), e;
+      return e = s({}, Le, e), c.typeCheckConfig("modal", e, Pe), e;
     }, t._showElement = function (e) {
       var t = this,
           i = n(this._element).hasClass(Fe);this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE || document.body.appendChild(this._element), this._element.style.display = "block", this._element.removeAttribute("aria-hidden"), this._element.setAttribute("aria-modal", !0), this._element.scrollTop = 0, i && c.reflow(this._element), n(this._element).addClass(ze), this._config.focus && this._enforceFocus();var o = n.Event(je.SHOWN, { relatedTarget: e }),
@@ -3276,14 +3276,14 @@ function launchGallery() {
     }, e._jQueryInterface = function (t, i) {
       return this.each(function () {
         var o = n(this).data("bs.modal"),
-            r = s({}, Pe, n(this).data(), "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t ? t : {});if (o || (o = new e(this, r), n(this).data("bs.modal", o)), "string" == typeof t) {
+            r = s({}, Le, n(this).data(), "object" == (typeof t === "undefined" ? "undefined" : _typeof(t)) && t ? t : {});if (o || (o = new e(this, r), n(this).data("bs.modal", o)), "string" == typeof t) {
           if (void 0 === o[t]) throw new TypeError('No method named "' + t + '"');o[t](i);
         } else r.show && o.show(i);
       });
     }, o(e, null, [{ key: "VERSION", get: function get() {
         return "4.2.1";
       } }, { key: "Default", get: function get() {
-        return Pe;
+        return Le;
       } }]), e;
   }();n(document).on(je.CLICK_DATA_API, Re.DATA_TOGGLE, function (e) {
     var t,
@@ -3576,8 +3576,8 @@ function launchGallery() {
       It = { HIDE: "hide.bs.tab", HIDDEN: "hidden.bs.tab", SHOW: "show.bs.tab", SHOWN: "shown.bs.tab", CLICK_DATA_API: "click.bs.tab.data-api" },
       Nt = "dropdown-menu",
       Ot = "active",
-      Pt = "disabled",
-      Lt = "fade",
+      Lt = "disabled",
+      Pt = "fade",
       jt = "show",
       Mt = ".dropdown",
       Ht = ".nav, .list-group",
@@ -3590,7 +3590,7 @@ function launchGallery() {
     function e(e) {
       this._element = e;
     }var t = e.prototype;return t.show = function () {
-      var e = this;if (!(this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && n(this._element).hasClass(Ot) || n(this._element).hasClass(Pt))) {
+      var e = this;if (!(this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && n(this._element).hasClass(Ot) || n(this._element).hasClass(Lt))) {
         var t,
             i,
             o = n(this._element).closest(Ht)[0],
@@ -3609,7 +3609,7 @@ function launchGallery() {
     }, t._activate = function (e, t, i) {
       var o = this,
           r = (!t || "UL" !== t.nodeName && "OL" !== t.nodeName ? n(t).children(qt) : n(t).find(Ft))[0],
-          s = i && r && n(r).hasClass(Lt),
+          s = i && r && n(r).hasClass(Pt),
           a = function a() {
         return o._transitionComplete(e, r, i);
       };if (r && s) {
@@ -5384,13 +5384,13 @@ function launchGallery() {
           I = [],
           N = null,
           O = k.parentSelector || "[data-" + lownamespace + "-parent]",
-          P = k.elementsSelector || "[data-" + lownamespace + "]",
-          L = {},
+          L = k.elementsSelector || "[data-" + lownamespace + "]",
+          P = {},
           j = [],
           M = isWindow(e);i.frame = e, i.options = k, i.parents = I, i.initialized = !1, i.reload = q;var H = function H(e, t) {
         var n = $(t),
             i = getInlineOptions($(t)),
-            o = {};o.element = t, o.options = i, o.parallaxElements = [], n.find(P).each(function (e, t) {
+            o = {};o.element = t, o.options = i, o.parallaxElements = [], n.find(L).each(function (e, t) {
           var n = getInlineOptions($(t));n.element = t, push.call(o.parallaxElements, n);
         }), push.call(I, o);
       };i.scroll = z, i.getIndex = function (e) {
@@ -5403,7 +5403,7 @@ function launchGallery() {
         if ("object" == (typeof e === "undefined" ? "undefined" : _typeof(e))) for (var n in e) {
           hasOwnProperty.call(e, n) && i.on(n, e[n]);
         } else if ("function" == typeof t) for (var o = e.split(" "), r = 0, s = o.length; r < s; r++) {
-          L[o[r]] = L[o[r]] || [], -1 === U(o[r], t) && push.call(L[o[r]], t);
+          P[o[r]] = P[o[r]] || [], -1 === U(o[r], t) && push.call(P[o[r]], t);
         } else if ("array" == typeof t) for (var a = 0, l = t.length; a < l; a++) {
           i.on(e, t[a]);
         }return i;
@@ -5411,8 +5411,8 @@ function launchGallery() {
         if (t instanceof Array) for (var n = 0, o = t.length; n < o; n++) {
           i.off(e, t[n]);
         } else for (var r = e.split(" "), s = 0, a = r.length; s < a; s++) {
-          if (L[r[s]] = L[r[s]] || [], void 0 === t) L[r[s]].length = 0;else {
-            var l = U(r[s], t);-1 !== l && splice.call(L[r[s]], l, 1);
+          if (P[r[s]] = P[r[s]] || [], void 0 === t) P[r[s]].length = 0;else {
+            var l = U(r[s], t);-1 !== l && splice.call(P[r[s]], l, 1);
           }
         }return i;
       }, i.set = function (e, t) {
@@ -5449,16 +5449,16 @@ function launchGallery() {
         }-1 !== $.inArray(S, transforms) ? D += S + "(" + T + ")" : e.style[S] = "opacity" === S ? within(n < 0 ? 1 + T : 1 - T, 0, 1) : T;
       }D && (e.style[transform] = gpuAcceleration + D);
     }function B(e, t) {
-      if (L[e]) {
-        for (c = L[e].length, j.length = 0, l = 0; l < c; l++) {
-          push.call(j, L[e][l]);
+      if (P[e]) {
+        for (c = P[e].length, j.length = 0, l = 0; l < c; l++) {
+          push.call(j, P[e][l]);
         }for (l = 0; l < c; l++) {
           j[l].call(i, e, t);
         }
       }
     }function U(e, t) {
-      for (var n = 0, i = L[e].length; n < i; n++) {
-        if (L[e][n] === t) return n;
+      for (var n = 0, i = P[e].length; n < i; n++) {
+        if (P[e][n] === t) return n;
       }return -1;
     }
   };function warn(e) {
@@ -5564,7 +5564,42 @@ function launchGallery() {
   e.stopPropagation();
 }), $(document).keyup(function (e) {
   27 === e.keyCode && closeSearch();
-});var headroom = null,
+}), Vue.component("sort-select", { template: '\n        <select\n            class="custom-select"\n            :sort-order="sortOrder"\n            v-model="sortOrder"\n            @change="$emit(\'input\', sortOrder)"\n        >\n            <option\n                v-for="sortKey in Object.keys(sortOptions)"\n                v-text="sortKey"\n                :value="sortKey">\n            </option>\n        </select>\n    ', props: { sortOptions: Object }, data: function data() {
+    return { sortOrder: "All" };
+  } }), new Vue({ el: "#vue-staff-app", data: function data() {
+    return { list: null, sortOrder: "All" };
+  }, computed: {
+    sortOptions: function sortOptions() {
+      var _this = this;
+
+      return { All: function All() {
+          return _this.list;
+        }, Location: function Location() {
+          return _this.list.slice().sort(function (e, t) {
+            return e.location === t.location ? e.lastName.localeCompare(t.lastName) : e.location.localeCompare(t.location);
+          });
+        }, Position: function Position() {
+          return _this.list.slice().sort(function (e, t) {
+            return e.position === t.position ? e.lastName.localeCompare(t.lastName) : e.position.localeCompare(t.position);
+          });
+        }, Surname: function Surname() {
+          return _this.list.slice().sort(function (e, t) {
+            return e.lastName.localeCompare(t.lastName);
+          });
+        } };
+    }
+  }, created: function created() {
+    for (var e = 0; e < staff.length; e++) {
+      var t = staff[e];t.lastName = this.getLastName(t.name);
+    }this.list = staff;
+  },
+  methods: {
+    sort: function sort(e) {
+      return this.sortOptions[e]();
+    },
+    getLastName: function getLastName(e) {
+      return String(e.split(" ").splice(-1, 1));
+    } } });var headroom = null,
     lvPage = document.querySelector(".lv-page"),
     resizeTimer;function initHeadroom() {
   var _ref;
