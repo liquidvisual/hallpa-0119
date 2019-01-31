@@ -1,0 +1,141 @@
+/*
+    SIDEBAR.CSS
+
+    - Last updated: 30.01.19
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// SIDEBAR
+//-----------------------------------------------------------------
+
+.sidebar {
+    position: relative;
+    height: 100%;
+
+    .bg-fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background: $secondary;
+        z-index: -1;
+    }
+}
+//-----------------------------------------------------------------
+// SIDEBOX
+//-----------------------------------------------------------------
+
+.sidebox {
+    padding: rem-calc(25);
+    background: #e7e7e7;
+    color: #393939;
+
+    @include media-breakpoint-up(lg) {
+        padding: rem-calc(25 38);
+    }
+
+    a {
+    	color: #393939;
+    }
+
+    h3 {
+        width: calc(100% + #{rem-calc(25*2)});
+        margin-left: rem-calc(-25);
+        padding-left: rem-calc(25);
+    	padding-bottom: rem-calc(20);
+    	border-bottom: 1px solid #d2d2d2;
+
+        @include media-breakpoint-up(lg) {
+            width: calc(100% + #{rem-calc(38*2)});
+            margin-left: rem-calc(-38);
+            padding-left: rem-calc(38);
+        }
+    }
+
+    .fa.mr-2 {
+        font-size: rem-calc(17);
+        min-width: rem-calc(20);
+        text-align: center;
+    }
+}
+
+//-----------------------------------------------------------------
+// INNER BLOCK GRID
+//-----------------------------------------------------------------
+
+.sidebox {
+	[class*="block-grid-"] {
+		margin: rem-calc(-10);
+	}
+
+	[class*="block-grid-"] > li,
+		.block-grid-item {
+		padding: rem-calc(10);
+	}
+}
+//-----------------------------------------------------------------
+// SIDE NAV
+//-----------------------------------------------------------------
+
+.side-nav {
+
+    li {
+        border-bottom: 1px solid rgba(black, 0.15);
+    }
+
+    a,
+    .anchor {
+        display: flex;
+        align-items: center;
+        padding: rem-calc(20 22 20 44);
+        font-size: rem-calc(20);
+        font-weight: $font-weight-bolder;
+        color: white;
+
+        .fa-angle-right {
+            margin-left: auto;
+            font-size: rem-calc(34);
+            line-height: 0;
+        }
+    }
+
+    .active {
+        border-bottom: 1px solid rgba(black, 0.05);
+        background: rgba(black, 0.1);
+    }
+
+    .side-nav-header {
+        border-top: 1px solid rgba(black, 0.15);
+
+        a,
+        .anchor {
+            font-size: rem-calc(23);
+            padding: rem-calc(30 22 30 44);
+
+            .fa-align-left {
+                margin-right: rem-calc(15);
+                font-size: rem-calc(45);
+                color: rgba(white, 0.3);
+                line-height: 0;
+            }
+        }
+    }
+
+    .side-nav-header.active {
+        border-top: 1px solid rgba(black, 0.05);
+    }
+
+    a:hover {
+        background: rgba(black, 0.02);
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+//=========================================
+//
+//=========================================

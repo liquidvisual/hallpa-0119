@@ -19,7 +19,7 @@ form[data-toggle="validator"] {
 		// padding: rem-calc(5 10 4 10);
 		padding: rem-calc(10 10 10 0);
 		// background: $red;
-		font-weight: $font-weight-semibold;
+		font-weight: $font-weight-normal;
 		color: lighten($red, 20%);
 	}
 
@@ -36,7 +36,7 @@ form[data-toggle="validator"] {
 }
 
 
-form button {
+form button:not(.lv-off-canvas button) {
 	min-width: rem-calc(250);
 	font-size: rem-calc(17) !important;
 	color: white !important;
@@ -46,8 +46,6 @@ form button {
 		cursor: not-allowed;
 	}
 }
-
-
 
 //-----------------------------------------------------------------
 // CAPTCHA BADGE
@@ -113,6 +111,25 @@ fieldset {
 .global-footer input,
 .global-footer button {
 	// border: 0;
+}
+
+//-----------------------------------------------------------------
+// FORM SELECT BOX (used in /people/)
+//-----------------------------------------------------------------
+
+.form-sort-select {
+	padding: rem-calc(20);
+	background: $secondary;
+	color: white;
+
+	.text {
+		min-width: rem-calc(80);
+	}
+
+	select {
+		padding: rem-calc(5 15);
+		background-position: right 15px center;
+	}
 }
 
 //-----------------------------------------------------------------

@@ -116,13 +116,12 @@ $header-bottom-lg-height: 50px !default;
 	height: $header-top-lg-height;
 	background: #242a2f; // body bg variable?
 	font-size: rem-calc(16);
-	// font-weight: 400; //$font-weight-semibold;
 	color: white; // [LOCKED] - for dropdown override
 	// transition: all ease 150ms;
 	z-index: 2; // [LOCKED] - dropdown needs to move over top of nav
 
 	a {
-		font-weight: 500; //$font-weight-semibold;
+		font-weight: $font-weight-normal;
 		margin-right: rem-calc(25);
 		color: white; // [THEMEABLE]
 		transition: opacity 200ms ease;
@@ -152,23 +151,23 @@ $header-bottom-lg-height: 50px !default;
 // a little brittle - copies styles from topbar
 //=========================================
 
-.global-header-top .dropdown .dropdown-menu {
-	padding: 0; // [RESET]
-	border: 0;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+// .global-header-top .dropdown .dropdown-menu {
+// 	padding: 0; // [RESET]
+// 	border: 0;
+// 	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
-	.dropdown-item {
-		padding: rem-calc(15 20);
-		font-size: rem-calc(14); // opinionated
-		font-weight: 500;
-		color: #444;
+// 	.dropdown-item {
+// 		padding: rem-calc(15 20);
+// 		font-size: rem-calc(14); // opinionated
+// 		font-weight: 500;
+// 		color: #444;
 
-		&:hover {
-			background: rgba(black, 0.1);
-			color: #444 !important;
-		}
-	}
-}
+// 		&:hover {
+// 			background: rgba(black, 0.1);
+// 			color: #444 !important;
+// 		}
+// 	}
+// }
 
 //-----------------------------------------------------------------
 // HEADER BODY

@@ -7,103 +7,52 @@ hero_image: /assets/img/content/backgrounds/bg-1.jpg
 breadcrumbs: true
 ---
 
-<p class="lead dropcap">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation.</p>
+In an early blog post we explained [what you needed to know before moving into a retirement village](#). This article provides more detail about the rights you have and need to be aware of before signing a retirement village contract.
 
-# Header 1
+## Your retirement village rights include:
 
-## Header 2
+* receiving information up-front about the residence, the operator of the retirement village, and the terms and conditions which will apply if you occupy the residence.
 
-### Header 3
+* the payments you are required to make initially and throughout the period you occupy the retirement village residence.
 
-#### Header 4
+* the right to “cool-off” at any time within 10 business days of signing a residence contract.
 
-##### Header 5
+* what happens when you leave the retirement village or die.
 
-###### Header 6
+The law concerning retirement villages is found in the Retirement Villages Act 2016 (“the Act”).
 
----
+The Act replaced the old Retirement Villages Act 1987 on 8 August 2017 and came into operation on 1 January 2018.
 
-<h1 class="display-1">Display 1</h1>
-<h2 class="display-2">Display 2 <br><small>neurotic oswald</small></h2>
-<h3 class="display-3">Display 3</h3>
-<h4 class="display-4">Display 4</h4>
-<h5 class="display-5">Display 5</h5>
-<h6 class="display-6">Display 6</h6>
+## Required documents before you sign a retirement village contract:
 
----
+Before entering into a retirement village, the operator is required to give you the following documentation at least 10 business days before you sign a residence contract:
 
-<h1>Header 1 <small>small text</small></h1>
-<h2>Header 2 <small>small text</small></h2>
-<h3>Header 3 <small>small text</small></h3>
-<h4>Header 4 <small>small text</small></h4>
-<h5>Header 5 <small>small text</small></h5>
-<h6>Header 6 <small>small text</small></h6>
+1. copy of the residence contract
+2. disclosure statement
+3. financial statements presented at the last Annual Meeting of the village and a written statement of any subsequent changes in the affairs of the village and the operator (which may significantly affect your decision to enter the village)
+4. copy of the minutes of the last two annual meetings of the village
+5. copy of the residence rules
+6. the operator’s remarketing policy
+7. any code of conduct applicable
+8. any other documents prescribed by the regulations (see [Retirement Villages Act 2016](#) )
+It is common for a retirement village operator to provide all of the above documents in one bundle or in a folder. Of those documents, the first two are often the most important.
 
----
+## The residence contract
 
-# H1. The Quick Brown Fox Jumps Over the Lazy Dog
+This is the contract which sets out all of your and the operator’s rights and obligations with respect to your occupation of the residence. The contract is required by law to contain certain information including:
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
+* details about the residence being occupied
+* the name and contact details of the operator
+* the right to cool-off
+* the right to occupy the residence
+* recurrent charges which you will be liable for
+* additional services and facilities available to residents of the retirement village and the costs associated with those services and facilities
+* the right to terminate the right to occupy and receive an exit entitlement
+* the operator’s dispute resolution policy
+details regarding who will be responsible for repairing or replacing the fixtures, fittings and furnishings in the residence
 
-## H2. The Quick Brown Fox Jumps Over the Lazy Dog
+## The disclosure statement in retirement village contracts
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
+The disclosure statement summarises key information contained in the residence contract, including all fees and charges, how the operator uses those fees and charges, any utilities, services or facilities provided by the operator and how the resident’s exit entitlement is calculated and paid.
 
-### H3. The Quick Brown Fox Jumps Over the Lazy Dog
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
-
-#### H4. The Quick Brown Fox Jumps Over the Lazy Dog
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
-
-##### H5. The Quick Brown Fox Jumps Over the Lazy Dog
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
-
-###### H6. The Quick Brown Fox Jumps Over the Lazy Dog
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor
-
----
-
-# H1. The Quick Brown Fox Jumps Over the Lazy Dog
-
-## H2. The Quick Brown Fox Jumps Over the Lazy Dog
-
-### H3. The Quick Brown Fox Jumps Over the Lazy Dog
-
-#### H4. The Quick Brown Fox Jumps Over the Lazy Dog
-
-##### H5. The Quick Brown Fox Jumps Over the Lazy Dog
-
-###### h6. The Quick Brown Fox Jumps Over the Lazy Dog
-
----
-
-<h1 class="subheader">Subheader 1</h1>
-<h2 class="subheader">Subheader 2</h2>
-<h3 class="subheader">Subheader 3</h3>
-<h4 class="subheader">Subheader 4</h4>
-<h5 class="subheader">Subheader 5</h5>
-<h6 class="subheader">Subheader 6</h6>
+After entering into occupation of the residence, the operator is required to complete a premises condition report, which provides detailed information about the condition of the fixtures, fittings and furnishings, and any other information as prescribed by the law from time to time. Both the operator and yourself are required to sign the premises condition report.

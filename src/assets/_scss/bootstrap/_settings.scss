@@ -163,7 +163,7 @@ $spacer: rem-calc(20); //1rem !default;
 // // Settings for the `<body>` element.
 
 // $body-bg:                   $white !default;
-$body-color:                #393a3a; //$gray-900 !default;
+$body-color:                #535252; //#393a3a; //$gray-900 !default;
 
 
 // // Links
@@ -306,13 +306,12 @@ $font-family-sans-serif:      "Montserrat", -apple-system, BlinkMacSystemFont, "
 // $font-size-sm:                ($font-size-base * .875) !default;
 
 // $font-weight-lighter:         lighter !default;
-// $font-weight-light:           300 !default;
-// $font-weight-normal:          400 !default;
-$font-weight-semibold:        500; //700 !default; // LV added - phase out
-// $font-weight-bold:            700 !default;
-// $font-weight-bolder:          bolder !default;
+$font-weight-light:           400; //300 !default;
+$font-weight-normal:          500; //400 !default;
+$font-weight-bold:            600; //700 !default;
+$font-weight-bolder:          700; //bolder !default;
 
-// $font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            $font-weight-normal !default;
 // $line-height-base:            1.5 !default;
 
 $h1-font-size:                rem-calc(41); //$font-size-base * 2.5 !default;
@@ -324,7 +323,7 @@ $h6-font-size:                rem-calc(15); //$font-size-base !default;
 
 // $headings-margin-bottom:      $spacer / 2 !default;
 // $headings-font-family:        inherit !default;
-$headings-font-weight:        700; //500 !default;
+$headings-font-weight:        $font-weight-bolder; //500 !default;
 // $headings-line-height:        1.2 !default;
 // $headings-color:              inherit !default;
 
@@ -333,16 +332,16 @@ $display2-size:               rem-calc(34); //5.5rem !default;
 $display3-size:               rem-calc(29); //4.5rem !default;
 $display4-size:               rem-calc(18); //3.5rem !default;
 
-$display1-weight:             700; //300 !default;
+$display1-weight:             $font-weight-bolder; //300 !default;
 // $display2-weight:             300 !default;
 // $display3-weight:             300 !default;
 // $display4-weight:             300 !default;
 // $display-line-height:         $headings-line-height !default;
 
 $lead-font-size:              rem-calc(26); //($font-size-base * 1.25) !default;
-// $lead-font-weight:            300 !default;
+$lead-font-weight:            $font-weight-light; //300 !default;
 
-// $small-font-size:             80% !default;
+$small-font-size:             85%; //80% !default;
 
 // $text-muted:                  $gray-600 !default;
 
@@ -417,9 +416,9 @@ $input-btn-padding-x:         rem-calc(26); //.75rem !default;
 // $input-btn-font-size-sm:      $font-size-sm !default;
 // $input-btn-line-height-sm:    $line-height-sm !default;
 
-// $input-btn-padding-y-lg:      .5rem !default;
-// $input-btn-padding-x-lg:      1rem !default;
-// $input-btn-font-size-lg:      $font-size-lg !default;
+$input-btn-padding-y-lg:      rem-calc(22); //.5rem !default;
+$input-btn-padding-x-lg:      rem-calc(35); //1rem !default;
+$input-btn-font-size-lg:      rem-calc(18); ////$font-size-lg !default;
 // $input-btn-line-height-lg:    $line-height-lg !default;
 
 // $input-btn-border-width:      $border-width !default;
@@ -472,7 +471,7 @@ $btn-active-box-shadow:       none; //inset 0 3px 5px rgba($black, .125) !defaul
 // $input-padding-y:                       $input-btn-padding-y !default;
 $input-padding-x:                       rem-calc(20); //$input-btn-padding-x !default;
 // $input-font-size:                       $input-btn-font-size !default;
-$input-font-weight:                     $font-weight-semibold;//$font-weight-base !default;
+// $input-font-weight:                     $font-weight-base !default;
 // $input-line-height:                     $input-btn-line-height !default;
 
 // $input-padding-y-sm:                    $input-btn-padding-y-sm !default;

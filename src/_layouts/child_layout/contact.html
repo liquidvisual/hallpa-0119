@@ -1,11 +1,97 @@
 ---
-layout: base__page_sidebar
+layout: base__page_sidebar_8x4
 ---
 
 {% assign settings = site.data.settings %}
 
-{% include components/forms/form_contact.html %}
+<!-- SECTION -->
+<section class="section">
 
+    <!-- GRID -->
+    <ul class="block-grid-xs-1 block-grid-md-2 is-condensed">
+        {% for i in (1..7) %}
+            <li>
+                <div class="sidebox">
+                    <h3 class="sidebox-header h5 text-uppercase mb-3">Brisbane <small>(Head Office)</small></h3>
+                    <div class="sidebox-body">
+
+                        <!-- ADDRESS -->
+                        <p class="mb-3">
+                            <div class="d-inline-flex align-items-start">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span class="text">Ground Floor, 16 Ellenborough Street<br> Ipswich QLD, 4305</span>
+                            </div>
+                        </p>
+
+                        <div class="row">
+                            <div class="col-xxl-6">
+
+                                <!-- PHONE -->
+                                <p class="mb-3">
+                                    <a class="d-inline-flex align-items-center" href="tel:0732810322">
+                                        <i class="fa fa-phone mr-2"></i>
+                                        <span class="text">(07) 3017 2400</span>
+                                    </a>
+                                </p>
+
+                                <!-- FAX -->
+                                <p class="mb-3">
+                                    <a class="d-inline-flex align-items-center" href="#/LINK-HERE">
+                                        <i class="fa fa-fax mr-2"></i>
+                                        <span class="text">(07) 3017 2499</span>
+                                    </a>
+                                </p>
+
+                            </div>
+                            <div class="col-xxl-6">
+
+                                <!-- VIEW MAP -->
+                                <p class="mb-3">
+                                    <a class="d-inline-flex align-items-center" href="/contact/contact-item/">
+                                        <i class="fa fa-map mr-2"></i>
+                                        <span class="text">View map <i class="fa fa-angle-right"></i></span>
+                                    </a>
+                                </p>
+
+                                <!-- GET DIRECTIONS -->
+                                <p class="mb-3">
+                                    <a class="d-inline-flex align-items-center" href="mailto:vanessa@hallpayne.com.au">
+                                        <i class="fa fa-location-arrow mr-2"></i>
+                                        <span class="text">Get directions <i class="fa fa-angle-right"></i></span>
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+{% contentfor sidebar %}
+
+    <!-- REQUEST A CALLBACK -->
+    <section class="section pl-4">
+        <div class="pl-3">
+
+            <!-- HEADING -->
+            <h3 class="d-flex text-white mb-4">
+                <i class="fa fa-comments-o mr-2"></i> Request a callback
+            </h3>
+
+            {% include form_contact.html %}
+        </div>
+    </section>
+{% endcontentfor %}
+
+
+{% comment %}
+{% include components/forms/form_contact.html %}
 
 {% contentfor sidebar %}
 
@@ -37,3 +123,4 @@ layout: base__page_sidebar
 {% contentfor content_additional %}
     {% include components/widgets/google_map.html id="google-map" %}
 {% endcontentfor %}
+{% endcomment %}

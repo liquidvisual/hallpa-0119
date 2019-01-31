@@ -3,13 +3,21 @@ layout: base__page
 ---
 
 {% contentfor hero_caption %}
-	<h1 class="display-1 text-uppercase mb-4">{{ page.title }}</h1>
 
-	<p class="display-3">Choosing the right law firm is the first and most crucial step in achieving the best legal outcome possible.</p>
+	<!-- HEADING -->
+	<h1 class="display-1 text-white text-uppercase mb-4">
+		{{ page.title }}
+	</h1>
+
+	<!-- LEAD -->
+	<p class="display-3">
+		Choosing the right law firm is the first and most crucial step in achieving the best legal outcome possible.
+	</p>
 
 	<div class="spacer mb-4"></div>
 
-	<div class="display-4">
+	<!-- WYSIWYG -->
+	<div class="wysiwyg display-4">
 		Hall Payne understands the legal process can be unfamiliar and stressful. For more than 25 years we have been there for everyday Australians after work accidents or injury, for unions fighting to protect member rights, and for families going through change or upheaval.
 		<br>
 		<br>
@@ -18,9 +26,10 @@ layout: base__page
 
 	<div class="spacer my-3"></div>
 
-	<div class="mb-1"><a href="/our-people/" class="btn btn-block btn-secondary">Our People <i class="fa fa-angle-right"></i></a></div>
-	<div class="mb-1"><a href="#/link-here/" class="btn btn-block btn-secondary">Why Switch? <i class="fa fa-angle-right"></i></a></div>
-	<div class="mb-1"><a href="#/link-here/" class="btn btn-block btn-secondary">Community Work <i class="fa fa-angle-right"></i></a></div>
+	<!-- CTAS -->
+	<div><a href="/our-people/" class="btn btn-hero btn-block btn-secondary">Our People <i class="fa fa-angle-right"></i></a></div>
+	<div><a href="#/link-here/" class="btn btn-hero btn-block btn-secondary">Why Switch? <i class="fa fa-angle-right"></i></a></div>
+	<div><a href="#/link-here/" class="btn btn-hero btn-block btn-secondary">Community Work <i class="fa fa-angle-right"></i></a></div>
 
 {% endcontentfor %}
 
@@ -51,42 +60,3 @@ layout: base__page
 </section>
 
 {% include sections/section_contact.html %}
-
-{% comment %}
-
-
-<!-- <h3 class="text-center my-5">Everything has moved to <a href="/sections/">Sections</a></h3> -->
-
-<!-- MEDIA ARTICLE -->
-{% capture item %}{% include components/media/media_article.html %}{% endcapture %}
-{% include sections/section.html content_block=item %}
-
-<!-- GALLERY -->
-{% capture item %}{% include components/media/gallery.html %}{% endcapture %}
-{% include sections/section.html content_block=item %}
-
-<!-- CARDS -->
-{% capture item %}{% include components/cards/cards.html %}{% endcapture %}
-{% include sections/section.html content_block=item %}
-
-<!-- CARDS SLIDER -->
-{% capture item %}{% include components/cards/cards__slider.html %}{% endcapture %}
-{% include sections/section.html content_block=item %}
-
-<!-- CARDS SLIDER -->
-{% capture item %}{% include components/cards/cards__tabs.html %}{% endcapture %}
-{% include sections/section_center.html content_block=item %}
-
-<!-- AFFILIATES -->
-{% capture item %}{% include components/media/affiliates.html %}{% endcapture %}
-{% include sections/section_center.html content_block=item %}
-
-<!-- MEDIA LIGHTBOX -->
-{% capture item %}{% include components/media/media_lightbox.html %}{% endcapture %}
-{% include sections/section_split.html content_block=item %}
-
-<!-- CONTACT FORM -->
-{% capture item %}{% include components/forms/form_contact.html %}{% endcapture %}
-{% include sections/section.html content_block=item %}
-
-{% endcomment %}

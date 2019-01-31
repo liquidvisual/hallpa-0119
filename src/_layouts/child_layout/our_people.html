@@ -2,42 +2,104 @@
 layout: base__page
 ---
 
-{% contentfor hero_caption %}
-	<h1 class="display-1 text-uppercase mb-4">{{ page.title }}</h1>
-	<p class="display-3">We are home to some of Australia’s leading lawyers, with trusted specialists in the areas you need. Hall Payne is big enough to offer you the depth and breadth of expertise you would expect at a large legal firm – but small enough to provide the personalised, prompt and friendly service we’re known for.</p>
-{% endcontentfor %}
+<script>
+	var staff = [
+	   { name: 'John Payne', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/john-payne@2x.jpg' },
+	   { name: 'Cameron Hall', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/cameron-hall@2x.jpg' },
+	   { name: 'Luke Forsyth', position: 'Principal', location: 'NSW', image: '/assets/img/content/people/luke-forsyth@2x.jpg' },
+	   { name: 'Linda Brangan', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/linda-brangan@2x.jpg' },
+	   { name: 'Luke Tiley', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/luke-tiley@2x.jpg' },
+	   { name: 'Cale Fryer', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/cale-fryer@2x.jpg' },
+	   { name: 'Joseph Kennedy', position: 'Principal', location: 'NSW', image: '/assets/img/content/people/joseph-kennedy@2x.jpg' },
+	   { name: 'Kalina Pyra', position: 'Senior Associate', location: 'QLD', image: '/assets/img/content/people/kalina-pyra@2x.jpg' },
+	   { name: 'Claire Gabriel', position: 'Senior Associate', location: 'QLD', image: '/assets/img/content/people/claire-gabriel@2x.jpg' },
+	   { name: 'Megan Stanley', position: 'Senior Associate', location: 'QLD', image: '/assets/img/content/people/megan-stanley@2x.jpg' },
+	   { name: 'Juliana Virine', position: 'Senior Associate', location: 'QLD', image: '/assets/img/content/people/juliana-virine@2x.jpg' },
+	   { name: 'Indi Gunadasa', position: 'Associate', location: 'TAS', image: '/assets/img/content/people/indi-gunadasa@2x.jpg' },
+	   { name: 'Kym Greinke', position: 'Associate', location: 'QLD', image: '/assets/img/content/people/kym-greinke@2x.jpg' },
+	   { name: 'Andrew Smith', position: 'Solicitor', location: 'NT', image: null },
+	   { name: 'Gary Su', position: 'Solicitor', location: 'QLD', image: null },
+	   { name: 'Jessica Hodge', position: 'Solicitor', location: 'QLD', image: null },
+	   { name: 'Jamie Byrne', position: 'Solicitor', location: 'QLD', image: null },
+	   { name: 'Syvannah Harper', position: 'Solicitor', location: 'NSW', image: null },
+	   { name: 'Shirley Baker', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/shirley-baker@2x.jpg' },
+	   { name: 'Ellie Bassingthwaighte', position: 'Solicitor', location: 'QLD', image: null },
+	   { name: 'Kris Birch', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/kris-birch@2x.jpg' },
+	   { name: 'Dale Blackmore', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/dale-blackmore@2x.jpg' },
+	   { name: 'Vanessa Brown', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/vanessa-brown@2x.jpg' },
+	   { name: 'Elliott Dalgleish', position: 'Solicitor', location: 'QLD', image: null },
+	   { name: 'Paul Spoto', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/paul-spoto@2x.jpg' },
+	   { name: 'Leanne Taylor', position: 'Registered Migration Agent', location: 'QLD', image: '/assets/img/content/people/leanne-taylor@2x.jpg' },
+
+	];
+</script>
 
 <!-- SECTION -->
-<section class="section">
+<section id="vue-staff-app" class="section">
 	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-md-8 pr-md-4">
 
-		<ul class="block-grid-xs-1 block-grid-md-2 block-grid-lg-4 block-grid-xl-5 mb-5">
-			{% for item in (1..14) %}
-				<li>
-					<!-- CARD -->
-					<div class="card is-flat">
+				<!-- LEAD -->
+				<p class="lead mb-4">
+					{{ page.lead }}
+				</p>
 
-						<!-- IMAGE -->
-						<a class="btn-tile" href="/our-people/our-people-item/">
-							<img width="100%" class="card-img-top" src="/assets/img/ui/no-face.png" alt="{{ item.title }}">
-							<span class="btn-tile-bg" style="background-image: url('/assets/img/ui/no-face.png')"></span>
+				<!-- WYSIWYG -->
+				<div class="wysiwyg mb-4 mb-md-0">
+					{{ content | markdownify }}
+				</div>
+
+			</div>
+			<div class="col-md-4 pl-md-5">
+
+				<!-- FORM SORT SELECT -->
+				<div class="form-sort-select d-flex align-items-center ml-xxl-5">
+					<span class="text">Sort by:</span>
+					<sort-select
+						v-model="sortOrder"
+						:sort-options="sortOptions">
+					</sort-select>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="spacer mb-3 mb-md-5"></div>
+
+		<!-- OUTPUT -->
+		<ul class="block-grid-xs-1 block-grid-md-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5">
+			<li v-for="(item, index) in sort(sortOrder)"
+				:key="index">
+
+				<!-- CARD -->
+				<div class="card is-flat">
+
+					<!-- IMAGE -->
+					<a class="btn-tile" href="/our-people/our-people-item/">
+						<img width="100%" class="card-img-top" src="/assets/img/ui/no-face.png" :alt="item.name">
+						<span v-if="!item.image" class="btn-tile-bg" style="background-image: url('/assets/img/ui/no-face.png')"></span>
+						<span v-if="item.image" class="btn-tile-bg" :style="{ backgroundImage: 'url(' + item.image +')' }"></span>
+					</a>
+
+					<!-- CARD BODY -->
+					<div class="card-body d-flex flex-column">
+
+						<!-- TITLE -->
+						<a href="/our-people/our-people-item/">
+							<h3 class="h5 text-uppercase card-title mb-1" v-text="item.name"></h3>
 						</a>
 
-						<!-- CARD BODY -->
-						<div class="card-body d-flex flex-column">
+						<!-- POSITION + LOCATION -->
+						<p class="text-muted h6 font-weight-normal">
+							<span v-text="item.position + ', ' + item.location"></span>
+						</p>
 
-							<!-- TITLE -->
-							<a class="text-dark" href="/our-people/our-people-item/">
-								<h3 class="card-title h5 font-weight-semibold mb-1">Staff Name</h3>
-							</a>
-
-							<!-- POSITION -->
-							<p class="text-muted text-uppercase">Position</p>
-
-						</div>
 					</div>
-				</li>
-			{% endfor %}
+				</div>
+
+			</li>
 		</ul>
+
 	</div>
 </section>

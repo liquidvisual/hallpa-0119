@@ -26,6 +26,7 @@
 	<!-- CARD BODY -->
 	<div class="card-body d-flex flex-column">
 
+		{% comment %}
 		{% if item.categories %}
 			<!-- TAGS / CATEGORIES -->
 			<small class="d-block text-uppercase mb-2">
@@ -35,6 +36,7 @@
 				{% endfor %}
 			</small>
 		{% endif %}
+		{% endcomment %}
 
 		<!-- TITLE -->
 		<a class="text-dark" href="{{ item.url }}">

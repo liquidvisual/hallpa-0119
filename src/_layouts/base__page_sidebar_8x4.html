@@ -2,23 +2,30 @@
 layout: base
 ---
 
-{% include {{ page.hero | default: 'components/hero/hero_static.html' }} align_caption=page.hero_caption_align options=page.hero_options data=page.hero_data %}
+{% assign hero_options = page.hero_options | default: 'is-short' %}
+
+{% include components/hero/hero_static.html
+	bg_image=page.hero_image
+	options=hero_options
+%}
 
 {% if page.breadcrumbs %}
 	{% include components/navigation/breadcrumbs.html %}
 {% endif %}
 
-<!-- BODY -->
+<!-- MAIN BODY -->
 <main class="main-body">
 	<div class="container">
 	    <div class="row">
-	        <div class="col-lg-9 pr-lg-4">
-	        	<div class="section-content card">
-	        		{{ content }}
-	        	</div>
+	        <div class="col-lg-8">
+	        	{{ content }}
 	        </div>
-	        <div class="col-lg-3 pl-lg-3">
+	        <div class="col-lg-4">
 				<aside class="sidebar">
+
+					<!-- BG FILL -->
+					<div class="bg-fill"></div>
+
 					{% contentblock sidebar no-convert %}
 				</aside>
 	        </div>

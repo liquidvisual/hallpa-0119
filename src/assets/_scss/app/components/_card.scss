@@ -19,9 +19,9 @@
     }
 
     time {
-        color: rgba(white, 0.25);
+        color: #cdcbcb;
         font-size: rem-calc(14); // what controls this?
-        font-weight: 600; // TODO: $font-weight-semibold;
+        font-weight: $font-weight-bold;
     }
 
     &.is-flat {
@@ -30,6 +30,24 @@
     	.card-body {
     		padding: rem-calc(30 15 0 0);
     	}
+    }
+
+    .card-title .fa-angle-right {
+        position: relative;
+        top: 2px;
+        font-size: rem-calc(30);
+        line-height: 0;
+        color: #b0b9c5;
+    }
+}
+
+//-----------------------------------------------------------------
+// CONTEXT
+//-----------------------------------------------------------------
+
+.is-primary .card {
+    time {
+        color: rgba(white, 0.25);
     }
 }
 

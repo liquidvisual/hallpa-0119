@@ -64,6 +64,11 @@
     &.is-dark {
         color: white;
 
+        h1, h2, h3, h4, h5, h6,
+        .btn {
+            color: white;
+        }
+
         hr {
             border-color: rgba(white, 0.3);
         }
@@ -81,6 +86,11 @@
                 color: white;
             }
         }
+    }
+
+    &.is-secondary {
+        background: $secondary;
+        color: white;
     }
 }
 
@@ -133,6 +143,34 @@
     &.is-parallax {
         > .container {
             position: relative; // allow parallax to slink behind
+        }
+    }
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.section-cta {
+
+    .fa-question-circle {
+        margin-right: rem-calc(44);
+        font-size: rem-calc(80);
+        opacity: 0.4;
+
+        @include media-breakpoint-down(md) {
+            min-width: rem-calc(50);
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem-calc(125);
+        }
+    }
+
+    .btn .fa {
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem-calc(32);
         }
     }
 }

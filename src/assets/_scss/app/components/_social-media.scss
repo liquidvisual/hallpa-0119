@@ -97,6 +97,8 @@
 }
 
 .global-footer .social-media a {
+	font-size: rem-calc(24); // [LOCKED] - override
+
 	@include media-breakpoint-up(md) {
 	    margin: rem-calc(0 0 10 10);
 	}

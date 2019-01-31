@@ -82,7 +82,7 @@ $hero-height-presets: (
     // height: 100%;
     // min-height: rem-calc(540); // curated
     padding: rem-calc(45 0); //rem-calc(100 0);
-    background-color: $primary;
+    // background-color: $primary;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -145,7 +145,8 @@ $hero-height-presets: (
     color: white;
     z-index: 1; // [LOCKED] - above tint
 
-    h1 {
+    h1,
+    .display-1 {
         max-width: rem-calc(600); // [LOCKED] - psd thing
     }
 

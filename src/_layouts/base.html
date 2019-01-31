@@ -13,7 +13,11 @@
     </title>
 
     <!-- CDN -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700">
+
+    <!-- build:js({src,.}) /assets/scripts/vue.js -->
+    <script src="/node_modules/vue/dist/vue{% unless site.environment == 'development' %}.min{% endunless %}.js"></script>
+    <!-- endbuild -->
 
     <!-- build:css({src,.tmp}) /assets/css/minified.css -->
     <link rel="stylesheet" href="/css/main.css">
@@ -22,7 +26,7 @@
 <body>
     {% include components/layout/loader.html %}
 
-    <div class="lv-page">
+    <div class="lv-page developerX">
 
         <!-- HEADER -->
         <header class="global-header">
@@ -73,6 +77,7 @@
     <script src="/assets/scripts/hero-slider.js"></script>
     <script src="/assets/scripts/off-canvas.js"></script>
     <script src="/assets/scripts/search.js"></script>
+    <script src="/assets/scripts/vue-people-sort.js"></script>
     <script src="/assets/scripts/main.js"></script>
     <!-- endbuild -->
 

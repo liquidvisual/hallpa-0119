@@ -2,15 +2,43 @@
 layout: base
 ---
 
-{% include components/hero/hero.html align_caption="center" options=page.hero_options data=page.hero_data %}
+{% include components/hero/hero.html
+	data=page.hero_slides
+	options=page.hero_options
+%}
 
-<!-- BODY -->
+<!-- MAIN BODY -->
 <main class="main-body">
 
-	<!-- CARDS -->
+	<!-- NEED LEGAL ADVICE? -->
+	<section class="section section-cta is-secondary py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-7 col-xl-7 d-flex align-items-md-center">
+
+					<!-- ICON -->
+					<i class="d-block fa fa-question-circle mb-3"></i>
+
+					<!-- CONTENT -->
+					<div class="mb-4">
+						<h2 class="text-white text-uppercase">Need Legal Advice?</h2>
+						<p class="h4 font-weight-normal mb-0">We have 9 offices across Queensland, New South Wales, Tasmania and Northern Territory.</p>
+					</div>
+
+				</div>
+				<div class="col-md-5 col-xl-5">
+					<div class="text-center text-md-right mr-md-4">
+						<a href="/contact/" class="btn btn-lg btn-primary">Find your local office <i class="fa fa-angle-right ml-4"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- LATEST FROM THE BLOG -->
 	<section class="section is-primary">
 		<div class="container">
-			<h2 class="text-uppercase text-center mb-5">Latest from the Blog</h2>
+			<h2 class="text-white text-uppercase text-center mb-5">Latest from the Blog</h2>
 			{% include components/cards/cards.html flat="true" columns=4 %}
 			<p class="text-center mb-0">
 				<a href="#" class="btn btn-secondary">More Blog Articles &nbsp;<i class="fa fa-angle-right"></i></a>
@@ -19,76 +47,5 @@ layout: base
 	</section>
 
 	{% include sections/section_contact.html %}
-
-
-
-{% comment %}
-
-
-	<!-- MEDIA ARTICLE -->
-	{% capture item %}{% include components/media/media_article.html %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- CARDS -->
-	{% capture item %}{% include components/cards/cards.html columns=4 %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- CARDS SLIDER -->
-	{% capture item %}{% include components/cards/cards__slider.html columns=4 %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- CARDS TABS -->
-	{% capture item %}{% include components/cards/cards__tabs.html columns=4 %}{% endcapture %}
-	{% include sections/section_center.html content_block=item %}
-
-	<!-- ACCORDION -->
-	{% capture item %}{% include components/content/accordion.html uid="faq" data=site.data.faq %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- AUDIO -->
-	{% capture item %}{% include components/media/audio_player.html %}{% endcapture %}
-	{% include sections/section_split.html content_block=item %}
-
-	<!-- GALLERY -->
-	{% capture item %}{% include components/media/gallery.html data=site.data.gallery %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- GALLERY CONDENSED -->
-	{% capture item %}{% include components/media/gallery.html options="is-condensed" data=site.data.gallery %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- GALLERY -->
-	{% capture item %}{% include components/media/gallery.html data=site.data.gallery %}{% endcapture %}
-	{% include sections/section_full.html content_block=item %}
-
-	<!-- GALLERY GAPLESS -->
-	{% capture item %}{% include components/media/gallery.html options="is-gapless" data=site.data.gallery %}{% endcapture %}
-	{% include sections/section_full.html content_block=item %}
-
-	<!-- MEDIA LIGHTBOX -->
-	{% capture item %}{% include components/media/media_lightbox.html data=site.data.gallery_single %}{% endcapture %}
-	{% include sections/section_split.html content_block=item %}
-
-	<!-- MEDIA LIGHTBOX -->
-	{% capture item %}{% include components/media/media_lightbox.html data=site.data.gallery_single %}{% endcapture %}
-	{% include sections/section_split_reversed.html content_block=item %}
-
-	<!-- CARDS -->
-	{% capture item %}{% include components/cards/cards.html %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- CARDS SLIDER -->
-	{% capture item %}{% include components/cards/cards__slider.html %}{% endcapture %}
-	{% include sections/section.html content_block=item %}
-
-	<!-- CARDS TABS -->
-	{% capture item %}{% include components/cards/cards__tabs.html %}{% endcapture %}
-	{% include sections/section_center.html content_block=item %}
-
-	<!-- AFFILIATES -->
-	{% capture item %}{% include components/media/affiliates.html %}{% endcapture %}
-	{% include sections/section_center.html content_block=item %}
-
-	{% endcomment %}
 
 </main>

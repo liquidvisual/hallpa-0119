@@ -5,7 +5,7 @@ layout: base__page
 {% assign areas_of_practice = site.data.sitemap[3].children %}
 
 {% contentfor hero_caption %}
-	<h1 class="display-1 text-uppercase mb-4">{{ page.title }}</h1>
+	<h1 class="display-1 text-white text-uppercase mb-4">{{ page.title }}</h1>
 	<p class="display-3">With a local focus, tapping in to a network of specialist lawyers nationally, Hall Payne Lawyers offers a comprehensive range of professional services for individuals, families, small to medium enterprises, community and member organisations.</p>
 {% endcontentfor %}
 
@@ -14,8 +14,33 @@ layout: base__page
     <div class="container">
         <div class="row">
             {% for item in areas_of_practice %}
-                <div class="col-md-6 col-lg-4 mb-5">
-                    {% include components/cards/card.html flat=true %}
+                <div class="col-md-6 col-lg-4 mb-4">
+
+                    <!-- CARD -->
+                    <div class="card h-100 is-flat">
+
+                        <!-- IMAGE -->
+                        <a class="btn-tile" href="{{ item.url }}">
+                            <img width="100%" class="card-img-top" src="/assets/img/layout/thumb-sizer--440x180.svg" alt="{{ item.title }}">
+                            <span class="btn-tile-bg" style="background-image: url({{ item.image }})"></span>
+                        </a>
+
+                        <!-- CARD BODY -->
+                        <div class="card-body d-flex flex-column">
+
+                            <!-- TITLE -->
+                            <a class="mb-1" href="{{ item.url }}">
+                                <h3 class="h4 card-title text-uppercase text-primary">{{ item.title }} <i class="fa fa-angle-right"></i></h3>
+                            </a>
+
+                            <!-- TEXT -->
+                            <div class="card-text mb-2">
+                                {{ item.description | markdownify }}
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             {% endfor %}
         </div>
