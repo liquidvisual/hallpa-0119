@@ -3,7 +3,7 @@ layout: base__page
 ---
 
 <script>
-	var staff = [
+	var staffList = [
 	   { name: 'John Payne', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/john-payne@2x.jpg', url: '/our-people/our-people-item/' },
 	   { name: 'Cameron Hall', position: 'Principal', location: 'QLD', image: '/assets/img/content/people/cameron-hall@2x.jpg', url: '/our-people/our-people-item/' },
 	   { name: 'Luke Forsyth', position: 'Principal', location: 'NSW', image: '/assets/img/content/people/luke-forsyth@2x.jpg', url: '/our-people/our-people-item/' },
@@ -65,10 +65,12 @@ layout: base__page
 			</div>
 		</div>
 
+		<!-- SPACER -->
 		<div class="spacer mb-3 mb-md-5"></div>
 
 		<!-- OUTPUT -->
-		<ul class="block-grid-xs-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5">
+		<ul class="block-grid-xs-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5" v-cloak>
+
 			<li v-for="(item, index) in sort(sortOrder)"
 				:key="index">
 
@@ -97,9 +99,7 @@ layout: base__page
 
 					</div>
 				</div>
-
 			</li>
 		</ul>
-
 	</div>
 </section>

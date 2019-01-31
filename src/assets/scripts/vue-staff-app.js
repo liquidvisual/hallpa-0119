@@ -83,12 +83,12 @@ new Vue({
     },
     created() {
         // roll through list and create 'last name' prop
-        for (var i=0; i<staff.length; i++) {
-            var obj = staff[i];
+        for (var i=0; i<staffList.length; i++) {
+            var obj = staffList[i];
             obj.lastName = this.getLastName(obj.name);
         }
         // init
-        this.list = staff;
+        this.list = staffList;
     },
     methods: {
         sort(sortOrder){
