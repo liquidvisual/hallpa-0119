@@ -12,7 +12,13 @@
 
 .sidebar {
     position: relative;
-    height: 100%;
+    height: 100%; // [LOCKED]
+
+    @include media-breakpoint-down(md) {
+        max-width: none !important; // override inline style
+        left: -20px;
+        width: calc(100% + 40px);
+    }
 
     .bg-fill {
         position: absolute;
@@ -24,6 +30,72 @@
         z-index: -1;
     }
 }
+
+//-----------------------------------------------------------------
+// SIDE NAV
+//-----------------------------------------------------------------
+
+.side-nav {
+
+    li {
+        border-bottom: 1px solid rgba(black, 0.15);
+    }
+
+    a,
+    .anchor {
+        display: flex;
+        align-items: center;
+        padding: rem-calc(20 22 20 22);
+        font-size: rem-calc(20);
+        font-weight: $font-weight-bolder;
+        color: white;
+
+        @include media-breakpoint-up(md) {
+            padding: rem-calc(20 22 20 44);
+        }
+
+        .fa-angle-right {
+            margin-left: auto;
+            font-size: rem-calc(34);
+            line-height: 0;
+        }
+    }
+
+    .active {
+        border-bottom: 1px solid rgba(black, 0.05);
+        background: rgba(black, 0.1);
+    }
+
+    .side-nav-header {
+        border-top: 1px solid rgba(black, 0.15);
+
+        a,
+        .anchor {
+            font-size: rem-calc(23);
+            padding: rem-calc(30 22 30 22);
+
+            @include media-breakpoint-up(md) {
+                padding: rem-calc(30 22 30 44);
+            }
+
+            .fa-align-left {
+                margin-right: rem-calc(15);
+                font-size: rem-calc(45);
+                color: rgba(white, 0.3);
+                line-height: 0;
+            }
+        }
+    }
+
+    .side-nav-header.active {
+        border-top: 1px solid rgba(black, 0.05);
+    }
+
+    a:hover {
+        background: rgba(black, 0.02);
+    }
+}
+
 //-----------------------------------------------------------------
 // SIDEBOX
 //-----------------------------------------------------------------
@@ -75,62 +147,6 @@
 		.block-grid-item {
 		padding: rem-calc(10);
 	}
-}
-//-----------------------------------------------------------------
-// SIDE NAV
-//-----------------------------------------------------------------
-
-.side-nav {
-
-    li {
-        border-bottom: 1px solid rgba(black, 0.15);
-    }
-
-    a,
-    .anchor {
-        display: flex;
-        align-items: center;
-        padding: rem-calc(20 22 20 44);
-        font-size: rem-calc(20);
-        font-weight: $font-weight-bolder;
-        color: white;
-
-        .fa-angle-right {
-            margin-left: auto;
-            font-size: rem-calc(34);
-            line-height: 0;
-        }
-    }
-
-    .active {
-        border-bottom: 1px solid rgba(black, 0.05);
-        background: rgba(black, 0.1);
-    }
-
-    .side-nav-header {
-        border-top: 1px solid rgba(black, 0.15);
-
-        a,
-        .anchor {
-            font-size: rem-calc(23);
-            padding: rem-calc(30 22 30 44);
-
-            .fa-align-left {
-                margin-right: rem-calc(15);
-                font-size: rem-calc(45);
-                color: rgba(white, 0.3);
-                line-height: 0;
-            }
-        }
-    }
-
-    .side-nav-header.active {
-        border-top: 1px solid rgba(black, 0.05);
-    }
-
-    a:hover {
-        background: rgba(black, 0.02);
-    }
 }
 
 //-----------------------------------------------------------------

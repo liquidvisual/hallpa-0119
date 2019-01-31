@@ -11,10 +11,6 @@ lead: |
   “It’s rewarding to see people develop confidence and control after a family breakdown.”
 ---
 
-<div class="lead">
-
-</div>
-
 Vanessa Brown joined Hall Payne in 2008 with almost two decades experience as a principal lawyer in Brown & Baker lawyers in Ipswich. Her strong reputation in family law, succession law, and wills and estates has been built on her track record of resolving disputes at the earliest opportunity.
 
 Vanessa says she enjoys seeing people’s perspective turnaround after they approach her for advice. “When people first come to me they can be wary and distrustful of the process,” she says. “It’s rewarding to see them develop confidence and regain control of their futures after a family breakdown.”

@@ -38,6 +38,14 @@
     }
 }
 
+[class*="block-grid-"].is-condensed-more {
+    margin: rem-calc(-5);
+
+    li {
+        padding: rem-calc(5);
+    }
+}
+
 [class*="block-grid-"].is-gapless {
     margin: 0;
 

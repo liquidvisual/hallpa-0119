@@ -2,24 +2,37 @@
 layout: base__page_sidebar_7x5
 ---
 
+{% assign law_team = site.data.staff %}
 {% assign nav_items = site.data.sitemap[3].children[0].children %}
 
 <!-- SECTION -->
 <section class="section">
 
 	<!-- LEAD -->
-	<p class="lead">
+	<p class="lead mb-4">
 		{{ page.lead }}
 	</p>
 
 	<!-- WYSIWYG -->
-	<div class="wysiwyg">
+	<div class="wysiwyg mb-5">
 		{{ content | markdownify }}
 	</div>
 
-	<hr>
+	<hr class="mb-4 pb-1">
 
-	<h2 class="h4 mb-4">Our Personal Compensation Law Team</h2>
+	<!-- HEADING -->
+	<h4 class="mb-4 pb-1">
+		Our Personal Compensation Law Team
+	</h4>
+
+	<!-- LAW TEAM -->
+	<ul class="block-grid-xs-1 block-grid-md-3 block-grid-lg-2 block-grid-xxl-3 is-condensed-more">
+		{% for item in law_team %}
+			<li>
+				{% include components/media/media_btn.html %}
+			</li>
+		{% endfor %}
+	</ul>
 
 </section>
 

@@ -9,20 +9,6 @@ breadcrumbs: true
 
 In an early blog post we explained [what you needed to know before moving into a retirement village](#). This article provides more detail about the rights you have and need to be aware of before signing a retirement village contract.
 
-## Your retirement village rights include:
-
-* receiving information up-front about the residence, the operator of the retirement village, and the terms and conditions which will apply if you occupy the residence.
-
-* the payments you are required to make initially and throughout the period you occupy the retirement village residence.
-
-* the right to “cool-off” at any time within 10 business days of signing a residence contract.
-
-* what happens when you leave the retirement village or die.
-
-The law concerning retirement villages is found in the Retirement Villages Act 2016 (“the Act”).
-
-The Act replaced the old Retirement Villages Act 1987 on 8 August 2017 and came into operation on 1 January 2018.
-
 ## Required documents before you sign a retirement village contract:
 
 Before entering into a retirement village, the operator is required to give you the following documentation at least 10 business days before you sign a residence contract:
@@ -56,3 +42,13 @@ details regarding who will be responsible for repairing or replacing the fixture
 The disclosure statement summarises key information contained in the residence contract, including all fees and charges, how the operator uses those fees and charges, any utilities, services or facilities provided by the operator and how the resident’s exit entitlement is calculated and paid.
 
 After entering into occupation of the residence, the operator is required to complete a premises condition report, which provides detailed information about the condition of the fixtures, fittings and furnishings, and any other information as prescribed by the law from time to time. Both the operator and yourself are required to sign the premises condition report.
+
+## H2. Heading Lorem Ipsum
+
+### H3. Heading Lorem Ipsum
+
+#### H4. Heading Lorem Ipsum
+
+##### H5. Heading Lorem Ipsum
+
+###### H6. Heading Lorem Ipsum

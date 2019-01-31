@@ -200,24 +200,25 @@ b, strong {
         opacity: 0;
         transition: opacity 300ms ease, background-color 300ms ease;
     }
+}
 
-    //=========================================
-    // HOVERS
-    //=========================================
+//-----------------------------------------------------------------
+// HOVERS
+//-----------------------------------------------------------------
 
-    &:hover {
-        @include media-breakpoint-up(xl) {
-            .btn-tile-bg {
-                transform: scale(1.05);
-            }
+.btn-tile:hover,
+a:hover .btn-tile {
+    @include media-breakpoint-up(xl) {
+        .btn-tile-bg {
+            transform: scale(1.05);
+        }
 
-            .btn-tile-bg:after {
-                transform: scale(1.08);
-            }
+        .btn-tile-bg:after {
+            transform: scale(1.08);
+        }
 
-            .btn-tile-overlay {
-                opacity: 1;
-            }
+        .btn-tile-overlay {
+            opacity: 1;
         }
     }
 }
