@@ -30,7 +30,6 @@ layout: base__page
 	   { name: 'Elliott Dalgleish', position: 'Solicitor', location: 'QLD', image: null, url: '/our-people/our-people-item/' },
 	   { name: 'Paul Spoto', position: 'Solicitor', location: 'QLD', image: '/assets/img/content/people/paul-spoto@2x.jpg', url: '/our-people/our-people-item/' },
 	   { name: 'Leanne Taylor', position: 'Registered Migration Agent', location: 'QLD', image: '/assets/img/content/people/leanne-taylor@2x.jpg', url: '/our-people/our-people-item/' },
-
 	];
 </script>
 
@@ -68,7 +67,7 @@ layout: base__page
 		<!-- SPACER -->
 		<div class="spacer mb-3 mb-md-5"></div>
 
-		<!-- OUTPUT -->
+		<!-- STAFF LIST -->
 		<ul class="block-grid-xs-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5" v-cloak>
 
 			<li v-for="(item, index) in sort(sortOrder)"
@@ -88,7 +87,7 @@ layout: base__page
 					<div class="card-body d-flex flex-column">
 
 						<!-- TITLE -->
-						<a href="/our-people/our-people-item/">
+						<a :href="item.url">
 							<h3 class="h5 text-uppercase card-title mb-1" v-text="item.name"></h3>
 						</a>
 
