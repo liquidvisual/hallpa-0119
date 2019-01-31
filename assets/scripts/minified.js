@@ -5589,9 +5589,9 @@ function launchGallery() {
         } };
     }
   }, created: function created() {
-    for (var e = 0; e < staff.length; e++) {
-      var t = staff[e];t.lastName = this.getLastName(t.name);
-    }this.list = staff;
+    for (var e = 0; e < staffList.length; e++) {
+      var t = staffList[e];t.lastName = this.getLastName(t.name);
+    }this.list = staffList;
   },
   methods: {
     sort: function sort(e) {

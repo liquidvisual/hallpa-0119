@@ -418,7 +418,7 @@
             
 <!-- MAIN BODY --><main class="main-body">
                 <script>
-                var staff = [{
+                var staffList = [{
                     name: 'John Payne',
                     position: 'Principal',
                     location: 'QLD',
@@ -600,10 +600,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- SPACER -->
                         <div class="spacer mb-3 mb-md-5"></div>
 
                         <!-- OUTPUT -->
-                        <ul class="block-grid-xs-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5">
+                        <ul class="block-grid-xs-2 block-grid-lg-4 block-grid-xl-5 is-condensed mb-5" v-cloak>
                             <li v-for="(item, index) in sort(sortOrder)" :key="index">
 
                                 <!-- CARD -->
