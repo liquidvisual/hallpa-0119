@@ -1,5 +1,5 @@
 ---
-layout: base__page_sidebar_9x3
+layout: base__page_sidebar_9x3_bgless
 ---
 
 <!-- SECTION -->
@@ -53,10 +53,20 @@ layout: base__page_sidebar_9x3
 </section>
 
 {% contentfor sidebar %}
-    <!-- CATEGORIES -->
+
+    <!-- SECTION -->
     <section class="section">
+
+        <!-- CATEGORIES -->
         <div class="sidebox mb-4">
-            <h3 class="sidebox-header h5 text-uppercase mb-4"><i class="fa fa-align-left"></i> Categories</h3>
+
+            <!-- HEADING -->
+            <h3 class="sidebox-header h5 text-uppercase mb-4">
+                <i class="fa fa-align-left mr-1"></i>
+                Categories
+            </h3>
+
+            <!-- CAT LIST -->
             <div class="sidebox-body mb-2">
                 <ul class="block-grid-xs-1 block-grid-md-3 block-grid-lg-1">
                     {% for item in site.data.blog_categories %}
