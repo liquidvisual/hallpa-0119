@@ -431,41 +431,54 @@
             <main class="main-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-8">
+                        <div class="col-lg-8">
 
                             <!-- SECTION -->
-                            <section class="section">
-                                <div class="sidebox" style="max-width: 400px">
+                            <section class="section section-map pb-0 mb-3 mb-md-5">
+
+                                <!-- SIDEBOX -->
+                                <div class="sidebox mb-1">
+
+                                    <!-- BODY -->
                                     <div class="sidebox-body">
 
                                         <!-- ADDRESS -->
-                                        <p class="mb-3"></p>
-                                        <div class="d-inline-flex align-items-start">
-                                            <i class="fa fa-map-marker mr-2"></i>
-                                            <span class="text">Ground Floor, 16 Ellenborough Street
-                                                <br>Ipswich QLD, 4305</span>
-                                        </div>
-                                        <p></p>
+                                        <p class="mb-3">
+                                            <span class="d-inline-flex align-items-start">
+                                                <i class="fa fa-map-marker mr-2"></i>
+                                                <span class="text">Ground Floor, 27 Peel Street
+                                                    <br>South Brisbane QLD 4101</span>
+                                            </span>
+                                        </p>
+
+                                        <!-- PO BOX -->
+                                        <p class="mb-3">
+                                            <span class="d-inline-flex align-items-start">
+                                                <i class="fa fa-truck mr-2"></i>
+                                                <span class="text">Locked Bag 2013
+                                                    <br>South Brisbane QLD 4101</span>
+                                            </span>
+                                        </p>
                                         <div class="row">
-                                            <div class="col-xxl-6">
+                                            <div class="col-md-6">
 
                                                 <!-- PHONE -->
                                                 <p class="mb-3">
-                                                    <a class="d-inline-flex align-items-center" href="tel:0732810322">
+                                                    <a class="d-inline-flex align-items-center" href="tel:07 3017 2400">
                                                         <i class="fa fa-phone mr-2"></i>
-                                                        <span class="text">(07) 3017 2400</span>
+                                                        <span class="text">07 3017 2400</span>
                                                     </a>
                                                 </p>
 
                                                 <!-- FAX -->
                                                 <p class="mb-3">
-                                                    <a class="d-inline-flex align-items-center" href="#/LINK-HERE">
+                                                    <a class="d-inline-flex align-items-center" href="tel:07 3017 2499">
                                                         <i class="fa fa-fax mr-2"></i>
-                                                        <span class="text">(07) 3017 2499</span>
+                                                        <span class="text">07 3017 2499</span>
                                                     </a>
                                                 </p>
                                             </div>
-                                            <div class="col-xxl-6">
+                                            <div class="col-md-6">
 
                                                 <!-- VIEW MAP -->
                                                 <p class="mb-3">
@@ -479,7 +492,7 @@
 
                                                 <!-- GET DIRECTIONS -->
                                                 <p class="mb-3">
-                                                    <a class="d-inline-flex align-items-center" href="mailto:vanessa@hallpayne.com.au">
+                                                    <a class="d-inline-flex align-items-center" href="/contact/contact-item/">
                                                         <i class="fa fa-location-arrow mr-2"></i>
                                                         <span class="text">Get directions
                                                             <i class="fa fa-angle-right"></i>
@@ -491,8 +504,19 @@
                                     </div>
                                 </div>
                             </section>
+
+                            <!-- MOBILE ONLY MAP -->
+                            <div class="hidden-md-up">
+
+                                <!-- GOOGLE MAP -->
+                                <section id="" class="lv-google-map" onclick="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: auto'" onmouseleave="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: none'">
+
+                                    <!-- <i class="fa fa-circle-o-notch fa-spin fa-fw"></i> -->
+                                    <iframe src="https://maps.google.com/maps?hl=en&q=Ground Floor, 27 Peel Street South Brisbane QLD 4101&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed" width="100%" height="500" frameborder="0" style="pointer-events: none"></iframe>
+                                </section>
+                            </div>
                         </div>
-                        <div class="col-xl-4">
+                        <div class="col-lg-4 mb-1 mb-lg-0">
                             <aside class="sidebar">
 
                                 <!-- BG FILL -->
@@ -500,11 +524,13 @@
 
                                 <!-- REQUEST A CALLBACK -->
                                 <section class="section">
-                                    <div class="side-form">
+                                    <div class="side-form mb-4">
 
                                         <!-- HEADING -->
-                                        <h3 class="d-flex text-white mb-4">
-                                            <i class="fa fa-comments-o mr-2"></i> Request a callback</h3>
+                                        <h3 class="side-form-heading d-flex align-items-center text-white mb-4">
+                                            <i class="fa fa-comments-o mr-2 mr-xl-3"></i>
+                                            <span>Request a callback</span>
+                                        </h3>
 
                                         <!-- IF SUCCESS (HIDDEN) -->
                                         <div class="alert alert-success alert-dismissible fade show mb-4" role="alert" hidden>
@@ -577,12 +603,16 @@
                     </div>
                 </div>
 
-                <!-- GOOGLE MAP -->
-                <section id="google-map" class="lv-google-map" onclick="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: auto'" onmouseleave="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: none'">
+                <!-- MD UP MAP -->
+                <div class="hidden-sm-down">
 
-                    <!-- <i class="fa fa-circle-o-notch fa-spin fa-fw"></i> -->
-                    <iframe src="https://maps.google.com/maps?hl=en&q=Ground Floor, 27 Peel Street South Brisbane QLD 4101&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed" width="100%" height="500" frameborder="0" style="pointer-events: none"></iframe>
-                </section>
+                    <!-- GOOGLE MAP -->
+                    <section id="" class="lv-google-map" onclick="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: auto'" onmouseleave="event.target.getElementsByTagName('iframe')[0].style = 'pointer-events: none'">
+
+                        <!-- <i class="fa fa-circle-o-notch fa-spin fa-fw"></i> -->
+                        <iframe src="https://maps.google.com/maps?hl=en&q=Ground Floor, 27 Peel Street South Brisbane QLD 4101&z=21&ie=UTF8&t=roadmap&z=16&iwloc=A&output=embed" width="100%" height="500" frameborder="0" style="pointer-events: none"></iframe>
+                    </section>
+                </div>
             </main>
         </div>
 

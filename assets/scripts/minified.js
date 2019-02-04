@@ -5564,42 +5564,46 @@ function launchGallery() {
   e.stopPropagation();
 }), $(document).keyup(function (e) {
   27 === e.keyCode && closeSearch();
-}), Vue.component("sort-select", { template: '\n        <select\n            class="custom-select"\n            :sort-order="sortOrder"\n            v-model="sortOrder"\n            @change="$emit(\'input\', sortOrder)"\n        >\n            <option\n                v-for="sortKey in Object.keys(sortOptions)"\n                v-text="sortKey"\n                :value="sortKey">\n            </option>\n        </select>\n    ', props: { sortOptions: Object }, data: function data() {
-    return { sortOrder: "All" };
-  } }), new Vue({ el: "#vue-staff-app", data: function data() {
-    return { list: null, sortOrder: "All" };
-  }, computed: {
-    sortOptions: function sortOptions() {
-      var _this = this;
+});try {
+  staffList && initStaffApp();
+} catch (e) {}function initStaffApp() {
+  Vue.component("sort-select", { template: '\n            <select\n                class="custom-select"\n                :sort-order="sortOrder"\n                v-model="sortOrder"\n                @change="$emit(\'input\', sortOrder)"\n            >\n                <option\n                    v-for="sortKey in Object.keys(sortOptions)"\n                    v-text="sortKey"\n                    :value="sortKey">\n                </option>\n            </select>\n        ', props: { sortOptions: Object }, data: function data() {
+      return { sortOrder: "All" };
+    } }), new Vue({ el: "#vue-staff-app", data: function data() {
+      return { list: null, sortOrder: "All" };
+    }, computed: {
+      sortOptions: function sortOptions() {
+        var _this = this;
 
-      return { All: function All() {
-          return _this.list;
-        }, Location: function Location() {
-          return _this.list.slice().sort(function (e, t) {
-            return e.location === t.location ? e.lastName.localeCompare(t.lastName) : e.location.localeCompare(t.location);
-          });
-        }, Position: function Position() {
-          return _this.list.slice().sort(function (e, t) {
-            return e.position === t.position ? e.lastName.localeCompare(t.lastName) : e.position.localeCompare(t.position);
-          });
-        }, Surname: function Surname() {
-          return _this.list.slice().sort(function (e, t) {
-            return e.lastName.localeCompare(t.lastName);
-          });
-        } };
-    }
-  }, created: function created() {
-    for (var e = 0; e < staffList.length; e++) {
-      var t = staffList[e];t.lastName = this.getLastName(t.name);
-    }this.list = staffList;
-  },
-  methods: {
-    sort: function sort(e) {
-      return this.sortOptions[e]();
+        return { All: function All() {
+            return _this.list;
+          }, Location: function Location() {
+            return _this.list.slice().sort(function (e, t) {
+              return e.location === t.location ? e.lastName.localeCompare(t.lastName) : e.location.localeCompare(t.location);
+            });
+          }, Position: function Position() {
+            return _this.list.slice().sort(function (e, t) {
+              return e.position === t.position ? e.lastName.localeCompare(t.lastName) : e.position.localeCompare(t.position);
+            });
+          }, Surname: function Surname() {
+            return _this.list.slice().sort(function (e, t) {
+              return e.lastName.localeCompare(t.lastName);
+            });
+          } };
+      }
+    }, created: function created() {
+      for (var e = 0; e < staffList.length; e++) {
+        var t = staffList[e];t.lastName = this.getLastName(t.name);
+      }this.list = staffList;
     },
-    getLastName: function getLastName(e) {
-      return String(e.split(" ").splice(-1, 1));
-    } } });var headroom = null,
+    methods: {
+      sort: function sort(e) {
+        return this.sortOptions[e]();
+      },
+      getLastName: function getLastName(e) {
+        return String(e.split(" ").splice(-1, 1));
+      } } });
+}var headroom = null,
     lvPage = document.querySelector(".lv-page"),
     resizeTimer;function initHeadroom() {
   var _ref;
