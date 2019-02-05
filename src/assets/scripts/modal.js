@@ -49,7 +49,15 @@ function getLocation() {
 function setLocation(state, condition) {
 
     if (state == 'qld' && condition == 'confirm') {
-        // open next modal
+
+        // close modal #1 and prevent exit event from triggering class removal
+        // bootstrap doesn't like multiple modals
+        $locationModal.modal('hide').on('hidden.bs.modal', (e) => {
+            document.body.classList.add('modal-open');
+            document.body.style.paddingRight = '15px';
+        });
+
+        // open modal #2
         $personalInjuryModal.modal('show');
 
     } else {
@@ -60,12 +68,10 @@ function setLocation(state, condition) {
         // store location in localStorage
         localStorage.setItem('location', state);
 
-        // close modal #2
+        // close modal #1 and #2
+        $locationModal.modal('hide');
         $personalInjuryModal.modal('hide');
     }
-
-    // close modal #1
-    $locationModal.modal('hide');
 }
 
 //-----------------------------------------------------------------

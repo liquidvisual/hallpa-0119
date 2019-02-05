@@ -99,7 +99,7 @@ $header-bottom-lg-height: 50px !default;
 	background: $primary;
 	will-change: transform;
 	// z-index: 9999;
-	z-index: 100;
+	z-index: 200;
 
 	@include media-breakpoint-up(md) {
 		position: absolute;
