@@ -11,7 +11,7 @@
     <script src="/assets/scripts/vue.js"></script>
     <link rel="stylesheet" href="/assets/css/minified.css">
 </head>
-<body>
+<body class="" data-location>
 
     <!-- PAGE LOADER -->
     <div id="lv-page-loader" class="lv-page-loader">
@@ -1002,29 +1002,66 @@
         </ul>
     </nav>
 
-    <!-- SEARCH -->
-    
-<!-- GLOBAL SEARCH --><div class="global-search" data-global-search>
-        <div class="container">
+    <!-- LOCATION MODAL -->
+    <div id="location-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="row justify-content-center w-100">
+                        <div class="col-md-10 text-center">
 
-            <!-- CLOSE -->
-            <button class="btn btn-close" data-dismiss="alert" aria-label="Close" title="Close">
-                <i class="fa fa-times-circle"></i>
-                <span class="text">esc</span>
-            </button>
+                            <!-- PLEASE SELECT YOUR STATE -->
+                            <h4 class="text-center text-white mb-4 pb-2 mx-auto" style="max-width: 586px">We need to show you specific information for your location. Please select your state:</h4>
 
-            <!-- FORM -->
-            <form class="global-search-form" action="/search/" method="get" novalidate>
-                <div class="input-group">
-                    <input class="form-control" name="q" type="search" placeholder="Search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                    <span class="global-search-info">Hit enter to search or ESC to close</span>
-                    <div class="input-group-append">
-                        <button type="submit" class="btn">
-                            <i class="fa fa-search"></i>
-                        </button>
+                            <!-- STATE SELECTIONS -->
+                            <ul class="block-grid-xs-2 block-grid-md-5 is-condensed-more">
+                                <li>
+                                    <button onclick="setLocation('qld', 'confirm')" class="btn btn-block btn-primary">QLD</button>
+                                </li>
+                                <li>
+                                    <button onclick="setLocation('nsw')" class="btn btn-block btn-primary">NSW</button>
+                                </li>
+                                <li>
+                                    <button onclick="setLocation('nt')" class="btn btn-block btn-primary">NT</button>
+                                </li>
+                                <li>
+                                    <button onclick="setLocation('tas')" class="btn btn-block btn-primary">TAS</button>
+                                </li>
+                                <li>
+                                    <button onclick="setLocation('other')" class="btn btn-block btn-primary">Other</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- PERSONAL INJURY MODAL -->
+    <div id="personal-injury-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+
+                            <!-- LEGAL TEXT -->
+                            <h4 class="text-center text-white mb-4 pb-2">If you would like to find out more about your rights and the process for making a personal injury claim, please answer 'yes' below.</h4>
+
+                            <!-- YES / NO -->
+                            <ul class="block-grid-xs-2 is-condensed-more mx-auto" style="max-width: 270px">
+                                <li>
+                                    <button onclick="setLocation('qld')" class="btn btn-block btn-primary">YES</button>
+                                </li>
+                                <li>
+                                    <button onclick="window.location = '/'" type="button" class="btn btn-block btn-primary">NO</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

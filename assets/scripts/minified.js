@@ -23,8 +23,6 @@ function launchGallery() {
       t.flickity("next").flickity("stopPlayer");
     }));
   });
-}function closeSearch() {
-  $("[data-global-search]").removeClass("active"), document.activeElement.blur();
 }!function (e, t) {
   "use strict";
   "object" == (typeof module === "undefined" ? "undefined" : _typeof(module)) && "object" == _typeof(module.exports) ? module.exports = e.document ? t(e, !0) : function (e) {
@@ -5536,7 +5534,17 @@ function launchGallery() {
   }(), e("html[development]").length && (i(), e(window).resize(function () {
     i();
   }));
-}(jQuery), launchGallery(), launchSlider(), function (e) {
+}(jQuery), launchGallery(), launchSlider();var $locationModal = $("#location-modal"),
+    $personalInjuryModal = $("#personal-injury-modal");function launchModal() {
+  var e = Boolean(document.querySelector(".theme-show-modal")),
+      t = getLocation();t ? setLocation(t) : !t && e && $locationModal.modal("show");
+}function getLocation() {
+  return localStorage.getItem("location") || null;
+}function setLocation(e, t) {
+  "qld" == e && "confirm" == t ? $personalInjuryModal.modal("show") : (document.body.dataset.location = e, localStorage.setItem("location", e), $personalInjuryModal.modal("hide")), $locationModal.modal("hide");
+}function closeSearch() {
+  $("[data-global-search]").removeClass("active"), document.activeElement.blur();
+}launchModal(), function (e) {
   "use strict";
   var t = e("html"),
       n = e(".lv-off-canvas .dropdown"),
