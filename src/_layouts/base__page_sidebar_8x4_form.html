@@ -20,13 +20,26 @@ layout: base
 	        <div class="col-lg-8">
 	        	{{ content }}
 	        </div>
-	        <div class="col-lg-4">
+	        <div class="col-lg-4 mb-1 mb-lg-0">
 				<aside class="sidebar">
 
 					<!-- BG FILL -->
 					<div class="bg-fill"></div>
 
-					{% contentblock sidebar no-convert %}
+					<!-- REQUEST A CALLBACK -->
+					<section class="section">
+					    <div class="side-form mb-4">
+
+					        <!-- HEADING -->
+					        <h3 class="side-form-heading d-flex align-items-center text-white mb-4">
+					            <i class="fa fa-comments-o mr-2 mr-xl-3"></i>
+					            <span>Request a callback</span>
+					        </h3>
+
+					        {% include form_contact.html %}
+					    </div>
+					</section>
+
 				</aside>
 	        </div>
 	    </div>

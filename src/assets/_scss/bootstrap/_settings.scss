@@ -334,12 +334,12 @@ $display4-size:               rem-calc(18); //3.5rem !default;
 
 $display1-weight:             $font-weight-bolder; //300 !default;
 // $display2-weight:             300 !default;
-// $display3-weight:             300 !default;
+$display3-weight:             $font-weight-normal; //300 !default;
 // $display4-weight:             300 !default;
 // $display-line-height:         $headings-line-height !default;
 
 $lead-font-size:              rem-calc(26); //($font-size-base * 1.25) !default;
-$lead-font-weight:            $font-weight-light; //300 !default;
+$lead-font-weight:            $font-weight-normal; //300 !default;
 
 $small-font-size:             85%; //80% !default;
 
@@ -503,6 +503,7 @@ $input-border-width:                    0; //$input-btn-border-width !default;
 // $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
 $input-placeholder-color:               #cdcdcd; //$gray-600 !default;
+
 // $input-plaintext-color:                 $body-color !default;
 
 // $input-height-border:                   $input-border-width * 2 !default;
@@ -929,15 +930,15 @@ $card-inner-border-radius:          0; //calc(#{$card-border-radius} - #{$card-b
 
 // $modal-title-line-height:           $line-height-base !default;
 
-// $modal-content-bg:                  $white !default;
+$modal-content-bg:                  $secondary; //$white !default;
 // $modal-content-border-color:        rgba($black, .2) !default;
-// $modal-content-border-width:        $border-width !default;
+$modal-content-border-width:        0; //$border-width !default;
 // $modal-content-border-radius:       $border-radius-lg !default;
 // $modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
 // $modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;
 
-// $modal-backdrop-bg:                 $black !default;
-// $modal-backdrop-opacity:            .5 !default;
+$modal-backdrop-bg:                 $primary; //$black !default;
+$modal-backdrop-opacity:            .7; //.5 !default;
 // $modal-header-border-color:         $gray-200 !default;
 // $modal-footer-border-color:         $modal-header-border-color !default;
 // $modal-header-border-width:         $modal-content-border-width !default;
@@ -947,8 +948,8 @@ $card-inner-border-radius:          0; //calc(#{$card-border-radius} - #{$card-b
 // $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
 
 // $modal-xl:                          1140px !default;
-// $modal-lg:                          800px !default;
-// $modal-md:                          500px !default;
+$modal-lg:                          930px; //800px !default;
+$modal-md:                       700px;//   500px !default;
 // $modal-sm:                          300px !default;
 
 // $modal-fade-transform:              translate(0, -50px) !default;

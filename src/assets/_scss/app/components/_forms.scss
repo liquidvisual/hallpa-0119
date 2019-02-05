@@ -36,7 +36,7 @@ form[data-toggle="validator"] {
 }
 
 
-form button:not(.lv-off-canvas button) {
+form:not(.global-search-form) .btn {
 	min-width: rem-calc(250);
 	font-size: rem-calc(17) !important;
 	color: white !important;

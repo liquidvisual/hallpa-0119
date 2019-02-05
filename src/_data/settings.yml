@@ -14,13 +14,65 @@ github_repo_path: https://github.com/liquidvisual/hallpa-0119
 github_repo_name: hallpa-0119
 jekyll_version: 3.7.0
 
-# OFFICES
 offices:
-  - title: Australia
-    address:
-    phone: 1800 659 114
-    email: general@hallpayne.com.au
-    po_box: Locked bag 2013<br> South Brisbane 4101
+  aus:
+    - city: All
+      phone: 1800 659 114
+      email: general@hallpayne.com.au
+
+  qld:
+    - city: Brisbane
+      email: general@hallpayne.com.au
+      phone: 07 3017 2400
+      fax: 07 3017 2499
+      address: Ground Floor, 27 Peel Street<br> South Brisbane QLD 4101
+      po_box: Locked Bag 2013<br> South Brisbane QLD 4101
+      head_office: true
+
+    - city: Gold Coast
+      email: general@hallpayne.com.au
+      phone: 1800 659 114
+      fax: 07 4922 0344
+      address: Unit 1, 5 Executive Drive<br> Burleigh Waters QLD 4220
+      po_box:
+
+    - city: Ipswich
+      email: general@hallpayne.com.au
+      phone: 007 3281 0322
+      fax: 07 3017 2499
+      address: Ground Floor, 16 Ellenborough Street<br> Ipswitch QLD 4305
+      po_box:
+
+    - city: Rockhampton Office
+      email: general@hallpayne.com.au
+      phone: 07 4922 0277
+      fax: 07 4922 0344
+      address: 156 Bolsover Street<br>Rockhampton QLD 4700
+      po_box:
+
+  nsw:
+    - city: Sydney
+      email: general@hallpayne.com.au
+      phone: 02 8338 8477
+      fax: 07 3017 2499
+      address: Suite 402, Level 4 262 Pitt Street<br> Sydney NSW 2000
+      po_box:
+
+  nt:
+    - city: Darwin
+      email: general@hallpayne.com.au
+      phone: 08 8942 0384
+      fax: 07 3017 2499
+      address: 1st Floor, 38 Woods Street<br> Darwin NT 0800
+      po_box:
+
+  tas:
+    - city: Hobart
+      email: general@hallpayne.com.au
+      phone: 03 6223 1255
+      fax: 07 3017 2499
+      address: Suite 4, Level 1, 162 Macquarie Street<br> Hobart TAS 7000
+      po_box:
 
 # GOOGLE
 google_analytics: #UA-XXXXXXXX-X

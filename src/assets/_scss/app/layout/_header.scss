@@ -14,7 +14,8 @@ $header-top-lg-height: 50px !default;
 
 $header-body-sm-height: 60px !default;
 $header-body-md-height: 230px !default;
-$header-body-lg-height: 324px !default;
+$header-body-lg-height: 230px !default;
+$header-body-xl-height: 324px !default;
 
 $header-bottom-sm-height: 50px !default;
 $header-bottom-md-height: 50px !default;
@@ -97,7 +98,8 @@ $header-bottom-lg-height: 50px !default;
 	width: 100%;
 	background: $primary;
 	will-change: transform;
-	z-index: 9999;
+	// z-index: 9999;
+	z-index: 100;
 
 	@include media-breakpoint-up(md) {
 		position: absolute;
@@ -118,7 +120,7 @@ $header-bottom-lg-height: 50px !default;
 	font-size: rem-calc(16);
 	color: white; // [LOCKED] - for dropdown override
 	// transition: all ease 150ms;
-	z-index: 2; // [LOCKED] - dropdown needs to move over top of nav
+	// z-index: 2; // [LOCKED] - dropdown needs to move over top of nav
 
 	a {
 		font-weight: $font-weight-normal;
@@ -189,6 +191,10 @@ $header-bottom-lg-height: 50px !default;
 
 	@include media-breakpoint-up(lg) {
 		height: $header-body-lg-height;
+	}
+
+	@include media-breakpoint-up(xl) {
+		height: $header-body-xl-height;
 	}
 
 	//=========================================

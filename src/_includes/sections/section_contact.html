@@ -1,4 +1,5 @@
 {% assign settings = site.data.settings %}
+{% assign au_office = settings.offices['aus'][0] %}
 {% assign bg_image = include.bg_image | default: '/assets/img/content/backgrounds/bg-6.jpg' %}
 {% assign parallax_enabled = include.parallax_enabled | default: false %}
 
@@ -27,27 +28,29 @@
 				<br>
 
 				<!-- PHONE -->
-		        <a class="h4 text-white font-weight-normal mr-4" href="tel:{{ settings.offices[0].phone }}" title="{{ settings.offices[0].title }}">
-		            <i class="fa fa-phone"></i>&nbsp;
+		        <a class="h4 text-white font-weight-normal mr-4" href="tel:{{ au_office.phone }}">
+		            <i class="fa fa-phone mr-1"></i>
 		            <span class="text">
-		            	{{ settings.offices[0].phone }}
+		            	{{ au_office.phone }}
 		        	</span>
 		        </a>
 
 		        <br class="hidden-md-up">
 
 				<!-- EMAIL -->
-		        <a class="h4 text-white font-weight-normal" href="mailto:{{ settings.offices[0].email }}">
-		            <i class="fa fa-envelope"></i>&nbsp;
+		        <a class="h4 text-white font-weight-normal" href="mailto:{{ au_office.email }}">
+		            <i class="fa fa-envelope mr-1"></i>
 		            <span class="text">
-		            	{{ settings.offices[0].email }}
+		            	{{ au_office.email }}
 		            </span>
 		        </a>
 
 				<hr class="mt-4 mb-4">
 
 				<!-- TEXT -->
-				<p class="h4 font-weight-normal">Or fill out the form below to request a callback...</p>
+				<p class="h4 font-weight-normal">
+					Or fill out the form below to request a callback...
+				</p>
 
 				<br>
 

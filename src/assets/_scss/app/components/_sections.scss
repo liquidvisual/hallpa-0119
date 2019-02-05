@@ -176,6 +176,30 @@
 }
 
 //-----------------------------------------------------------------
+// ADHOC STYLING OF CONTACT BOX
+// on /contact/contact-item/
+//-----------------------------------------------------------------
+
+.section-map {
+    pointer-events: none;
+    z-index: 1;
+
+    @include media-breakpoint-only(md) {
+        height: rem-calc(600); // because the sidebar is now stacked and gone
+    }
+
+    .sidebox {
+        pointer-events: auto;
+        padding-top: rem-calc(30);
+
+        @include media-breakpoint-up(md) {
+            max-width: rem-calc(400);
+            box-shadow: 4px 4px 4px -1px rgba(black, 0.2);
+        }
+    }
+}
+
+//-----------------------------------------------------------------
 //
 //-----------------------------------------------------------------
 //=========================================

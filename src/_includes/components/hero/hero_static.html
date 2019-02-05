@@ -44,10 +44,19 @@
                                 {% endif %}
 
                                 {% if page.locational %}
-                                    <!-- LOCATIONAL -->
+                                    <!-- LOCATION SELECTOR -->
                                     <div class="d-flex align-items-center mt-1">
-                                        <h3 class="h4 text-uppercase mr-2 mb-0">Queensland</h3>
-                                        <button class="btn btn-sm btn-light mb-0">Change State</button>
+
+                                        <!-- DYNAMIC HEADING -->
+                                        <h3 class="h4 text-uppercase mr-2 mb-0">
+                                            <span class="modal-state-sync-text"></span>
+                                        </h3>
+
+                                        <!-- CHANGE LOCATION -->
+                                        <button class="btn btn-sm btn-light mb-0" data-toggle="modal" data-target="#location-modal">
+                                            Change State
+                                        </button>
+
                                     </div>
                                 {% endif %}
 
@@ -59,8 +68,8 @@
             </div>
         </div>
 
-        <!-- PARALLAX (OPTIONAL) -->
         {% if bg_image %}
+            <!-- PARALLAX (OPTIONAL) -->
             {% include components/hero/hero__parallax_plugin.html image=page.hero_image %}
         {% endif %}
 

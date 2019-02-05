@@ -1,28 +1,26 @@
 ---
-layout: base__page_sidebar_8x4
+layout: base__page_sidebar_8x4_form
 ---
 
-{% assign settings = site.data.settings %}
+{% assign offices = site.data.settings.offices['qld'] %}
 
 <!-- SECTION -->
-<section class="section">
-
-
-    {% include components/widgets/google_map.html id="google-map" %}
-
-
+<section class="section section-map pb-0 mb-3 mb-md-5">
+    {% for item in offices %}
+        {% if item.city == 'Brisbane' %}
+            {% include components/content/contact_box.html po_box=true %}
+        {% endif %}
+    {% endfor %}
 </section>
 
-{% contentfor sidebar %}
+<!-- MOBILE ONLY MAP -->
+<div class="hidden-md-up">
+    {% include components/widgets/google_map.html %}
+</div>
 
-    <!-- REQUEST A CALLBACK -->
-    <section class="section">
-
-        <!-- HEADING -->
-        <h3 class="d-flex text-white mb-4">
-            <i class="fa fa-comments-o mr-2"></i> Request a callback
-        </h3>
-
-        {% include form_contact.html %}
-    </section>
+{% contentfor content_additional %}
+    <!-- MD UP MAP -->
+    <div class="hidden-sm-down">
+        {% include components/widgets/google_map.html %}
+    </div>
 {% endcontentfor %}

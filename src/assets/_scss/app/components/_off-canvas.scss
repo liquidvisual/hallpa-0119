@@ -12,7 +12,7 @@
 //-----------------------------------------------------------------
 
 $body-bg: white !default;
-$menu-bg-color: #111;
+$menu-bg-color: $secondary;
 $menu-width-xs: 267px;
 $menu-width-md: 350px;
 $hamburger-width: 28px;
@@ -162,7 +162,7 @@ $hamburger-slit-height: 3px;
 .lv-off-canvas ul {
 
 	li {
-		border-bottom: 1px solid rgba(white, 0.1);
+		border-bottom: 1px solid rgba(black, 0.1);
 		margin-left: 20px;
 	}
 
@@ -199,7 +199,7 @@ $hamburger-slit-height: 3px;
 		right: 0;
 		width: 44px;
 		height: 100%;
-		border-left: 1px solid rgba(white, 0.1);
+		border-left: 1px solid rgba(black, 0.1);
 		// background: $menu-bg-color;
 		font-family: "FontAwesome";
 		font-size: 25px;

@@ -1,0 +1,55 @@
+/*
+    MODAL.CSS
+
+    - Last updated: 04.02.18
+*/
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// MODAL LOCATION
+//-----------------------------------------------------------------
+
+.modal {
+	pointer-events: none; // prevent legal modal being closed with no selection
+
+	.modal-content {
+		pointer-events: auto;
+		min-height: rem-calc(445);
+		margin: rem-calc(20);
+
+		.btn {
+			display: block;
+			text-transform: none;
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// STATE HEADING
+// changes depending on data-location (JS)
+//-----------------------------------------------------------------
+
+body[data-location='qld']   .modal-state-sync-text:after { content: 'Queensland'; }
+body[data-location='nsw']   .modal-state-sync-text:after { content: 'New South Wales'; }
+body[data-location='nt']    .modal-state-sync-text:after { content: 'Northern Territory'; }
+body[data-location='tas']   .modal-state-sync-text:after { content: 'Tasmania'; }
+body[data-location='other'] .modal-state-sync-text:after { content: 'Other'; }
+
+//-----------------------------------------------------------------
+// VISIBILITY
+//-----------------------------------------------------------------
+
+[data-visible-for] {
+	display: none;
+}
+
+body[data-location='qld'] [data-visible-for*='qld'] { display: block; }
+body[data-location='nsw'] [data-visible-for*='nsw'] { display: block; }
+body[data-location='nt'] [data-visible-for*='nt'] { display: block; }
+body[data-location='tas'] [data-visible-for*='tas'] { display: block; }
+body[data-location='other'] [data-visible-for*='other'] { display: block; }
+
+//=========================================
+//
+//=========================================

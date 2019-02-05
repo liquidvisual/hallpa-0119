@@ -1,126 +1,59 @@
 ---
-layout: base__page_sidebar_8x4
+layout: base__page_sidebar_8x4_form
 ---
 
 {% assign settings = site.data.settings %}
 
 <!-- SECTION -->
-<section class="section" hidden>
+<section class="section">
+    <div class="row">
+        <div class="col-md-6">
 
-    <!-- GRID -->
-    <ul class="block-grid-xs-1 block-grid-md-2 is-condensed">
-        {% for i in (1..7) %}
-            <li>
-                <div class="sidebox">
-                    <h3 class="sidebox-header h5 text-uppercase mb-3">Brisbane <small>(Head Office)</small></h3>
-                    <div class="sidebox-body">
+            <!-- QUEENSLAND -->
+            <h2 class="h3 text-uppercase text-dark mb-3">
+                Queensland
+            </h2>
 
-                        <!-- ADDRESS -->
-                        <p class="mb-3">
-                            <div class="d-inline-flex align-items-start">
-                                <i class="fa fa-map-marker mr-2"></i>
-                                <span class="text">Ground Floor, 16 Ellenborough Street<br> Ipswich QLD, 4305</span>
-                            </div>
-                        </p>
+            {% for item in settings.offices['qld'] %}
+                {% include components/content/contact_box.html %}
+            {% endfor %}
 
-                        <div class="row">
-                            <div class="col-xxl-6">
+            <div class="spacer mb-4"></div>
 
-                                <!-- PHONE -->
-                                <p class="mb-3">
-                                    <a class="d-inline-flex align-items-center" href="tel:0732810322">
-                                        <i class="fa fa-phone mr-2"></i>
-                                        <span class="text">(07) 3017 2400</span>
-                                    </a>
-                                </p>
+        </div>
+        <div class="col-md-6">
 
-                                <!-- FAX -->
-                                <p class="mb-3">
-                                    <a class="d-inline-flex align-items-center" href="#/LINK-HERE">
-                                        <i class="fa fa-fax mr-2"></i>
-                                        <span class="text">(07) 3017 2499</span>
-                                    </a>
-                                </p>
+            <!-- NEW SOUTH WALES -->
+            <h2 class="h3 text-uppercase text-dark mb-3">
+                New South Wales
+            </h2>
 
-                            </div>
-                            <div class="col-xxl-6">
+            {% for item in settings.offices['nsw'] %}
+                {% include components/content/contact_box.html %}
+            {% endfor %}
 
-                                <!-- VIEW MAP -->
-                                <p class="mb-3">
-                                    <a class="d-inline-flex align-items-center" href="/contact/contact-item/">
-                                        <i class="fa fa-map mr-2"></i>
-                                        <span class="text">View map <i class="fa fa-angle-right"></i></span>
-                                    </a>
-                                </p>
+            <div class="spacer mb-4"></div>
 
-                                <!-- GET DIRECTIONS -->
-                                <p class="mb-3">
-                                    <a class="d-inline-flex align-items-center" href="mailto:vanessa@hallpayne.com.au">
-                                        <i class="fa fa-location-arrow mr-2"></i>
-                                        <span class="text">Get directions <i class="fa fa-angle-right"></i></span>
-                                    </a>
-                                </p>
+            <!-- NORTHERN TERRITORY -->
+            <h2 class="h3 text-uppercase text-dark mb-3">
+                Northern Territory
+            </h2>
 
-                            </div>
-                        </div>
+            {% for item in settings.offices['nt'] %}
+                {% include components/content/contact_box.html %}
+            {% endfor %}
 
-                    </div>
-                </div>
+            <div class="spacer mb-4"></div>
 
-            </li>
-        {% endfor %}
-    </ul>
+            <!-- TASMANIA -->
+            <h2 class="h3 text-uppercase text-dark mb-3">
+                Tasmania
+            </h2>
 
+            {% for item in settings.offices['tas'] %}
+                {% include components/content/contact_box.html %}
+            {% endfor %}
+
+        </div>
+    </div>
 </section>
-
-{% contentfor sidebar %}
-
-    <!-- REQUEST A CALLBACK -->
-    <section class="section pl-4">
-        <div class="pl-3">
-
-            <!-- HEADING -->
-            <h3 class="d-flex text-white mb-4">
-                <i class="fa fa-comments-o mr-2"></i> Request a callback
-            </h3>
-
-            {% include form_contact.html %}
-        </div>
-    </section>
-{% endcontentfor %}
-
-
-{% comment %}
-{% include components/forms/form_contact.html %}
-
-{% contentfor sidebar %}
-
-    <!-- CONTACT DETAILS -->
-    <section class="section">
-        <div class="container">
-            <h4>{{ settings.company }}</h4>
-            <p>
-                {{ settings.offices[0].title }}<br>
-                {{ settings.offices[0].address }}<br>
-                <a href="mailto:settings.offices[0].email">{{ settings.offices[0].email }}</a>
-            </p>
-            <br>
-            <p><a href="#google-map" class="btn btn-primary">Directions&nbsp; <i class="fa fa-external-link"></i></a></p>
-            <br>
-
-            <!-- WYSIWYG -->
-            <div class="wysiwyg mb-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-
-            {% include components/social_media.html %}
-        </div>
-    </section>
-
-{% endcontentfor %}
-
-{% contentfor content_additional %}
-    {% include components/widgets/google_map.html id="google-map" %}
-{% endcontentfor %}
-{% endcomment %}
