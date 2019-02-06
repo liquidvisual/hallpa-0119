@@ -2,16 +2,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function launchGallery() {
-  $("[data-lightbox-group]").each(function () {
-    var e = $(this),
-        t = e.attr("data-lightbox-group");e.magnificPopup({ delegate: "a", type: "image", tLoading: "Loading image #%curr%...", mainClass: "mfp-img-mobile", gallery: { enabled: !0, navigateByImgClick: !0, preload: [0, 1] }, image: { tError: '<a href="%url%">The image #%curr%</a> could not be loaded.', titleSrc: function titleSrc(e) {
-          return '<div class="mb-1">' + e.el.attr("title") + "</div><small>" + t + "</small>";
-        } }, callbacks: { elementParse: function elementParse(e) {
-          (-1 != e.src.indexOf("youtube") || -1 != e.src.indexOf("vimeo") || -1 != e.src.indexOf("maps")) && (e.type = "iframe");
-        } } });
-  });
-}function launchSlider() {
+function launchSlider() {
   $("[data-hero-slider]").each(function () {
     var e = $(this),
         t = $(".lv-hero-item-slider", e),
@@ -5534,7 +5525,7 @@ function launchGallery() {
   }(), e("html[development]").length && (i(), e(window).resize(function () {
     i();
   }));
-}(jQuery), launchGallery(), launchSlider();var $locationModal = $("#location-modal"),
+}(jQuery), launchSlider();var $locationModal = $("#location-modal"),
     $personalInjuryModal = $("#personal-injury-modal");function launchModal() {
   var e = Boolean(document.querySelector(".theme-show-modal")),
       t = getLocation();t ? setLocation(t) : !t && e && $locationModal.modal("show");
