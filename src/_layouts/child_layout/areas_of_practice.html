@@ -5,8 +5,17 @@ layout: base__page
 {% assign areas_of_practice = site.data.sitemap[3].children %}
 
 {% contentfor hero_caption %}
-	<h1 class="display-1 text-white text-uppercase mb-4">{{ page.title }}</h1>
-	<p class="display-3">With a local focus, tapping in to a network of specialist lawyers nationally, Hall Payne Lawyers offers a comprehensive range of professional services for individuals, families, small to medium enterprises, community and member organisations.</p>
+
+    <!-- HEADING -->
+	<h1 class="display-1 text-white text-uppercase mb-4">
+        {{ page.title }}
+    </h1>
+
+    <!-- LEAD -->
+	<p class="display-3">
+        {{ page.lead }}
+    </p>
+
 {% endcontentfor %}
 
 <!-- AREAS OF PRACTICE -->

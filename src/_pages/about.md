@@ -5,6 +5,8 @@ permalink: /about/
 hero_image: /assets/img/content/backgrounds/bg-7.jpg
 hero_options: is-default
 hero_caption_align: left
+lead: |
+  Choosing the right law firm is the first and most crucial step in achieving the best legal outcome possible.
 claims:
   - title: Work. Life. Fairness
     image: /assets/img/content/icon-handshake.png
@@ -21,3 +23,7 @@ claims:
     body: |
       Our teams are lead by trusted senior lawyers including accredited specialists in personal injury, employment and industrial relations.
 ---
+
+Hall Payne understands the legal process can be unfamiliar and stressful. For more than 25 years we have been there for everyday Australians after work accidents or injury, for unions fighting to protect member rights, and for families going through change or upheaval.
+
+We get great outcomes for clients in a cost-effective, timely and straightforward manner. Our impressive track record helping Australians from all walks of life has seen us become one of Australia’s most well respected firms with offices in Brisbane, Sydney, Darwin, Hobart, regional Queensland and Far North Queensland.

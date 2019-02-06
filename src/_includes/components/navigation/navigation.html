@@ -20,10 +20,17 @@
 {% endcomment %}
 
 {% assign settings = site.data.settings %}
-{% assign phone = settings.offices[0].phone %}
+{% assign phone = settings.offices['aus'][0].phone %}
 {% assign sitemap = site.data.sitemap %}
 
 <ul>
+    <!-- PHONE NUMBER (OPTIONAL) -->
+    {% if phone %}
+        <li class="is-off-canvas-only pt-2 text-center">
+            <a class="phone" href="tel:{{ phone }}"><i class="fa fa-phone"></i> {{ phone }}</a>
+        </li>
+    {% endif %}
+
     {% for item in sitemap %}
 
         {% capture parent_classes %}
@@ -79,11 +86,18 @@
 
     <!-- SOCIAL MEDIA (OPTIONAL) -->
     <li class="is-off-canvas-only pt-2">
-        {% include components/social_media.html %}
+        {% include components/widgets/social_media.html %}
+    </li>
+
+    <!-- PAYMENTS (HARDCODED) -->
+    <li class="is-off-canvas-only pt-2">
+        <a href="#" class="btn btn-block btn-primary mb-2">
+            <i class="fa fa-credit-card mr-2"></i>Payments
+        </a>
     </li>
 
     <!-- SEARCH (OPTIONAL) -->
-    <li class="is-off-canvas-only">
+    <li class="is-off-canvas-only pt-2">
         {% include components/forms/form_search.html %}
     </li>
 

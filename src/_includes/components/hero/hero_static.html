@@ -2,7 +2,7 @@
 <!--
     HERO STATIC
 
-    - Updated: 22.01.19
+    - Updated: 06.02.19
     - Static banner, no carousel functionality, commonly used on internal pages
       to display page headers
 -->
@@ -20,7 +20,7 @@
     <div class="lv-hero {{ options }}">
 
         <!-- HERO ITEMS -->
-        <div class="lv-hero-item align-items-end {{ options }}" style="background-image: url('{{ page.hero_image }}')">
+        <div class="lv-hero-item align-items-end {{ options }}" style="background-image: url('{{ bg_image }}')">
             <div class="container">
                 <div class="row h-100">
                     <div class="col-md-9 col-lg-8 col-xl-7">
@@ -68,10 +68,12 @@
             </div>
         </div>
 
-        {% if bg_image %}
-            <!-- PARALLAX (OPTIONAL) -->
-            {% include components/hero/hero__parallax_plugin.html image=page.hero_image %}
-        {% endif %}
+        {% comment %}
+            {% if bg_image %}
+                <!-- PARALLAX (OPTIONAL) -->
+                {% include components/hero/hero__parallax_plugin.html image=page.hero_image %}
+            {% endif %}
+        {% endcomment %}
 
     </div> <!-- /.lv-hero -->
 </section> <!-- /.lv-hero-wrapper -->

@@ -2,11 +2,6 @@
 layout: base
 ---
 
-{% include components/hero/hero.html
-	data=page.hero_slides
-	options=page.hero_options
-%}
-
 <!-- MAIN BODY -->
 <main class="main-body">
 
@@ -19,7 +14,7 @@ layout: base
 					<!-- ICON -->
 					<i class="d-block fa fa-question-circle mb-3"></i>
 
-					<!-- CONTENT -->
+					<!-- TEXT -->
 					<div class="mb-4">
 						<h2 class="text-white text-uppercase">Need Legal Advice?</h2>
 						<p class="h4 font-weight-normal mb-0">We have 9 offices across Queensland, New South Wales, Tasmania and Northern Territory.</p>
@@ -32,6 +27,7 @@ layout: base
 					<div class="text-center text-md-right mr-md-4">
 						<a href="/contact/" class="btn btn-lg btn-primary">Find your local office <i class="fa fa-angle-right ml-4"></i></a>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -40,11 +36,17 @@ layout: base
 	<!-- LATEST FROM THE BLOG -->
 	<section class="section is-primary">
 		<div class="container">
+
+			<!-- HEADING -->
 			<h2 class="text-white text-uppercase text-center mb-5">Latest from the Blog</h2>
+
 			{% include components/cards/cards.html flat="true" columns=4 %}
+
+			<!-- CTA -->
 			<p class="text-center mb-0">
 				<a href="/blog/" class="btn btn-secondary">More Blog Articles &nbsp;<i class="fa fa-angle-right"></i></a>
 			</p>
+
 		</div>
 	</section>
 

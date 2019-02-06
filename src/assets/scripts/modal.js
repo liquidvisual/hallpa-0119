@@ -52,9 +52,8 @@ function setLocation(state, condition) {
 
         // close modal #1 and prevent exit event from triggering class removal
         // bootstrap doesn't like multiple modals
-        $locationModal.modal('hide').on('hidden.bs.modal', (e) => {
-            document.body.classList.add('modal-open');
-            document.body.style.paddingRight = '15px';
+        $locationModal.modal('hide').on('hidden.bs.modal', function() {
+            document.body.classList.add('modal-open'); // force this
         });
 
         // open modal #2

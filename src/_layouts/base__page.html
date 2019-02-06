@@ -2,17 +2,6 @@
 layout: base
 ---
 
-{% assign hero_options = page.hero_options | default: 'is-short' %}
-
-{% include components/hero/hero_static.html
-	bg_image=page.hero_image
-	options=hero_options
-%}
-
-{% if page.breadcrumbs %}
-	{% include components/navigation/breadcrumbs.html %}
-{% endif %}
-
 <!-- MAIN BODY -->
 <main class="main-body">
 	{{ content }}

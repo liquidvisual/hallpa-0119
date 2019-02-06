@@ -67,11 +67,11 @@ p.lead {
 }
 
 @include media-breakpoint-down(sm) {
-    .display-1 { font-size: $h1-font-size; }
-    // .display-1 { font-size: calc(#{$display1-size} - 100%); }
-    // .display-2 { font-size: calc(#{$display1-size} - 100%) !important; }
-    // .display-3 { font-size: calc(#{$display1-size} - 100%) !important; }
-    // .display-4 { font-size: calc(#{$display1-size} - 100%) !important; }
+    // .display-1 { font-size: $h1-font-size; }
+    .display-1 { font-size: calc(#{$display1-size} - 80%); }
+    // .display-2 { font-size: calc(#{$display2-size} - 100%) !important; }
+    .display-3 { font-size: calc(#{$display3-size} - 30%) !important; }
+    // .display-4 { font-size: calc(#{$display4-size} - 100%) !important; }
 }
 
 //-----------------------------------------------------------------

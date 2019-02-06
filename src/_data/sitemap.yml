@@ -3,6 +3,10 @@
 
 - title: About
   url: /about/
+  include_children_in_nav: true
+  children:
+    - title: Why Switch to Hall Payne?
+      url: /about/why-switch-to-hall-payne/
 
 - title: Our People
   url: /our-people/

@@ -92,6 +92,16 @@
         background: $secondary;
         color: white;
     }
+
+    &.is-gray { // client request
+        @include media-breakpoint-down(sm) {
+            padding-top: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            background: #f0f0f1;
+        }
+    }
 }
 
 //-----------------------------------------------------------------

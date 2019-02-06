@@ -2,7 +2,7 @@
 <!--
     HERO DEFAULT
 
-    - Updated: 29.01.19
+    - Updated: 06.02.19
     - Complete functionality incl. youtube video, commonly used on homepages
 -->
 {% endcomment %}
@@ -20,7 +20,7 @@
 
         <!-- HERO ITEMS -->
         {% for item in slides | limit: 1 %}
-            <div class="lv-hero-item {{ item.options }}"> <!-- style="background-image: url('{{ item.image }}')" -->
+            <div class="lv-hero-item {{ item.options }}">
 
                 <!-- HERO SLIDER (OVERLAY BEHIND) -->
                 <div class="lv-hero-item-slider-wrapper has-fade-transition" data-hero-slider>
@@ -30,7 +30,7 @@
                             data-flickity='
                             {
                                 "adaptiveHeight": true,
-                                "autoPlay": false,
+                                "autoPlay": 5000,
                                 "cellAlign": "left",
                                 "contain": true,
                                 "draggable": false,
@@ -40,7 +40,7 @@
                                 "friction": 0.28,
                                 "groupCells": false,
                                 "imagesLoaded": true,
-                                "pageDots": true,
+                                "pageDots": false,
                                 "pauseAutoPlayOnHover": true,
                                 "prevNextButtons": false,
                                 "selectedAttraction": 0.025,
@@ -89,21 +89,20 @@
 
                                 <!-- HEADER -->
                                 <h1 class="h3 mb-3">
-                                    Hall Payne is known for giving expert advice to those who need it.
+                                    {{ page.title }}
                                 </h1>
 
                                 <!-- WYSIWYG -->
                                 <div class="wysiwyg mb-5">
-                                    Our specialist Lawyers work with everyday Australians to large member organisations. Whether it's for you, your family, business or community organisation - Hall Payne can help.
+                                    {{ page.content }}
                                 </div>
 
                                 <!-- PRACTICE AREAS -->
                                 <ul class="list-unstyled">
                                     {% for item in site.data.sitemap[3].children %}
                                         <li class="mb-3">
-                                            <a class="h2 font-weight-bolder d-flex align-items-center font-weight-bold text-uppercase" href="/areas-of-practice/business-law/">
-                                                <span class="mr-2">{{ item.title }}</span>
-                                                <i class="fa fa-angle-right d-inline"></i>
+                                            <a class="h2 font-weight-bolder font-weight-bold text-uppercase" href="/areas-of-practice/areas-of-practice-item/">
+                                                <span class="mr-2">{{ item.title }}</span><i class="fa fa-angle-right d-inline"></i>
                                             </a>
                                         </li>
                                     {% endfor %}

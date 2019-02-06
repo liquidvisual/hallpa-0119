@@ -11,17 +11,36 @@
 //-----------------------------------------------------------------
 
 .modal {
-	pointer-events: none; // prevent legal modal being closed with no selection
 
 	.modal-content {
-		pointer-events: auto;
 		min-height: rem-calc(445);
 		margin: rem-calc(20);
+
+		.modal-body {
+			min-height: inherit; // fixes IE11 woo
+		}
 
 		.btn {
 			display: block;
 			text-transform: none;
 		}
+	}
+}
+
+//-----------------------------------------------------------------
+// BOOTSTRAP HACK
+// remove inline padding forced by BS in the JS
+// to prevent scrollbar jump, reassign to lv-page
+//-----------------------------------------------------------------
+
+body[style] {
+	padding-right: 0 !important;
+}
+
+body.modal-open, {
+	.lv-page {
+		position: relative;
+		overflow-y: scroll;
 	}
 }
 

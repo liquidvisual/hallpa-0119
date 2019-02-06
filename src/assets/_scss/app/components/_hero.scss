@@ -16,7 +16,7 @@ $hero-height-presets: (
         lg: auto, //rem-calc(846), // [LOCKED] - 576 maintain aspect ratio?
     ),
     is-short: (
-        xs: rem-calc(350),
+        xs: rem-calc(280), //rem-calc(350),
         md: rem-calc(386),
         lg: rem-calc(386),
     ),
@@ -128,10 +128,6 @@ $hero-height-presets: (
         min-height: 0;
         padding: rem-calc(0 0 45 0);
     }
-
-
-
-    // .lv-hero-caption
 }
 
 //----------------------------------------------------------------- *****
@@ -150,15 +146,32 @@ $hero-height-presets: (
         max-width: rem-calc(600); // [LOCKED] - psd thing
     }
 
+    .h2 {
+        @include media-breakpoint-down(md) {
+            font-size: $h3-font-size;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: rem-calc(24); // kinda specific
+        }
+    }
+
+    .wysiwyg p {
+        font-size: rem-calc(17);
+    }
+
     a:hover {
         color: white;
         opacity: 0.7;
     }
 
     .fa-angle-right {
-        font-size: rem-calc(40);
         line-height: 0;
         opacity: 0.5;
+
+        @include media-breakpoint-up(md) {
+            font-size: rem-calc(38);
+        }
     }
 }
 

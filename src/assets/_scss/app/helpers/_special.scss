@@ -38,9 +38,25 @@
     z-index: 200;
 }
 
-
 .spec-small {
 	font-size: 80%; // used only in sidebox heading /contact
+}
+
+//-----------------------------------------------------------------
+// BIZARRE - used on why switch page
+//-----------------------------------------------------------------
+
+.spec-spacious {
+	@include media-breakpoint-up(xxl) {
+	    justify-content: space-between;
+	}
+
+	[class*='col'] {
+		@include media-breakpoint-up(xxl) {
+			padding: 0;
+		    max-width: rem-calc(412);
+		}
+	}
 }
 
 //-----------------------------------------------------------------

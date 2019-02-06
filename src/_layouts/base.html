@@ -36,7 +36,26 @@
 
         <!-- BODY -->
         <div class="global-body">
-            {{ content }}
+
+            {% if page.permalink == "/" %}
+                {% include components/hero/hero.html
+                    data=page.hero_slides
+                    options=page.hero_options
+                %}
+            {% else %}
+                {% assign hero_options = page.hero_options | default: 'is-short' %}
+
+                {% include components/hero/hero_static.html
+                    bg_image=page.hero_image
+                    options=hero_options
+                %}
+            {% endif %}
+
+            {% if page.breadcrumbs %}
+                {% include components/navigation/breadcrumbs.html %}
+            {% endif %}
+
+            <!-- { { content }} -->
         </div>
 
         <!-- FOOTER -->
@@ -51,9 +70,9 @@
         {% include components/navigation/navigation.html %}
     </nav>
 
-    {% include components/modal_location.html %}
+    {% include components/modals/modal_location.html %}
 
-    {% include components/modal_personal_injury.html %}
+    {% include components/modals/modal_personal_injury.html %}
 
     <!--[if lte IE 9]>
     <div class="lv-alert-bar">
@@ -75,7 +94,6 @@
     <script src="/node_modules/magnific-popup/dist/jquery.magnific-popup.js"></script>
     <script src="/node_modules/scrollax/scrollax.js"></script>
     <script src="/assets/scripts/liquidvisual/responsive-utility.js"></script>
-    <script src="/assets/scripts/gallery.js"></script>
     <script src="/assets/scripts/hero-slider.js"></script>
     <script src="/assets/scripts/modal.js"></script>
     <script src="/assets/scripts/off-canvas.js"></script>

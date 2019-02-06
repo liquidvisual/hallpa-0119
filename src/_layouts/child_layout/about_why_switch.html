@@ -1,0 +1,103 @@
+---
+layout: base__page
+---
+
+{% assign posts = site.data.lorem_ipsum %}
+
+{% contentfor hero_caption %}
+
+	<!-- HEADING -->
+	<h1 class="display-1 text-white text-uppercase mb-4">
+		{{ page.title }}
+	</h1>
+
+	<!-- LEAD -->
+	<p class="display-3">
+		{{ page.lead }}
+	</p>
+
+	<div class="spacer mb-4"></div>
+
+	<!-- WYSIWYG -->
+	<div class="wysiwyg">
+		{{ content }}
+	</div>
+
+	<div class="spacer my-3"></div>
+
+	<!-- SPECIFY ADDITIONAL CUSTOM PADDING -->
+	<div class="spacer my-4 hidden-lg-down"></div>
+	<div class="spacer my-5 hidden-lg-down"></div>
+
+{% endcontentfor %}
+
+<!-- GRID SECTION #1 -->
+<section class="section pb-md-4 pb-lg-5">
+	<div class="container">
+		<div class="row spec-spacious">
+			{% for item in posts | limit: 3 %}
+				<div class="col-md-4 col-lg-4 mb-4">
+
+					<!-- HEADING -->
+					<h3 class="mb-3">
+						{{ item.title }}
+					</h3>
+
+					<!-- TEXT -->
+					{{ item.body | markdownify | truncate: 150 }}
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<!-- GRID SECTION #2 -->
+<section class="section is-gray pb-md-4 pb-lg-5">
+	<div class="container">
+		<div class="row spec-spacious">
+			{% for item in posts | limit: 3 %}
+				<div class="col-md-4 col-lg-4 mb-4">
+
+					<!-- IMAGE (OPTIONAL) -->
+					<img width="100%" class="mb-2" src="{{ item.image }}" alt="{{ item.title }}"></p>
+
+					<!-- HEADING -->
+					<h3 class="mb-3">
+						{{ item.title }}
+					</h3>
+
+					<!-- TEXT -->
+					{{ item.body | truncate: 150 }}
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<!-- GRID SECTION #3 -->
+<section class="section pb-md-4 pb-lg-5">
+	<div class="container">
+		<div class="row spec-spacious">
+			{% for item in posts | limit: 3 %}
+				<div class="col-md-4 col-lg-4 mb-4">
+
+					<!-- IMAGE (OPTIONAL) -->
+					<img width="100%" class="mb-2" src="{{ item.image }}" alt="{{ item.title }}"></p>
+
+					<!-- HEADING -->
+					<h3 class="mb-3">
+						{{ item.title }}
+					</h3>
+
+					<!-- TEXT -->
+					{{ item.body | truncate: 150 }}
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% include sections/section_contact.html %}
