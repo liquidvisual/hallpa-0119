@@ -20,7 +20,7 @@
 //-----------------------------------------------------------------
 
 .section {
-    overflow: hidden;
+    overflow: hidden; // used for the sidebar atm, and bleeding, not good practice but too far along
 
     > .container {
         position: relative;
@@ -96,6 +96,7 @@
     &.is-gray { // client request
         @include media-breakpoint-down(sm) {
             padding-top: 0;
+            padding-bottom: 0;
         }
 
         @include media-breakpoint-up(md) {
@@ -210,8 +211,23 @@
 }
 
 //-----------------------------------------------------------------
-//
+// SECTION CONTACT
 //-----------------------------------------------------------------
+
+.section-contact {
+    a {
+        @include media-breakpoint-down(md) {
+            font-size: rem-calc(19);
+        }
+    }
+
+    .bg-fill {
+        @include media-breakpoint-only(lg) {
+            left: rem-calc(-40);
+        }
+    }
+}
+
 //=========================================
 //
 //=========================================

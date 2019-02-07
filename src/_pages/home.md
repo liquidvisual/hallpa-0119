@@ -6,7 +6,7 @@ regenerate: true
 hero_options: is-default
 hero_slides:
   - title: Placeholder 01
-    image: /assets/img/content/backgrounds/placeholder-1.jpg
+    image: /assets/img/content/backgrounds/placeholder-4.jpg
   - title: Placeholder 02
     image: /assets/img/content/backgrounds/placeholder-2.jpg
   - title: Placeholder 03

@@ -17,6 +17,12 @@
     }
 }
 
+.sidebar.ml-auto .section {
+    @include media-breakpoint-down(md) {
+        overflow: visible;
+    }
+}
+
 //-----------------------------------------------------------------
 // SIDEBAR
 //-----------------------------------------------------------------
@@ -54,6 +60,19 @@
 //-----------------------------------------------------------------
 
 .side-nav {
+    width: calc(100% + #{$container-gutter/1.5}*2);
+    margin-bottom: rem-calc(-16); // make it neat at the bottom
+    margin-left: -$container-gutter/1.5; // same as global.scss
+
+    @include media-breakpoint-up(md) {
+        width: calc(100% + #{$container-gutter}*2);
+        margin-left: -$container-gutter; // same as global.scss
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: auto;
+        margin: 0;
+    }
 
     li {
         border-bottom: 1px solid rgba(black, 0.15);
@@ -63,12 +82,16 @@
     .anchor {
         display: flex;
         align-items: center;
-        padding: rem-calc(20 22 20 22);
-        font-size: rem-calc(20);
+        padding: rem-calc(20 25 20 22);
+        font-size: rem-calc(16);
         font-weight: $font-weight-bolder;
         color: white;
 
         @include media-breakpoint-up(md) {
+            font-size: rem-calc(20);
+        }
+
+        @include media-breakpoint-up(lg) {
             padding: rem-calc(20 22 20 44);
         }
 

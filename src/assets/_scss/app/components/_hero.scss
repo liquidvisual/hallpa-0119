@@ -16,7 +16,7 @@ $hero-height-presets: (
         lg: auto, //rem-calc(846), // [LOCKED] - 576 maintain aspect ratio?
     ),
     is-short: (
-        xs: rem-calc(280), //rem-calc(350),
+        xs: rem-calc(300), //rem-calc(350),
         md: rem-calc(386),
         lg: rem-calc(386),
     ),
@@ -141,9 +141,16 @@ $hero-height-presets: (
     color: white;
     z-index: 1; // [LOCKED] - above tint
 
+    overflow-wrap: break-word;
+    // word-wrap: break-word;
+    // word-break: break-word;
+    // hyphens: auto;
+    // -webkit-hyphens: auto;
+
     h1,
     .display-1 {
         max-width: rem-calc(600); // [LOCKED] - psd thing
+
     }
 
     .h2 {
