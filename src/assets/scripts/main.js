@@ -47,9 +47,10 @@ $(function () {
 $('a[href*="#"]:not([href="#"], [href="#sitemap"], [data-toggle="tab"])').click(function() {
     var id = $(this).attr('href');
     var endPos = $(id);
+    var headerHeight = $('.global-header').height();
 
     if (endPos.length) {
-        $.scrollTo(endPos.offset().top - 50, 500);
+        $.scrollTo(endPos.offset().top - headerHeight, 500);
         // return false;
     }
 });

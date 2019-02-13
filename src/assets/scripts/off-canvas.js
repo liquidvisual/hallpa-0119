@@ -1,7 +1,10 @@
 /*
-    OFF-CANVAS.JS - Last updated: 17.09.18, 16.04.18, 13.12.16
+    OFF-CANVAS.JS - Last updated: 13.02.19, 17.09.18, 16.04.18, 13.12.16
 
-    - Notes: Latest Nov version fixes major problem with 3rd lvls
+    - Notes:
+
+    * 2019 versions delays window.location to finish animation
+    * Latest Nov version fixes major problem with 3rd lvls
     * off-canvas closes when clicking hash tag anchor
 */
 //-----------------------------------------------------------------
@@ -19,6 +22,7 @@
     var $dropdowns = $('.lv-off-canvas .dropdown');
     var $lvPage = $('.lv-page');
     var $lvOffCanvas = $('.lv-off-canvas');
+    var $anchor = $('a', $lvOffCanvas);
     var $hashAnchor = $('a[href*="#"]:not([href="#"])', $lvOffCanvas);
     var $submenuTrigger = $('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');
 
@@ -26,7 +30,7 @@
     // HAMBURGER CLICK
     //-----------------------------------------------------------------
 
-    $('[data-menu-toggle]').click(function(event){
+    $('[data-menu-toggle]').on('click', function(event){
 
         event.preventDefault();
 
@@ -45,7 +49,7 @@
 
             setTimeout(function(){
 
-                $lvPage.click(function(event){
+                $lvPage.on('click', function(event){
                     event.stopPropagation();
 
                     if ($('.has-open-menu').length) {
@@ -61,7 +65,7 @@
     // HASH ANCHOR CLICK - NEW -
     //-----------------------------------------------------------------
 
-    $hashAnchor.click(function(event){
+    $hashAnchor.on('click', function(event){
         event.preventDefault();
         event.stopPropagation();
         $html.removeClass('has-open-menu').addClass('has-closed-menu');
@@ -72,7 +76,7 @@
     // SUBMENU CLICK
     //-----------------------------------------------------------------
 
-    $submenuTrigger.click(function(event){
+    $submenuTrigger.on('click', function(event){
         event.preventDefault();
         event.stopPropagation();
         $(this).parent().next('.dropdown').addClass('is-open');
@@ -82,9 +86,24 @@
     // DROPDOWN CLICK (EXIT BACK)
     //-----------------------------------------------------------------
 
-    $dropdowns.click(function(event){
+    $dropdowns.on('click', function(event){
         $(this).removeClass('is-open');
         event.stopPropagation();
+    });
+
+    //-----------------------------------------------------------------
+    // ANCHORS CLICK (smoother experience)
+    //-----------------------------------------------------------------
+
+    $anchor.on('click', function(event){
+        event.preventDefault();
+        var path = $(this).attr('href');
+        // $html.removeClass('has-open-menu').addClass('has-closed-menu');
+
+        setTimeout(function() {
+            window.location = path;
+
+        }.bind(path), 200);
     });
 
     //-----------------------------------------------------------------

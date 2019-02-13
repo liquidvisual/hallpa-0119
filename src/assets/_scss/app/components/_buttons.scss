@@ -231,8 +231,9 @@ a:hover .btn-tile {
     font-size: rem-calc(18);
     padding: rem-calc(16 20);
     margin-bottom: rem-calc(4);
+    text-align: left;
 
-    i.fa-angle-right {
+    i.fa {
         margin-left: auto;
         font-size: rem-calc(32);
         color: white;
@@ -242,6 +243,36 @@ a:hover .btn-tile {
     &:hover {
         opacity: 1 !important;
     }
+}
+
+// Used in sidebar--content_rich template only (accordion like)
+
+.btn-accordion { // adhoc, not reusable
+    background: #efeff0;
+    text-transform: none;
+    font-size: rem-calc(16);
+    color: $body-color;
+
+    i.fa {
+        color: rgba(black, 0.35);
+        padding-left: rem-calc(4);
+    }
+
+    &:hover {
+        background: darken(#efeff0, 3%);
+    }
+}
+
+.btn-up {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    background: #efeff0;
+    font-weight: $font-weight-bold;
+    color: #b4b5b6;
+    border-radius: 100%;
 }
 
 .sidebar .btn-secondary {
