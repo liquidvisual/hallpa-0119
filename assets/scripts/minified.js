@@ -5543,20 +5543,25 @@ function launchSlider() {
       n = e(".lv-off-canvas .dropdown"),
       i = e(".lv-page"),
       o = e(".lv-off-canvas"),
-      r = e('a[href*="#"]:not([href="#"])', o),
-      s = e('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');e("[data-menu-toggle]").click(function (n) {
+      r = e("a", o),
+      s = e('a[href*="#"]:not([href="#"])', o),
+      a = e('<span class="submenu-trigger"><i class="fa fa-angle-right"></i></span>');e("[data-menu-toggle]").on("click", function (n) {
     n.preventDefault(), e(".has-open-menu").length || (t.removeClass("has-closed-menu").addClass("has-open-menu"), setTimeout(function () {
-      i.click(function (n) {
+      i.on("click", function (n) {
         n.stopPropagation(), e(".has-open-menu").length && (t.removeClass("has-open-menu").addClass("has-closed-menu"), e(this).unbind("click"));
       });
     }, 10));
-  }), r.click(function (e) {
+  }), s.on("click", function (e) {
     e.preventDefault(), e.stopPropagation(), t.removeClass("has-open-menu").addClass("has-closed-menu"), i.unbind("click");
-  }), s.click(function (t) {
+  }), a.on("click", function (t) {
     t.preventDefault(), t.stopPropagation(), e(this).parent().next(".dropdown").addClass("is-open");
-  }), n.click(function (t) {
+  }), n.on("click", function (t) {
     e(this).removeClass("is-open"), t.stopPropagation();
-  }), e(".lv-off-canvas .has-dropdown > a").append(s);
+  }), r.on("click", function (t) {
+    t.preventDefault();var n = e(this).attr("href");setTimeout(function () {
+      window.location = n;
+    }.bind(n), 200);
+  }), e(".lv-off-canvas .has-dropdown > a").append(a);
 }(jQuery), $("[data-search-trigger]").click(function (e) {
   return $("[data-global-search]").addClass("active"), $("[data-global-search] input").focus(), !1;
 }), $("[data-global-search]").on("mousedown", function () {
@@ -5620,7 +5625,8 @@ function launchSlider() {
   document.documentElement.classList.add("has-loaded"), initHeadroom(), $(window).on("resize", onResize), $.Scrollax();
 }), $('a[href*="#"]:not([href="#"], [href="#sitemap"], [data-toggle="tab"])').click(function () {
   var e = $(this).attr("href"),
-      t = $(e);t.length && $.scrollTo(t.offset().top - 50, 500);
+      t = $(e),
+      n = $(".global-header").height();t.length && $.scrollTo(t.offset().top - n, 500);
 }), $("[data-back-top]").click(function () {
   $.scrollTo(0, 500);
 });
