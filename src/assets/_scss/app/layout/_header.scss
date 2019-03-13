@@ -13,13 +13,14 @@ $header-top-md-height: 50px !default;
 $header-top-lg-height: 50px !default;
 
 $header-body-sm-height: 60px !default;
-$header-body-md-height: 230px !default;
-$header-body-lg-height: 230px !default;
-$header-body-xl-height: 324px !default;
+$header-body-md-height: 180px !default; //230px !default;
+$header-body-lg-height: 180px !default; //230px !default;
+$header-body-xl-height: 214px !default; //324px !default;
+$header-body-xxl-height: 304px !default; //324px !default;
 
-$header-bottom-sm-height: 50px !default;
-$header-bottom-md-height: 50px !default;
-$header-bottom-lg-height: 50px !default;
+// $header-bottom-sm-height: 50px !default;
+// $header-bottom-md-height: 50px !default;
+// $header-bottom-lg-height: 50px !default;
 
 //-----------------------------------------------------------------
 // HEADROOM
@@ -195,6 +196,10 @@ $header-bottom-lg-height: 50px !default;
 
 	@include media-breakpoint-up(xl) {
 		height: $header-body-xl-height;
+	}
+
+	@include media-breakpoint-up(xxl) {
+	    height: $header-body-xxl-height;
 	}
 
 	//=========================================

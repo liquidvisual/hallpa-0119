@@ -2,5 +2,7 @@
 layout: child_layout/blog
 title: Blog
 permalink: /blog/
-hero_image: /assets/img/content/backgrounds/bg-1.jpg
+hero_image:
+hero_options: is-gray-minimal
+theme: theme-blog
 ---

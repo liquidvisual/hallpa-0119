@@ -8,12 +8,12 @@
         {%- if page.url == '/' -%}
             {{- site.data.settings.title_homepage -}}
         {%- else -%}
-            {{- page.title }} - {{ site.data.settings.title -}}
+            {{ page.title }} - {{ site.data.settings.title }}
         {%- endif -%}
     </title>
 
     <!-- CDN -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,700">
 
     <!-- build:js({src,.}) /assets/scripts/vue.js -->
     <script src="/node_modules/vue/dist/vue{% unless site.environment == 'development' %}.min{% endunless %}.js"></script>

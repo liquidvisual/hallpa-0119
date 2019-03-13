@@ -15,15 +15,23 @@
 	overflow: hidden;
 
 	@include media-breakpoint-down(sm) {
-	    padding-top: 60px;
+	    padding-top: $header-body-sm-height;
 	}
 
 	@include media-breakpoint-up(md) {
-	    padding-top: 280px;
+	    padding-top: $header-body-md-height + $header-top-sm-height;
+	}
+
+	@include media-breakpoint-up(lg) {
+	    padding-top: $header-body-lg-height + $header-top-sm-height;
 	}
 
 	@include media-breakpoint-up(xl) {
-	    padding-top: 374px;
+	    padding-top: $header-body-xl-height + $header-top-sm-height;
+	}
+
+	@include media-breakpoint-up(xxl) {
+	    padding-top: $header-body-xxl-height + $header-top-sm-height;
 	}
 }
 
