@@ -16,9 +16,10 @@ $hero-height-presets: (
         lg: auto, //rem-calc(846), // [LOCKED] - 576 maintain aspect ratio?
     ),
     is-short: (
-        xs: rem-calc(300), //rem-calc(350),
-        md: rem-calc(386),
-        lg: rem-calc(386),
+        xs: rem-calc(252), //300
+        md: rem-calc(290), //386
+        lg: rem-calc(322), //386
+        xxl: rem-calc(354) // client requested
     ),
     is-full: (
         xs: auto,
