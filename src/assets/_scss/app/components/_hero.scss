@@ -35,6 +35,11 @@ $hero-height-presets: (
         xs: auto,
         md: auto,
         lg: auto,
+    ),
+    is-gray-minimal-short: (
+        xs: rem-calc(70),
+        md: rem-calc(76),
+        lg: rem-calc(76),
     )
 );
 
@@ -140,7 +145,8 @@ $hero-height-presets: (
 // IS GRAY MINIMAL (BLOG/BLOG ITEM)
 //-----------------------------------------------------------------
 
-.is-gray-minimal {
+.is-gray-minimal,
+.is-gray-minimal-short {
 
     .lv-hero-item {
         padding: rem-calc(50 0 30 0);

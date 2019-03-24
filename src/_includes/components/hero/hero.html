@@ -64,12 +64,14 @@
                                     {% include components/hero/hero__vimeo_plugin.html %}
                                 {% endif %}
 
+                                {% comment %}
                                 <!-- PARALLAX (OPTIONAL) -->
                                 {% unless item.youtube_id or item.vimeo_id  %}
                                     {% if item.image %}
                                         {% include components/hero/hero__parallax_plugin.html image=item.image %}
                                     {% endif %}
                                 {% endunless  %}
+                                {% endcomment %}
 
                             </div>
                         {% endfor %}

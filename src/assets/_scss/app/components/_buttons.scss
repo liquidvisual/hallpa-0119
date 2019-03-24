@@ -39,6 +39,22 @@ b, strong {
 }
 
 //-----------------------------------------------------------------
+// BTN-DOWNLOAD
+// small gray button used for pdfs etc, used in blog-item
+//-----------------------------------------------------------------
+
+.btn-download {
+    padding: rem-calc(8 15);
+    background-color: #e6e6e6;
+    font-size: rem-calc(14);
+    color: $body-color;
+
+    &:hover {
+        background-color: darken(#e6e6e6, 2%)
+    }
+}
+
+//-----------------------------------------------------------------
 // BACK TO TOP
 //-----------------------------------------------------------------
 
