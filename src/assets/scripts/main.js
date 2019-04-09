@@ -25,7 +25,7 @@ $(function () {
     $(window).on('resize', onResize);
 
     // Parallax
-    $.Scrollax();
+    // $.Scrollax();
 
     // Tooltips
     // $('[data-toggle="tooltip"]').tooltip();

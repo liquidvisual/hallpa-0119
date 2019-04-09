@@ -69,6 +69,9 @@ body[data-location='nt'] [data-visible-for*='nt'] { display: block; }
 body[data-location='tas'] [data-visible-for*='tas'] { display: block; }
 body[data-location='other'] [data-visible-for*='other'] { display: block; }
 
+// show OTHER for SEO when no choice is made
+body[data-location=''] [data-visible-for*='other'] { display: block; }
+
 //=========================================
 //
 //=========================================
