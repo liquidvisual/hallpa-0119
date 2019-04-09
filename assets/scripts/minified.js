@@ -5657,7 +5657,7 @@ function launchSlider() {
     headroom && setHeadroomOffset();
   }, 250);
 }$(function () {
-  document.documentElement.classList.add("has-loaded"), initHeadroom(), $(window).on("resize", onResize), $.Scrollax();
+  document.documentElement.classList.add("has-loaded"), initHeadroom(), $(window).on("resize", onResize);
 }), $('a[href*="#"]:not([href="#"], [href="#sitemap"], [data-toggle="tab"])').click(function () {
   var e = $(this).attr("href"),
       t = $(e),
