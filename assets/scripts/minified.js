@@ -5609,16 +5609,14 @@ function launchSlider() {
   staffList && initStaffApp();
 } catch (e) {}function initStaffApp() {
   Vue.component("sort-select", { template: '\n            <select\n                class="custom-select"\n                :sort-order="sortOrder"\n                v-model="sortOrder"\n                @change="$emit(\'input\', sortOrder)"\n            >\n                <option\n                    v-for="sortKey in Object.keys(sortOptions)"\n                    v-text="sortKey"\n                    :value="sortKey">\n                </option>\n            </select>\n        ', props: { sortOptions: Object }, data: function data() {
-      return { sortOrder: "All" };
+      return { sortOrder: "Position" };
     } }), new Vue({ el: "#vue-staff-app", data: function data() {
-      return { list: null, sortOrder: "All" };
+      return { list: null, sortOrder: "Position" };
     }, computed: {
       sortOptions: function sortOptions() {
         var _this = this;
 
-        return { All: function All() {
-            return _this.list;
-          }, Location: function Location() {
+        return { Location: function Location() {
             return _this.list.slice().sort(function (e, t) {
               return e.location === t.location ? e.lastName.localeCompare(t.lastName) : e.location.localeCompare(t.location);
             });
