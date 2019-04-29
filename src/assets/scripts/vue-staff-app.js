@@ -46,7 +46,7 @@ function initStaffApp() {
         },
         data() {
             return {
-                sortOrder: 'All' // need this to init with
+                sortOrder: 'Position' // need this to init with
             }
         }
      });
@@ -60,16 +60,16 @@ function initStaffApp() {
         data() {
             return {
                 list: null,
-                sortOrder: "All",
+                sortOrder: "Position",
             }
         },
         computed: {
             sortOptions() {
                 return {
-                    "All": () => {
-                        return this.list;
-                    },
-                    "Location": () => {
+                    // 'All': () => {
+                    //     return this.list;
+                    // },
+                    'Location': () => {
                        return this.list.slice().sort(function(a, b) {
                           if (a.location === b.location) {
                              // name is only important when locations are the same
@@ -78,7 +78,7 @@ function initStaffApp() {
                           return a['location'].localeCompare(b['location']);
                        });
                     },
-                    "Position": () => {
+                    'Position': () => {
                        return this.list.slice().sort(function(a, b) {
                           if (a.position === b.position) {
                              return a['lastName'].localeCompare(b['lastName']);
@@ -86,7 +86,7 @@ function initStaffApp() {
                           return a['position'].localeCompare(b['position']);
                        });
                     },
-                    "Surname": () => {
+                    'Surname': () => {
                         // Set slice() to avoid to generate an infinite loop!
                         return this.list.slice().sort(function(a, b) {
                             return a['lastName'].localeCompare(b['lastName']);
