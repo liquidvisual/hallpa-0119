@@ -2582,11 +2582,13 @@ function launchSlider() {
                 g = d(c.bottom) > d(n.bottom),
                 v = "left" === i && h || "right" === i && p || "top" === i && m || "bottom" === i && g,
                 y = -1 !== ["top", "bottom"].indexOf(i),
-                b = !!t.flipVariations && (y && "start" === r && h || y && "end" === r && p || !y && "start" === r && m || !y && "end" === r && g);(f || v || b) && (e.flipped = !0, (f || v) && (i = s[l + 1]), b && (r = function (e) {
+                b = !!t.flipVariations && (y && "start" === r && h || y && "end" === r && p || !y && "start" === r && m || !y && "end" === r && g),
+                _ = !!t.flipVariationsByContent && (y && "start" === r && p || y && "end" === r && h || !y && "start" === r && g || !y && "end" === r && m),
+                w = b || _;(f || v || w) && (e.flipped = !0, (f || v) && (i = s[l + 1]), w && (r = function (e) {
               return "end" === e ? "start" : "start" === e ? "end" : e;
             }(r)), e.placement = i + (r ? "-" + r : ""), e.offsets.popper = E({}, e.offsets.popper, O(e.instance.popper, e.offsets.reference, e.placement)), e = P(e.instance.modifiers, e, "flip"));
           }), e;
-        }, behavior: "flip", padding: 5, boundariesElement: "viewport" }, inner: { order: 700, enabled: !1, fn: function fn(e) {
+        }, behavior: "flip", padding: 5, boundariesElement: "viewport", flipVariations: !1, flipVariationsByContent: !1 }, inner: { order: 700, enabled: !1, fn: function fn(e) {
           var t = e.placement,
               n = t.split("-")[0],
               i = e.offsets,
