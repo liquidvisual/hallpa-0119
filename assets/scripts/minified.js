@@ -5571,7 +5571,9 @@ function launchSlider() {
 }function setLocation(e, t) {
   "qld" == e && "confirm" == t ? ($locationModal.modal("hide").on("hidden.bs.modal", function () {
     document.body.classList.add("modal-open");
-  }), $personalInjuryModal.modal("show")) : (document.body.dataset.location = e, localStorage.setItem("location", e), $locationModal.modal("hide"), $personalInjuryModal.modal("hide"));
+  }), $personalInjuryModal.modal("show")) : (document.body.dataset.location = e, localStorage.setItem("location", e), $personalInjuryModal.modal("hide"), $locationModal.modal("hide").on("hidden.bs.modal", function () {
+    document.body.classList.remove("modal-open");
+  }));
 }function closeSearch() {
   $("[data-global-search]").removeClass("active"), document.activeElement.blur();
 }launchModal(), function (e) {
