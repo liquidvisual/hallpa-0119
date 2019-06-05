@@ -280,15 +280,21 @@ a:hover .btn-tile {
 }
 
 .btn-up {
-    min-width: 22px;
-    width: 22px;
-    height: 22px;
-    line-height: 20px;
+    min-width: 23px;
+    width: 23px;
+    height: 23px;
+    line-height: 0;
+    // line-height: 10px;
     text-align: center;
     background: #efeff0;
     font-weight: $font-weight-bold;
     color: #b4b5b6;
     border-radius: 100%;
+
+    .fa {
+        position: relative;
+        top: -2px;
+    }
 }
 
 .sidebar .btn-secondary {
