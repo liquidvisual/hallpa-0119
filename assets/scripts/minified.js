@@ -5562,7 +5562,20 @@ function launchSlider() {
   }(), e("html[development]").length && (i(), e(window).resize(function () {
     i();
   }));
-}(jQuery), launchSlider();var $locationModal = $("#location-modal"),
+}(jQuery), launchSlider(), function (e) {
+  var t,
+      n = e("#blog-modal"),
+      i = document.body.classList.contains("theme-show-blog-modal"),
+      o = "seeking-information-about-queensland-personal-compensation-law",
+      r = (t = o, localStorage.getItem(t) || null),
+      s = n[0].querySelector("[data-yes-btn]");function a(e, t) {
+    localStorage.setItem(e, t), n.modal("hide"), n.modal("hide").on("hidden.bs.modal", function () {
+      document.body.classList.remove("modal-open");
+    });
+  }i && r && a(o, !0), i && !r && n.modal("show"), s.addEventListener("click", function () {
+    a(o, !0);
+  });
+}($);var $locationModal = $("#location-modal"),
     $personalInjuryModal = $("#personal-injury-modal");function launchModal() {
   var e = Boolean(document.querySelector(".theme-show-modal")),
       t = getLocation();t ? setLocation(t) : !t && e && $locationModal.modal("show");
