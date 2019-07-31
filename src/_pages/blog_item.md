@@ -6,7 +6,7 @@ permalink: /blog/blog-item/
 hero_image:
 hero_options: is-gray-minimal-short
 breadcrumbs: true
-theme: theme-no-hero
+theme: theme-no-hero theme-show-blog-modal
 ---
 
 <p class="lead">In Australia, there are two courts your family law matter can be filed or heard in; the Family Court of Australia and the Federal Circuit Court.</p>

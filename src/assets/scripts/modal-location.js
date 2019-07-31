@@ -1,7 +1,8 @@
 /*
-    MODAL.JS - Last updated: 05.02.19
+    MODAL-LOCATION.JS - Last updated: 05.02.19
 
     Notes:
+        - Not updated with latest, just renamed for future maintenance
         - https://getbootstrap.com/docs/4.1/components/modal/#via-javascript
         - $('.modal-location').on('hidden.bs.modal', function (e) { })
 */
