@@ -146,8 +146,19 @@ function onResize() {
 }
 
 //-----------------------------------------------------------------
-//
+// SHOW MORE BUTTON (shown in  sidebar of /our-people/our-people-item
 //-----------------------------------------------------------------
+
+$('.show-more-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var readMoreContainer = $this.parent().parent().find('.read-more-container');
+    var isHidden = !!readMoreContainer.attr('hidden');
+
+    $this.find('.fa-angle-up').toggleClass('fa-angle-down');
+    readMoreContainer.attr('hidden', !isHidden)
+});
+
 //==================================================
 //
 //==================================================
