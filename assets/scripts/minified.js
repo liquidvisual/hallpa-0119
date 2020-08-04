@@ -5679,4 +5679,8 @@ function launchSlider() {
       n = $(".global-header").height();t.length && $.scrollTo(t.offset().top - n, 500);
 }), $("[data-back-top]").click(function () {
   $.scrollTo(0, 500);
+}), $(".show-more-btn").on("click", function (e) {
+  e.preventDefault();var t = $(this),
+      n = t.parent().parent().find(".read-more-container"),
+      i = !!n.attr("hidden");t.find(".fa-angle-up").toggleClass("fa-angle-down"), n.attr("hidden", !i);
 });
