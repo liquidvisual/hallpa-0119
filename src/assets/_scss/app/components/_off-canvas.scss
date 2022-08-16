@@ -1,9 +1,13 @@
 /*
     OFF-CANVAS.CSS
 
-    - Last updated: 06.02.19
+    - Last updated: 17.08.22, 28.03.19, 04.03.19, 16.04.18
     - liquidvisual.com
 
+    - Taken from GNL to retro-fit
+
+	- slightly improved from Swellnet, (workskil)
+	- empty hrefs act as whole link
     - latest update removes 'off-canvas' effect and transforms.
       Runs jankier, but will handle deep menus
 */
@@ -12,10 +16,12 @@
 //-----------------------------------------------------------------
 
 $body-bg: white !default;
-$menu-bg-color: $secondary;
+$menu-bg-color: $secondary; //darken($secondary, 0%); //darken(#3e3e4b, 15%);
+
 $menu-width-xs: 267px;
 $menu-width-sm: 320px; // NEW
 $menu-width-md: 350px;
+
 $hamburger-width: 28px;
 $hamburger-height: $hamburger-width - $hamburger-width/5;
 $hamburger-slit-height: 3px;
@@ -40,7 +46,7 @@ $hamburger-slit-height: 3px;
 	}
 
 	@include media-breakpoint-up(md) {
-	    width: $menu-width-md;
+	    width: $menu-width-md; // [required]
 	}
 }
 
@@ -53,7 +59,7 @@ $hamburger-slit-height: 3px;
 	height: 100%;
 	padding: 0 0 50px 0;
 	margin: 0;
-	font-size: rem-calc(16);
+	font-size: 15px; //rem-calc(16);
 	overflow: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
@@ -149,7 +155,7 @@ $hamburger-slit-height: 3px;
 		padding: 26px 20px 15px 40px;
 		color: rgba(black, 0.4);
 		background: darken($menu-bg-color, 5%) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAADRklEQVR4nO3dP08UQRjH8e/sYWEDR+efxkJ7SjUxUpCIHe/A8xVoQgzttSQc8R2Ina2NuUsoaIiWZ2+IFhwlEBP+BLmxIAtBIODtM7vzPLO/8pKbffLJZG5vdmbHkWhevrvznGH21jv6fxr771cXt3dDXs+FbDzWzM7f++Cca51+4NkZeqZ7y5vfQ10zOegLyHkCYycFfSVynoDYyUBfi5wnEHYS0DdGzhMA2zz0fyPn8ew4hlNfOlu/JOrIJBqJNSMjAziaxz5rStUyJtVQbCmEDIDv95YHYkOHyR5dHBmG0Jap5iTmerQEsve0ep3BZ6GSAGM/hlLI3c7mR6GSTmMGOmZkMAIdOzIYgNaADMqhtSCDYmhNyKAUWhsyKITWiAzKoLUigyJozcigBFo7MiiAtoAMkUNbQYaIoS0hQ6TQ1pAhQmiLyBDZxL8IMr7d7QyiQoaIerRMT/Yr3c7gtVBJookC2joyRACdAjJUDJ0KMlQInRIyVASdGjJUAJ0iMpQMnSoylAidMjKUBJ06MpQAXSOfJCh0jXyWYNA18vkEga6RL0Ycuka+PKIr/l/M331TI18eUeiMrF3k+1aRQRB6ZmFyAkfBXUxuTaSYCNOQamhj/eDw0dPxJvB41DacY+7hk/GfP77+Drb5vaqIDh1Hjb02+H6RNpxjZXb+/iuhkqKJ+F3HzMLkxK3j22vgpoq0E+OT7CIJch9dY19MsH+GNfb5BJ3rqLHPEnz2rsY+SSnz0TV2iU9YUscu9ZlhytilPwVPFbuSdR0pYle2Uik17ErX3qWEXflq0lSwK4eGNLCjgAY57CF+rrck+z4kiUQDDULYJbw5d5REBQ12saODBpvYUUKDPexoocEWdtTQYAc7emiwga0CGvRjq4EG3diqoEEvtjpo0ImtEhr0YauFBl3YqqFBD7Z6aNCBbQIa4sc2Aw1xY5uChnixzZ3Dsrq4vXvU2J8utPPA0cycb4sVhcEenUeiZx819ppSJ3ea69F5ivds35c8HtUsNBTDlj7CyTQ0jIbtPS3pJQtmx+h/c9Mxuz7CSSDXYddHOAnmKuzQy8nEtihrycb6weGDZ2OfMj924Lyb8o5vzh23uktbQZeR/QVa6+byTLlOUgAAAABJRU5ErkJggg==') no-repeat 15px 29px;
-		background-size: 13px;
+		background-size: 15px;
 		// font-size: 16px; // [LOCKED]
 		text-transform: uppercase;
 		z-index: 1000;
@@ -202,7 +208,7 @@ $hamburger-slit-height: 3px;
 	// NEXT ARROW .has-dropdown > a > .text::after
 	//=========================================
 
-	.has-dropdown > a > .submenu-trigger {
+	.has-dropdown > a > .submenu-arrow {
 		content: "\f105";
 		position: absolute;
 		top: 0;
@@ -215,9 +221,16 @@ $hamburger-slit-height: 3px;
 		font-size: 25px;
 		font-weight: normal;
 		// color: rgba(white, 0.4);
-		// color: rgba(black, 0.4);
 		text-align: center;
 		cursor: pointer;
+	}
+
+	.has-dropdown > a[href=''] > .submenu-arrow {
+		left: -21px;// fix border glitch
+		width: calc(100% + 20px);
+		padding-right: 18px;
+		text-align: right;
+		// background: aqua;
 	}
 }
 
@@ -239,18 +252,10 @@ $hamburger-slit-height: 3px;
 
 	.text {
 		display: inline-block;
-		width: $menu-width-xs - 80px;
+		width: 95%;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
-
-		@include media-breakpoint-up(sm) {
-		    width: $menu-width-sm - 80px;
-		}
-
-		@include media-breakpoint-up(md) {
-		    width: $menu-width-md - 80px;
-		}
 	}
 }
 
@@ -269,6 +274,87 @@ $hamburger-slit-height: 3px;
 		opacity: 1;
 	}
 }
+
+//-----------------------------------------------------------------
+// HAMBURGER TRIGGER
+//-----------------------------------------------------------------
+
+// .lv-hamburger {
+// 	position: relative;
+// 	width: $hamburger-width;
+// 	height: $hamburger-height;
+// 	cursor: pointer;
+// 	// background: aqua;
+
+// 	.lv-hamburger-top,
+// 	.lv-hamburger-middle,
+// 	.lv-hamburger-bottom {
+// 		position: absolute;
+// 		left: 0;
+// 		width: 100%;
+// 		height: $hamburger-slit-height;
+// 		background-color: #222;
+// 	}
+
+// 	.lv-hamburger-middle {
+// 		top: calc(50% - #{$hamburger-slit-height}/2);
+// 	}
+
+// 	.lv-hamburger-bottom {
+// 		bottom: 0;
+// 	}
+// }
+
+//=========================================
+// HAS MENU OPEN - STATE
+//=========================================
+
+// .has-open-menu {
+// 	.lv-hamburger-top,
+// 	.lv-hamburger-middle,
+// 	.lv-hamburger-bottom {
+// 		transition: transform ease 300ms 300ms;
+// 	}
+
+// 	.lv-hamburger-top {
+// 		transform: rotate(45deg);
+// 		top: calc(50% - #{$hamburger-slit-height/2});
+// 	}
+
+// 	.lv-hamburger-bottom {
+// 		transform: rotate(-45deg);
+// 		top: calc(50% - #{$hamburger-slit-height/2});
+// 	}
+
+// 	.lv-hamburger-middle {
+// 		background: rgba(black, 0.8) !important; // [LOCKED] - override theming
+// 		position: fixed;
+// 		top: 0;
+// 		left: -20px;
+// 		width: 100%;
+// 		height: 130vh; // savior
+// 		z-index: 1;
+// 	}
+// }
+
+//-----------------------------------------------------------------
+// CONTEXT
+//-----------------------------------------------------------------
+
+.lv-off-canvas .is-nav-only {
+	display: none; // to hide 'Home' from appearing twice. Remove if client changes this.
+}
+
+.is-off-canvas-only {
+    display: none;
+}
+
+.lv-off-canvas .is-off-canvas-only {
+    display: block;
+    border: 0;
+}
+
+// EXTRA ~~~~~~
 
 //-----------------------------------------------------------------
 // HAS MENU OPEN - STATE
@@ -309,4 +395,3 @@ $hamburger-slit-height: 3px;
 		width: calc(100% - 18px);
 	}
 }
-

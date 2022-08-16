@@ -3,7 +3,7 @@ layout: base__page_sidebar_7x5
 ---
 
 {% assign law_team = site.data.staff %}
-{% assign nav_items = site.data.sitemap[3].children[0].children %}
+{% assign nav_items = site.data.sitemap["Areas of Practice"].children["Personal Compensation Law"].children %}
 
 <!-- SECTION -->
 <section class="section">
@@ -51,8 +51,8 @@ layout: base__page_sidebar_7x5
 				</li>
 				{% for item in nav_items %}
 					<li class="{% if forloop.index == 1 %}active{% endif %}">
-						<a href="{{ item.url }}">
-							<span class="text">{{ item.title }}</span>
+						<a href="{{ item[1].url }}">
+							<span class="text">{{ item[0] }}</span>
 							<i class="fa fa-angle-right"></i>
 						</a>
 					</li>

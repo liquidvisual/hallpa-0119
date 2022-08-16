@@ -1,0 +1,120 @@
+{
+    "Home": {
+        "url": "/",
+    },
+    "About": {
+        "url": "/about/",
+        "children_excluded_from_nav": false,
+        "children": {
+            "Why Switch to Hall Payne?": {
+                "url": "/about/why-switch-to-hall-payne/",
+            },
+            "What Our Clients Say": {
+                "url": "/about/why-switch-to-hall-payne/",
+            },
+            "In the Community": {
+                "url": "/about/why-switch-to-hall-payne/",
+            },
+        }
+    },
+    "Our People": {
+        "url": "/our-people/",
+        "children_excluded_from_nav": false,
+        "children": {
+            "Vanessa Brown": {
+                "url": "/our-people/our-people-item/",
+            }
+        }
+    },
+    "Areas of Practice": {
+        "url": "/areas-of-practice/",
+        "children_excluded_from_nav": false,
+        "children": {
+            "Personal Compensation Law": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-01@2x.jpg",
+                "description": "After an injury, compensation paid swiftly and fairly can really help your recovery.",
+                "children_excluded_from_nav": false,
+                "children": {
+                    "Workplace Injury": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Motor Vehicle Accidents": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Medical Negligence": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Asbestosis, Black Lung & Dust Diseases": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Public Liability (Slips and Falls)": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Other Injury Claims": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                    "Institutional Abuse": {
+                        "url": "/areas-of-practice/areas-of-practice-item/areas-of-practice-item/"
+                    },
+                }
+            },
+            "Industrial & Employment Law": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-02@2x.jpg",
+                "description": "We’re committed to protecting your rights at work and securing fair outcomes in all disputes."
+            },
+            "Discrimination": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-03@2x.jpg",
+                "description": "We’re committed to equality, and protecting your right to live free from discrimination of any kind."
+            },
+            "Superannuation & Insurance": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-04@2x.jpg",
+                "description": "If you can’t work we can help you access your life, superannuation or disability insurance."
+            },
+            "Family law": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-05@2x.jpg",
+                "description": "Avoid extra stress by getting the right advice for you and your family."
+            },
+            "Wills & Estates": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-06@2x.jpg",
+                "description": "We’ll help you draft a will and organise your estate, bringing you and your family peace of mind."
+            },
+            "Criminal Law": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-07@2x.jpg",
+                "description": "The right legal advice and support is crucial at every stage of criminal law."
+            },
+            "Conveyancing": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-08@2x.jpg",
+                "description": "Text still to come."
+            },
+            "Immigration": {
+                "url": "/areas-of-practice/areas-of-practice-item/",
+                "image": "/assets/img/content/area-of-practice-thumbs/thumb-09@2x.jpg",
+                "description": "We support those looking to live and work in Australia with expert legal advice."
+            }
+        }
+    },
+    "Blog": {
+        "url": "/blog/",
+        "classes": "is-right-aligned",
+        "children_excluded_from_nav": false,
+        "children": {
+            "Blog Post": {
+                "url": "/blog/blog-item/"
+            }
+        }
+    },
+    "Contact": {
+        "url": "/contact/",
+    },
+    #"Search": {
+    #    "url": "#/search/"
+    #}
+}

@@ -1,7 +1,10 @@
 /*
-    TOPBAR.CSS
+    NAV.CSS *NEW*
 
-    - updated: 16.04.18
+    - Notes:
+        latest update copies nav.scss from GNL website.
+
+    - updated: 16.08.22, 31.07.19, 03.07.19, 14.06.19, 16.04.18
     - liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -12,31 +15,27 @@
 //-----------------------------------------------------------------
 
 .global-navigation {
-    display: inline-flex;
     position: relative; // [LOCKED]
+    // top: rem-calc(-36);
     padding: rem-calc(10 0);
-    margin-left: auto;
-    margin-right: rem-calc(-16);
-    // z-index: 9999;
+    right: rem-calc(-20);
 }
 
 //-----------------------------------------------------------------
 // GENERAL UL
 //-----------------------------------------------------------------
 
-.lv-topbar ul {
+.lv-nav ul {
     padding: 0; // [RESET]
     margin: 0;  // [RESET]
     list-style: none; // [RESET]
-    font-family: $headings-font-family;
-    font-size: rem-calc(16);
 }
 
 //=========================================
 // TOP PARENT UL
 //=========================================
 
-.lv-topbar > ul {
+.lv-nav > ul {
     display: flex;
 
     > li {
@@ -49,57 +48,106 @@
 // ALL ANCHORS (INCL. DROPDOWN CHILDREN)
 //-----------------------------------------------------------------
 
-.lv-topbar a {
-    display: block; // [LOCKED]
+.lv-nav a {
+    // display: block; // [LOCKED]
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-decoration: none; // [LOCKED]
     font-weight: $font-weight-normal; // [LOCKED]
+
+    .submenu-arrow {
+        position: relative;
+        left: 5px;
+        // display: none; ?
+        margin-left: auto;
+        font-size: rem-calc(20);
+        line-height: 0; // [LOCKED]
+    }
 }
 
 //-----------------------------------------------------------------
-// TOP PARENT ANCHORS (NAV)
+// TOP PARENT ANCHORS
 //-----------------------------------------------------------------
 
-.lv-topbar .top-parent-anchor {
+.lv-nav > ul > li > a {
     display: block; // [LOCKED]
-    padding: rem-calc(0 18);
-
+    position: relative; // for triangle - if present
+    padding: rem-calc(0 20);
+    // padding-top: rem-calc(5); // SPECIAL CASE - Josefin font is a little weird
     font-size: rem-calc(17);
     text-transform: uppercase;
-
     line-height: 44px; // [LOCKED]
     color: white; // [THEMABLE]
-    transition: background 150ms ease;
+    text-transform: uppercase;
+
+    // this is a preference thing. Want arrows to denote dropdowns on top nav items?
+    .submenu-arrow {
+        display: none;
+    }
 }
 
-//=========================================
+//-----------------------------------------------------------------
 // HOVER, ACTIVE
-//=========================================
+//-----------------------------------------------------------------
 
-.lv-topbar .top-parent-anchor:hover {
+// ANCHOR HOVER
+.lv-nav > ul > li > a:hover {
     background: rgba(black, 0.08); // [THEMEABLE]
+    // color: lighten($primary, 20%);
 }
 
-.lv-topbar .active .top-parent-anchor {
-    // background: rgba(white, 0.15);
+// ANCHOR ACTIVE
+.lv-nav > ul > li.active-parent > a,
+.lv-nav > ul > li.active > a  {
+    // background: rgba(black, 0.08); // [THEMEABLE]
+    // color: $primary;
 
-    .text {
+    > .text {
         padding-bottom: 5px;
-        border-bottom: 2px solid white; // [THEMEABLE]
+        border-bottom: 2px solid white;
     }
 }
 
-.lv-topbar .top-parent-anchor:hover {
-    .text {
-        border-bottom: 0;
-        border-color: transparent;
-    }
+// DEEP DROPDOWNS ALWAYS HIDDEN?
+.lv-nav .dropdown .dropdown {
+    // display: none;
+    background: #f3f3f3;
+}
+
+// DEEP DROPDOWNS ALWAYS HIDDEN
+.lv-nav .dropdown .dropdown .dropdown {
+    display: none;
 }
 
 //-----------------------------------------------------------------
 // DROPDOWN ANCHOR HOVERS
 //-----------------------------------------------------------------
 
-.lv-topbar .has-dropdown:hover > .top-parent-anchor {
+.lv-nav > ul > li:hover > a {
+    background: rgba(black, 0.1);
+
+    > .text {
+        border-color: transparent; // [LOCKED]
+    }
+}
+
+//-----------------------------------------------------------------
+
+// SHOW DROPDOWN
+// .lv-nav > ul > li.active > .dropdown {
+//     visibility: visible;
+//     transform: translateY(0);
+//     transition: none;
+//     display: flex;
+//     z-index: 1; // [LOCKED] - fixes glitch
+// }
+
+//-----------------------------------------------------------------
+// DROPDOWN ANCHOR HOVERS
+//-----------------------------------------------------------------
+
+.lv-nav > ul > li.has-dropdown:hover > a {
     background: rgba(black, 0.1);
 
     .text {
@@ -107,7 +155,12 @@
     }
 }
 
-.lv-topbar .has-dropdown:hover > .dropdown {
+// time hack - keep the anchor bg selected when dropdown opens
+.lv-nav ul.dropdown > li.has-dropdown:hover > a {
+    background: rgba(black, 0.05);
+}
+
+.lv-nav .has-dropdown:hover > .dropdown {
     @include media-breakpoint-up(lg) {
         height: auto;
         overflow: visible;
@@ -120,8 +173,7 @@
 // DROPDOWNS
 //-----------------------------------------------------------------
 
-.lv-topbar .dropdown {
-    display: none; // [OPT IN DESIGN / OFF CANVAS ETC]
+.lv-nav .dropdown {
     position: absolute;
     left: 0;
     width: rem-calc(280);
@@ -133,19 +185,30 @@
     visibility: hidden;
     transform: translateY(10px);
     transition: transform 200ms ease;
+
+    // [OPT IN DESIGN / OFF CANVAS ETC]
+    &.is-excluded-from-nav,
+    &.is-excluded-from-nav .dropdown {
+        display: none; // is-excluded-from-nav
+    }
+}
+
+.lv-nav .dropdown .dropdown {
+    top: 0;
+    left: -100%;
 }
 
 //-----------------------------------------------------------------
-// DROPDOWNS
+// DROPDOWN ALIGN
 //-----------------------------------------------------------------
 
 // Prevent far-right dropdown from exceeding page width
-.lv-topbar .is-right-aligned .dropdown {
+.lv-nav .is-right-aligned .dropdown {
     right: 0;
     left: auto;
 }
 
-.lv-topbar .dropdown.is-nav-included {
+.lv-nav .dropdown.is-nav-included {
     display: block;
 }
 
@@ -153,13 +216,14 @@
 // DROPDOWN LIST + ANCHORS
 //=========================================
 
-.lv-topbar .dropdown li {
+.lv-nav .dropdown li {
     position: relative;
     border-bottom: 1px solid rgba(black, 0.1);
 
     a {
         padding: rem-calc(10 20);
         font-size: rem-calc(14); // opinionated
+        font-weight: $font-weight-normal;
         color: #444;
         transition: none; // [LOCKED]
 
@@ -169,7 +233,7 @@
     }
 }
 
-.lv-topbar .dropdown li:last-child {
+.lv-nav .dropdown li:last-child {
     border-bottom: 0;
 }
 
@@ -177,7 +241,7 @@
 // MEGA MENU DROPDOWNS
 //-----------------------------------------------------------------
 
-// .lv-topbar .has-dropdown.is-mega > .dropdown {
+// .lv-nav .has-dropdown.is-mega > .dropdown {
 //     display: flex;
 //     flex-wrap: wrap;
 //     width: rem-calc(650);
@@ -199,6 +263,10 @@
     display: block;
     border: 0;
 }
+
+//=========================================
+//
+//=========================================
 
 //=========================================
 //
