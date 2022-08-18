@@ -1,11 +1,11 @@
 /*
-    NAV.CSS *NEW*
+    NAV.CSS
 
     - Notes:
-        latest update copies nav.scss from GNL website.
+        * adds nested dropdown alignment detail from Jono's custom
+        * Replicate's GNL nav.
 
-    - updated: 16.08.22, 31.07.19, 03.07.19, 14.06.19, 16.04.18
-    - liquidvisual.com
+    - updated: 18.08.22, 16.08.22, 31.07.19, 03.07.19, 14.06.19, 16.04.18
 */
 //-----------------------------------------------------------------
 // VARIABLES
@@ -196,6 +196,10 @@
 .lv-nav .dropdown .dropdown {
     top: 0;
     left: -100%;
+
+    @media (min-width: 1715px) {
+        left: 100%;
+    }
 }
 
 //-----------------------------------------------------------------
@@ -206,6 +210,12 @@
 .lv-nav .is-right-aligned .dropdown {
     right: 0;
     left: auto;
+}
+
+// override nested dropdown
+.lv-nav .dropdown .is-right-aligned .dropdown {
+    right: auto;
+    left: -100%;
 }
 
 .lv-nav .dropdown.is-nav-included {
